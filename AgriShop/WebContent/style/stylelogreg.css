@@ -1,0 +1,58 @@
+@charset "ISO-8859-1";
+
+.login, .registrazione {
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.login table, .registrazione table {
+	width: 40%;
+	margin-left: 20%;
+	margin-right: 10%;
+}
+
+.login tr {
+	margin-top: 5%;
+}
+
+input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+}
+
+.registrazione input:focus {
+	border: 3px solid green;
+}
+
+.login input:focus{
+	border: 3px solid green;
+}
+
+
+
+
+.bottone {
+	width: 40%;
+	margin-top: 30px;
+	margin-left: 25%;
+	border-radius: 5px;
+}
+.bottone:hover{
+	border: 3px solid green;
+}
+
+.iscriviti{
+	width:20%;
+	margin-left:20%;
+}
+
+.iscriviti:hover{
+	border: 3px solid green;
+}
