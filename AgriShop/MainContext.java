@@ -1,5 +1,3 @@
-package utils;
-
 
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
@@ -30,7 +28,7 @@ public class MainContext implements ServletContextListener {
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context) initCtx.lookup("java:comp/env");
 
-			ds = (DataSource) envCtx.lookup("jdbc/azienda1");
+			ds = (DataSource) envCtx.lookup("jdbc/azienda_2");
 			
 			Connection con = null;
 
