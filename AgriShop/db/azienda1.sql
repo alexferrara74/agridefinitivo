@@ -68,10 +68,18 @@ CREATE TABLE ruolo (
   foreign key (CF) references dipendenti(CF)
 );
 
+DROP TABLE IF EXISTS categoria;
+CREATE TABLE categoria (
+categ varchar(15) not null,
+primary key(categ)
+);
+
 DROP TABLE IF EXISTS negozio;
 CREATE TABLE negozio (
   ragione_sociale    varchar(50)  not NULL,
   indirizzo varchar(30)          not NULL, 
+  civico int(4) not null,
+  cap int(5) not null,
   PIVA      varchar(16)           not NULL,
   email    varchar(35)  not NULL,
   pwd       varchar(8)   not NULL,
@@ -83,10 +91,12 @@ CREATE TABLE prodotto (
  prezzo      int         not NULL,
  nomep        varchar(10) not NULL,
  SSN         char(9)     not NULL,
- tipo        varchar(15) not NULL,
  disponibilità int(5)   not NULL,
  descrizione varchar(50) not NULL,
-  primary key (SSN)
+ categ varchar(10) not null,
+ idfoto varchar(30) not null,
+  primary key (SSN),
+  foreign key (categ) references categoria(categ)
 );
 
 DROP TABLE IF EXISTS ordine;
@@ -189,7 +199,8 @@ CREATE TABLE carta (
  num_pag     int  NULL,
  foreign key (num_pag) references pagamento(num_pag)
 );
-
+INSERT INTO categoria VALUES
+('ortaggi');
 
 INSERT INTO azienda VALUES
 ('Azienda&co','Napoli',1000,'IT12359971632');
@@ -259,28 +270,20 @@ INSERT INTO numero_telefono VALUES
 INSERT INTO numero_telefono VALUES 
 (3387139665,'SPTRB66S93P987R');
 
-INSERT INTO negozio VALUES
-('ortofrutta_campano','via Ruggi n 5','IT12378527898','m.ren7@hotmail.it','ciao123!');
-INSERT INTO negozio VALUES
-('fruit_shop','18 Jessup Rd','IT93345463256','alex_f@gmail.it','alex111');
-INSERT INTO negozio VALUES
-('al_mercatino','via Roma n 15','IT74145467415','michy33@virgilio.it','casa22?');
-INSERT INTO negozio VALUES
-('vegetable_da_Marcello','372 Clearwater Blvd','IT12657893456','malem@gmail.it','orto88?');
+
 
 
 INSERT INTO prodotto VALUES
-(3,'pomodoro',654008935,'K.M.0',10,'pomodorino giallo');
+(3,'pomodoro',654008935,10,'pomodorino giallo','ortaggi','pomodorinogiallo');
 INSERT INTO prodotto VALUES
-(1,'patata',125987635,'K.M.0',5,'patate novelle');
+(1,'patata',125987635,5,'patate novelle','ortaggi','patate');
 INSERT INTO prodotto VALUES
-(3,'melanzane',539512508,'P.C.P',100,'melanzana cima di viola');
+(3,'melanzane',539512508,100,'melanzana cima di viola','ortaggi','ortaggi');
 INSERT INTO prodotto VALUES
-(2,'lattuga',147963258,'K.M.0',20,'lattuga iceberg');
+(2,'lattuga',147963258,20,'lattuga iceberg','ortaggi','ortaggi');
 INSERT INTO prodotto VALUES
-(4,'uva',159638257,'P.C.P',33,'uva armonera del Cilento');
-INSERT INTO prodotto VALUES
-(4,'zucca',745963821,'P.C.P',50,'zucca napoletana tonda');
+(4,'uva',159638257,33,'uva armonera del Cilento','ortaggi','ortaggi');
+
 
 INSERT INTO ordine (data)  VALUES
 ('2021-11-14');
@@ -293,14 +296,6 @@ INSERT INTO ordine (data)  VALUES
 INSERT INTO ordine (data)  VALUES
 ('2021-07-25');
 
-INSERT INTO esegue VALUES
-('IT12378527898',1);
-INSERT INTO esegue VALUES
-('IT93345463256',3);
-INSERT INTO esegue VALUES
-('IT12657893456',2);
-INSERT INTO esegue VALUES
-('IT74145467415',4);
 
 INSERT INTO composto VALUES
 (12,654008935,1);
