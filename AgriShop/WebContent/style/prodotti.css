@@ -1,0 +1,20 @@
+@charset "ISO-8859-1";
+
+
+#risultato{
+	width :80%px;
+	height:1080px;
+	border-style:solid;
+	margin-left:10%;
+	margin-right:10%;
+}
+#singolo{
+		font-family: Arial, Helvetica, sans-serif;
+	display:inline;
+	float:left;
+	width:330px;
+	height:200px;
+	border-style:solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 10px 10px 10px;
+}

@@ -14,20 +14,30 @@ public class prodotto implements Serializable {
 	String descrizione;
 	String ssn;
 	int quantita;
-	String tipologia;
+	String categoria;
 	
-	
+
 	public prodotto () {
 		
 		ssn="0";
 		nome="";
 		descrizione="";
-		tipologia="";
 		prezzo=0;
 		quantita=0;
+		categoria="";
 
 	}
 
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCtegoria(String categoria) {
+		this.categoria = categoria;
+	}
+	
 
 	public int getQuantita() {
 		return quantita;

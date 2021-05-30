@@ -11,12 +11,17 @@
 
 <link href="style/stylepage.css" rel="stylesheet" type="text/css">
 
-<title>AgriShop</title>
+
 </head>
 
 
 <body>
-	<%@ include file="Header.jsp"%><br>
+
+
+
+	<%@ include file="../Header.jsp"%><br>
+
+
 
 <div class="immagine">
 	<img class="imm" src="immagini/azienda.jpg" alt="azienda" width="1000px" height="400px">
@@ -27,13 +32,33 @@
 
 
 
-	<div class="homepage">
-		<p id="offerta">Prodotti in offerta:</p>
-		<div id="prod"></div>
+<div class="homepage">
 
-		<div id="prod"></div>
-		<div id="prod"></div>
-		<div id="prod"></div>
+<% 
+Collection<?> prodotti=(Collection<?>)request.getAttribute("offerta");
+	
+%>
+
+
+<%
+if(prodotti!=null&&prodotti.size()>0){
+	
+		Iterator<?> it=prodotti.iterator();
+		
+		while(it.hasNext()){
+			prodotto beans=(prodotto)it.next();
+	
+	%>
+		
+		<p id="offerta">Prodotti in offerta:</p>
+		
+		<span id="prodottiinofferta">
+		
+		<%= beans.getNome() %>
+				
+		</span>
+
+<% } }%>
 
 	</div>
 

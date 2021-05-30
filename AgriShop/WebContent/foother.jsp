@@ -4,9 +4,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link href="style/foother.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div id="foother">
+
+<ul>
+<li>ChiSiamo
+<li>Lavora Con Noi
+
+</ul>
+
+</div>
+
+
 
 </body>
 </html>

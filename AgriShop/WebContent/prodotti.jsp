@@ -4,13 +4,12 @@
 <% 
 Collection<?> prodotti=(Collection<?>)request.getAttribute("prodotti");
 
-String error= (String)request.getAttribute("error");
-
-if(prodotti==null&& error==null){
-	response.sendRedirect(response.encodeRedirectURL("./prodotti"));
-	return;
+String errore= (String)request.getAttribute("error");
+if(prodotti==null&&errore==null){
 	
+	response.sendRedirect(response.encodeRedirectURL("./prodotti"));
 }
+
 	
 %>
 
@@ -18,27 +17,27 @@ if(prodotti==null&& error==null){
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="style/prodotti.css" rel="stylesheet" type="text/css">
 
 <title>PRODOTTI</title>
 </head>
 
 
 <body>
-<h1>Store</h1>
-<h1>Prodotti</h1>
-
-<%
+	<%@ include file="Header.jsp"%><br>
 
 
-%>
-<table>
-<tr>
- <th>Code</th>
- <th>Nome</th>
- <th>Description</th>
- <th>Action</th>
-</tr>
+<div id="parametriconfigurazione">
+
+
+
+
+</div>
+
+
+
+<div id="risultato">
+
 
 <%
 if(prodotti!=null&&prodotti.size()>0){
@@ -49,30 +48,24 @@ if(prodotti!=null&&prodotti.size()>0){
 	
 	%>
 	
-	<tr> 
-	<td> <%=beans.getNome() %></td>
-	<td> <%=beans.getPrezzo() %></td>
-	<td> <%=beans.getDescrizione() %></td>
-	<td></td>
-</tr>
 
-
-
+	
+	<div id="singolo">
+	 <p id="descrizione"><%=beans.getDescrizione() %><br>
+	 <p id="prezzo"><%=beans.getPrezzo() %> <br>
+	
+	</div>
 
 <% }
 		
 	}else{
 %>
 
-	<tr>
-	<td colspan="4">NO PRODUCT</td>
-	</tr>
+ <a href="errore.jsp">Errore</a>
 
 <% } %>
 
-
-</table>
-
+</div>
 
 </body>
 

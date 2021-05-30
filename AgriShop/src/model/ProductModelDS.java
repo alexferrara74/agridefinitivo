@@ -8,6 +8,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 import javax.sql.DataSource;
 
+import model.prodotto;
+import utils.utility;
+
 
 
 
@@ -48,15 +51,12 @@ public class ProductModelDS implements ProductModel<prodotto>{
 				bean.setDescrizione(rs.getString("descrizione"));
 				bean.setQuantita(rs.getInt("disponibilità"));
 				bean.setSsn(rs.getString("ssn"));
+				bean.setCtegoria(rs.getString("categ"));
 			
 				prodotti.add(bean);
-				
-				System.out.print(bean.nome);
-				
+							
 			}
-			
-			
-			
+						
 		}finally {
 			try {
 			if(prepareStatement!=null)
@@ -78,8 +78,61 @@ public class ProductModelDS implements ProductModel<prodotto>{
 
 	@Override
 	public prodotto doRetrieveByKey(String code) throws SQLException {
-		return null;
+		
+		Connection connection=null;
+		PreparedStatement prepareStatement=null;
+		
+		String selectSQL="SELECT * FROM prodotto WHERE disponibilità = ?";
+	
+		
+		Collection <prodotto> prodotti= new LinkedList<prodotto>(); 
+		
+		
+		try {
+			
+			connection= ds.getConnection();
+			prepareStatement= connection.prepareStatement(selectSQL);
+			prepareStatement.setInt(1, Integer.parseInt(code));
+			ResultSet rs=prepareStatement.executeQuery();
+			
+			while(rs.next()) {
+				prodotto bean= new prodotto();
+				bean.setPrezzo(rs.getFloat("prezzo"));
+				bean.setNome(rs.getString("nomep"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setQuantita(rs.getInt("disponibilità"));
+				bean.setSsn(rs.getString("ssn"));
+			
+				prodotti.add(bean);
+				
+		
+				
+			}
+			
+			
+			
+		}finally {
+			try {
+			if(prepareStatement!=null)
+			prepareStatement.close();
+			}finally {
+				
+			
+			
+			if(connection!=null)
+			connection.close();
+			}
+			
+		}
+		
+		return (prodotto) prodotti;
 	}
+		
+		
+		
+
+		
+	
 	
 	
 	@Override
