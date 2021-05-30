@@ -29,6 +29,21 @@ if(prodotti==null&&errore==null){
 
 <div id="parametriconfigurazione">
 
+<p>Categorie:
+<form action="">
+<input type="checkbox" id="ortaggi" value="ortaggi">
+<label for="ortaggi"> Ortaggi</label><br>
+<input type="checkbox" id="ortaggi" value="ortaggi">
+<label for="ortaggi"> Ortaggi</label><br>
+<input type="checkbox" id="ortaggi" value="ortaggi">
+<label for="ortaggi"> Ortaggi</label><br>
+<input type="checkbox" id="ortaggi" value="ortaggi">
+<label for="ortaggi"> Ortaggi</label><br>
+<input type="checkbox" id="ortaggi" value="ortaggi">
+<label for="ortaggi"> Ortaggi</label><br>
+
+
+</form>
 
 
 
@@ -51,8 +66,9 @@ if(prodotti!=null&&prodotti.size()>0){
 
 	
 	<div id="singolo">
-	 <p id="descrizione"><%=beans.getDescrizione() %><br>
-	 <p id="prezzo"><%=beans.getPrezzo() %> <br>
+	<a href=""><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
+	  <p id="descrizione"><a href=""><%=beans.getDescrizione() %></a><br>
+	 	 <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
 	
 	</div>
 

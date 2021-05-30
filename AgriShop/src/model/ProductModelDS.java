@@ -52,7 +52,7 @@ public class ProductModelDS implements ProductModel<prodotto>{
 				bean.setQuantita(rs.getInt("disponibilità"));
 				bean.setSsn(rs.getString("ssn"));
 				bean.setCtegoria(rs.getString("categ"));
-			
+				bean.setIdfoto(rs.getString("idfoto"));
 				prodotti.add(bean);
 							
 			}

@@ -13,6 +13,7 @@ x.value=x.value.toUpperCase();
 
 function validamail(mail){
 var x=mail.value;
+mail.value=mail.value.toLowerCase();
 var uno= x.indexOf("@");
 var due=x.lastIndexOf(".");
 if(due<=1||uno<=1){
@@ -34,7 +35,7 @@ return true;
 
 
 function validapass(password){
-	var ck_password = /^[A-Za-z0-9]{8,12}$/;
+	var ck_password = /^[A-Za-z0-9]{8,8}$/;
 	var pas1= password.value;
 	
 	
@@ -57,7 +58,7 @@ function validapass(password){
 
 function validaconferma(conferma){
 
-	var ck_password = /^[A-Za-z0-9]{8,12}$/;
+	var ck_password = /^[A-Za-z0-9]{8,8}$/;
 	var pas1= conferma.value;
 
 	if(!ck_password.test(pas1)){
@@ -127,7 +128,7 @@ indirizzo.focus();
 
 function validacivico(civico){
 
-var ck=/^[0-9]{3}$/;
+var ck=/^[0-9]{2,3}$/;
 
 
 if(!ck.test(civico.value)){

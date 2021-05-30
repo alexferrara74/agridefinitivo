@@ -15,7 +15,17 @@ public class prodotto implements Serializable {
 	String ssn;
 	int quantita;
 	String categoria;
-	
+	String idfoto;
+
+	public String getIdfoto() {
+		return idfoto;
+	}
+
+
+	public void setIdfoto(String idfoto) {
+		this.idfoto = idfoto;
+	}
+
 
 	public prodotto () {
 		
