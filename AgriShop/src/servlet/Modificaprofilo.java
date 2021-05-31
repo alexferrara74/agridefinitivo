@@ -32,8 +32,18 @@ public class Modificaprofilo extends HttpServlet {
 		String conferma=request.getParameter("conferma");
 		String indirizzo= request.getParameter("indirizzo");
 		String piva=request.getParameter("piva");
-	
+		String cap=request.getParameter("cap");
+		String civico=request.getParameter("ncivico");
 		
+		if(cap!=null) {			
+			if(!cap.equals("")) {
+				neg.setCap(cap);
+			}}
+		
+			if(civico!=null) {			
+				if(!civico.equals("")) {
+					neg.setCivico(civico);
+				}}
 		
 		if(user!=null) {			
 		if(!user.equals("")) {

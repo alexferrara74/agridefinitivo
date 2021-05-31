@@ -55,7 +55,7 @@ public class loginservlet extends HttpServlet {
 		
 		else {
 			
-		if(neg.getPwd().equals(password)) {
+		if(neg.getPwd().equals(password)&&neg.getEmail().equals(username)) {
 			
 		
 				ssn.setAttribute("nome",neg.getRs());

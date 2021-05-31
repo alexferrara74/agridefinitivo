@@ -12,7 +12,7 @@
 <%
 String username= (String)request.getSession().getAttribute("nome");
 String error=(String)request.getAttribute("passerrata");
-
+Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 %>
 
 </head>
@@ -31,6 +31,24 @@ String error=(String)request.getAttribute("passerrata");
 			<form id="ricerca" action="ricerca" method="POST">
 				<input id="text" type="text" placeholder="Ricerca">
 			</form>
+			
+			<%
+			if(ricerca==null){}
+			
+			if(ricerca!=null&&ricerca.size()>0){
+				Iterator<?> it=ricerca.iterator();
+				while(it.hasNext()){
+					prodotto beans=(prodotto)it.next();
+			%>	
+			<div id="risultatoricerca">
+			<%=beans.getDescrizione() %>
+			
+			
+			</div>
+			
+	<%}} %>
+			
+			
 
 			<p id="img">
 				<img id="img" src="immagini/aaa3.png" alt="alternatetext">

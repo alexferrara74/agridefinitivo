@@ -33,6 +33,14 @@ Negozio neg=(Negozio)request.getSession().getAttribute("neg");
 </tr>
 <tr>
 
+<td><input type="text" name="cap" placeholder="<%=neg.getCap()%>"></td>
+</tr>
+<tr>
+
+<td><input type="text" name="civico" placeholder="<%=neg.getCivico()%>"></td>
+</tr>
+<tr>
+
 <td><input type="text" name="indirizzo" placeholder="<%=neg.getIndirizzo()%>"></td>
 </tr>
 <tr>

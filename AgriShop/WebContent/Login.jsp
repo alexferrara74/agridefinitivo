@@ -39,12 +39,13 @@
 			</div>
 			
 			<%if(errorelogin!=null){
-			if(errorelogin.equals("passerrata")){ %>
+				if(errorelogin=="passerrata"){
+				%>
 			
 			<div id="errorelogin">
 			<p>errore login
 			</div>
-			<% }}%>
+			<%} }%>
 			
 	</div>
 	

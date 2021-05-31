@@ -82,7 +82,7 @@ public class ProductModelDS implements ProductModel<prodotto>{
 		Connection connection=null;
 		PreparedStatement prepareStatement=null;
 		
-		String selectSQL="SELECT * FROM prodotto WHERE disponibilità = ?";
+		String selectSQL="SELECT * FROM prodotto WHERE nomep = ?";
 	
 		
 		Collection <prodotto> prodotti= new LinkedList<prodotto>(); 
@@ -92,7 +92,7 @@ public class ProductModelDS implements ProductModel<prodotto>{
 			
 			connection= ds.getConnection();
 			prepareStatement= connection.prepareStatement(selectSQL);
-			prepareStatement.setInt(1, Integer.parseInt(code));
+			prepareStatement.setString(1, code);
 			ResultSet rs=prepareStatement.executeQuery();
 			
 			while(rs.next()) {

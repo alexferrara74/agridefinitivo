@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS negozio;
 CREATE TABLE negozio (
   ragione_sociale    varchar(50)  not NULL,
   indirizzo varchar(30)          not NULL, 
-  civico int(4) not null,
+  ncivico int(4) not null,
   cap int(5) not null,
   PIVA      varchar(16)           not NULL,
   email    varchar(35)  not NULL,
