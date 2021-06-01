@@ -31,6 +31,12 @@ input {
 	border: 3px solid green;
 }
 
+
+#utente input:focus {
+	border: 3px solid green;
+}
+
+
 .login input:focus{
 	border: 3px solid green;
 }

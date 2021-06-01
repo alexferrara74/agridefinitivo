@@ -11,9 +11,6 @@ import javax.sql.DataSource;
 import model.prodotto;
 import utils.utility;
 
-
-
-
 public class ProductModelDS implements ProductModel<prodotto>{
 
 	private DataSource ds= null;
@@ -77,12 +74,12 @@ public class ProductModelDS implements ProductModel<prodotto>{
 	
 
 	@Override
-	public prodotto doRetrieveByKey(String code) throws SQLException {
+	public Collection<prodotto>  doRetrieveByKey(String code) throws SQLException {
 		
 		Connection connection=null;
 		PreparedStatement prepareStatement=null;
 		
-		String selectSQL="SELECT * FROM prodotto WHERE nomep = ?";
+		String selectSQL="SELECT * FROM prodotto WHERE categ = ?";
 	
 		
 		Collection <prodotto> prodotti= new LinkedList<prodotto>(); 
@@ -93,15 +90,18 @@ public class ProductModelDS implements ProductModel<prodotto>{
 			connection= ds.getConnection();
 			prepareStatement= connection.prepareStatement(selectSQL);
 			prepareStatement.setString(1, code);
+
 			ResultSet rs=prepareStatement.executeQuery();
 			
 			while(rs.next()) {
 				prodotto bean= new prodotto();
-				bean.setPrezzo(rs.getFloat("prezzo"));
+				bean.setPrezzo(rs.getInt("prezzo"));
 				bean.setNome(rs.getString("nomep"));
 				bean.setDescrizione(rs.getString("descrizione"));
 				bean.setQuantita(rs.getInt("disponibilità"));
 				bean.setSsn(rs.getString("ssn"));
+				bean.setCtegoria(rs.getString("categ"));
+				bean.setIdfoto(rs.getString("idfoto"));
 			
 				prodotti.add(bean);
 				
@@ -125,7 +125,7 @@ public class ProductModelDS implements ProductModel<prodotto>{
 			
 		}
 		
-		return (prodotto) prodotti;
+		return  prodotti;
 	}
 		
 		

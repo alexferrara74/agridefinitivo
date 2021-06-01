@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../style/stylogreg.css" rel="stylesheet" type="text/css">
+<link href="../style/stylelogreg.css" rel="stylesheet" type="text/css">
+
 <script src="../JS/controllo-profilo.js"></script>
 
 <%
@@ -15,13 +16,12 @@ Negozio neg=(Negozio)request.getSession().getAttribute("neg");
 </head>
 <body>
 
-
 <div id="utente">
 <fieldset>
 <legend>Modifica Dati Personali</legend>
 <p>Account di <%=username%></p>
 
-<form action="../Modificaprofilo" method="post">
+<form class="modprofilo"action="../Modificaprofilo" method="post">
 
 <table>
 <tr>
@@ -37,7 +37,7 @@ Negozio neg=(Negozio)request.getSession().getAttribute("neg");
 </tr>
 <tr>
 
-<td><input type="text" name="civico" placeholder="<%=neg.getCivico()%>"></td>
+<td><input type="text" name="ncivico" placeholder="<%=neg.getCivico()%>"></td>
 </tr>
 <tr>
 

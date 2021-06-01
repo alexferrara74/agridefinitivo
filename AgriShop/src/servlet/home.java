@@ -28,9 +28,15 @@ public class home extends HttpServlet {
 
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model= new ProductModelDS(ds);
-		
+		String[] categoria =request.getParameterValues("scelta");
+			
+		if(categoria!=null) {
+	    for(String s:categoria) {
+			if(s!=null) {
+				String dato=s;
+						
 		try {
-			request.setAttribute("prodotti", model.doRetrieveAll(""));
+			request.setAttribute("prodotti", model.doRetrieveByKey(dato));
 		} catch (SQLException e) {
 			utility.print(e);
 			
@@ -38,7 +44,22 @@ public class home extends HttpServlet {
 			
 			
 		}
-		
+	}
+	    
+	    }}	else {
+				try {
+					request.setAttribute("prodotti", model.doRetrieveByKey("frutta"));
+				} catch (SQLException e) {
+					utility.print(e);
+					
+					request.setAttribute("error", e.getMessage());
+					
+					
+				}
+			}
+	
+	    
+	
 		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/prodotti.jsp");
 		dispacher.forward(request, response);
 		

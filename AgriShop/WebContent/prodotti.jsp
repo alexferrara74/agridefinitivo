@@ -6,7 +6,6 @@ Collection<?> prodotti=(Collection<?>)request.getAttribute("prodotti");
 
 String errore= (String)request.getAttribute("error");
 if(prodotti==null&&errore==null){
-	
 	response.sendRedirect(response.encodeRedirectURL("./prodotti"));
 }
 
@@ -30,18 +29,18 @@ if(prodotti==null&&errore==null){
 <div id="parametriconfigurazione">
 
 <p>Categorie:
-<form action="">
+<form action="prodotti" >
+<input type="checkbox" id="ortaggi" value="ortaggi" name="scelta">
+<label for="ortaggi"> Ortaggi</label><br>
+<input type="checkbox" id="frutta" value="frutta" name="scelta">
+<label for="ortaggi"> Frutta</label><br>
 <input type="checkbox" id="ortaggi" value="ortaggi">
 <label for="ortaggi"> Ortaggi</label><br>
 <input type="checkbox" id="ortaggi" value="ortaggi">
 <label for="ortaggi"> Ortaggi</label><br>
 <input type="checkbox" id="ortaggi" value="ortaggi">
 <label for="ortaggi"> Ortaggi</label><br>
-<input type="checkbox" id="ortaggi" value="ortaggi">
-<label for="ortaggi"> Ortaggi</label><br>
-<input type="checkbox" id="ortaggi" value="ortaggi">
-<label for="ortaggi"> Ortaggi</label><br>
-
+<input type="submit" value="Submit">
 
 </form>
 

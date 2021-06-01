@@ -44,7 +44,8 @@ public class LoginModelDS implements negozioModel<Negozio>{
 		
 		
 		while(rs.next()) {
-		
+			bean.setCap(rs.getString("cap"));
+			bean.setCivico(rs.getString("ncivico"));
 			bean.setRs(rs.getString("ragione_sociale"));
 			bean.setIndirizzo(rs.getString("indirizzo"));
 			bean.setPiva(rs.getString("PIVA"));

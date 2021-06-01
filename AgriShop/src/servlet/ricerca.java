@@ -32,15 +32,6 @@ public class ricerca extends HttpServlet {
 		ProductModelDS model= new ProductModelDS(ds);
 		prodotto prod;
 		
-		try {
-			request.setAttribute("ricerca",(model.doRetrieveByKey(parametro)));
-		} catch (SQLException e) {
-			utility.print(e);
-			
-			request.setAttribute("error", e.getMessage());
-			
-			
-		}
 		
 		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/Header.jsp");
 		dispacher.forward(request, response);
