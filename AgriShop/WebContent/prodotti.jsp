@@ -53,6 +53,7 @@ if(prodotti==null&&errore==null){
     <input type="submit" value="Submit"> 
 
 <div></div>
+<div></div>
 </form>
  
 
