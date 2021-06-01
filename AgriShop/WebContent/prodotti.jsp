@@ -51,7 +51,7 @@ if(prodotti==null&&errore==null){
 <label for="ortaggi"> Ortaggi</label><br>
 </div>
     <input type="submit" value="Submit"> 
-
+<div></div>
 
 </form>
  
