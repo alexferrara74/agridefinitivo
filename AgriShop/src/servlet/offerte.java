@@ -26,6 +26,16 @@ public class offerte extends HttpServlet {
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model= new ProductModelDS(ds);
 		
+		try {
+			request.setAttribute("offerta", model.doRetrieveAll(""));
+		} catch (SQLException e) {
+			utility.print(e);
+			
+			request.setAttribute("error", e.getMessage());
+			
+			
+		}
+
 	
 			
 		

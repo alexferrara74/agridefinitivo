@@ -9,3 +9,8 @@ function esegui(){
 	
 	}
 	
+	function funzione(){
+		
+	 document.getElementById("sceltasingolo").submit();
+		
+	}

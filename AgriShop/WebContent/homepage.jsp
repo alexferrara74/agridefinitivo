@@ -10,7 +10,7 @@
 
 
 <link href="style/stylepage.css" rel="stylesheet" type="text/css">
-
+<link href="style/prodotti.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -33,10 +33,11 @@
 
 
 <div class="homepage">
-
+<p style=display:block; id="offerta">Prodotti in offerta:</p>
 <% 
 Collection<?> prodotti=(Collection<?>)request.getAttribute("offerta");
-	
+if(prodotti==null){
+	response.sendRedirect(response.encodeRedirectURL("./home"));	}
 %>
 
 
@@ -50,13 +51,15 @@ if(prodotti!=null&&prodotti.size()>0){
 	
 	%>
 		
-		<p id="offerta">Prodotti in offerta:</p>
 		
-		<span id="prodottiinofferta">
 		
-		<%= beans.getNome() %>
-				
-		</span>
+		<div id="singolo">
+		  <form action="prodotti/visualizzaprodotto.jsp" id="sceltasingolo"></form>
+		  <img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png" onclick="funzione()">
+		  <p id="descrizione" onclick="funzione()"><%=beans.getDescrizione() %><br>
+	 	  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
+	</div>
+
 
 <% } }%>
 

@@ -83,15 +83,14 @@ if(prodotti!=null&&prodotti.size()>0){
 		Iterator<?> it=prodotti.iterator();
 		while(it.hasNext()){
 			prodotto beans=(prodotto)it.next();
-
+	System.out.print(beans.getIdfoto());
 	%>
 
 	<div id="singolo">
-	
-	<a href="prodotti/visualizzaprodotto.jsp?nome=<%=beans.getNome()%>&descrizione=<%=beans.getDescrizione()%>&prezzo=<%=beans.getPrezzo()%>&foto=<%=beans.getIdfoto()%> " ><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
-		  <p id="descrizione"><a href="prodotti/visualizzaprodotto.jsp?prodotto=<%=beans.getNome()%>"><%=beans.getDescrizione() %></a><br>
-	 	 <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
-	
+		  <form action="prodotti/visualizzaprodotto.jsp" id="sceltasingolo"></form>
+		  <img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png" onclick="funzione()">
+		  <p id="descrizione" onclick="funzione()"><%=beans.getDescrizione() %><br>
+	 	  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
 	</div>
 
 <% }
