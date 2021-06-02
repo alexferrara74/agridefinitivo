@@ -18,7 +18,8 @@ if(prodotti==null&&errore==null){
 <meta charset="ISO-8859-1">
 <link href="style/prodotti.css" rel="stylesheet" type="text/css">
 
-<title>PRODOTTI</title>
+<script src="JS/jsprodotti.js"></script>
+
 </head>
 
 
@@ -29,29 +30,41 @@ if(prodotti==null&&errore==null){
 <div id="parametriconfigurazione">
 
 <p>Categorie:
-<form action="prodotti" >
+<form action="prodotti" id="prodaction" >
 <div>
-<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
+<input type="radio" id="ortaggi" value="ortaggi" name="scelta" onclick="esegui()">
 <label for="ortaggi"> Ortaggi</label><br>
 </div>
+
 <div>
-<input type="radio" id="frutta" value="frutta" name="scelta">
+<input type="radio" id="frutta" value="frutta" name="scelta" onclick="esegui()">
 <label for="ortaggi"> Frutta</label><br>
 </div>
-<div>
-<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
-<label for="ortaggi"> Ortaggi</label><br>
-</div>
-<div>
-<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
-<label for="ortaggi"> Ortaggi</label><br>
-</div>
-<div>
-<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
-<label for="ortaggi"> Ortaggi</label><br>
-</div>
-    <input type="submit" value="Submit"> 
 
+<div>
+<input type="radio" id="verdura" value="verdura" name="scelta" onclick="esegui()">
+<label for="ortaggi"> Verdura</label><br>
+</div>
+
+<div>
+<input type="radio" id="semi" value="semi" name="scelta" onclick="esegui()">
+<label for="ortaggi"> Semi</label><br>
+</div>
+
+<div>
+<input type="radio" id="fruttasecca" value="fruttasecca" name="scelta" onclick="esegui()">
+<label for="ortaggi">Frutta Secca</label><br>
+</div>
+ 
+ <div>
+<input type="radio" id="vino" value="vino" name="scelta" onclick="esegui()">
+<label for="ortaggi">Vino</label><br>
+</div>
+
+<div>
+<input type="radio" id="olio" value="olio" name="scelta" onclick="esegui()">
+<label for="ortaggi">Olio</label><br>
+</div>
 
 </form>
  
@@ -70,13 +83,13 @@ if(prodotti!=null&&prodotti.size()>0){
 		Iterator<?> it=prodotti.iterator();
 		while(it.hasNext()){
 			prodotto beans=(prodotto)it.next();
-	String s=beans.getNome();
+
 	%>
 
 	<div id="singolo">
 	
-	<a href="prodotti/visualizzaprodotto.jsp?prodotto=<%=s%>" ><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
-		  <p id="descrizione"><a href="prodotti/visualizzaprodotto.jsp?prodotto=<%=s%>"><%=beans.getDescrizione() %></a><br>
+	<a href="prodotti/visualizzaprodotto.jsp?nome=<%=beans.getNome()%>&descrizione=<%=beans.getDescrizione()%>&prezzo=<%=beans.getPrezzo()%>&foto=<%=beans.getIdfoto()%> " ><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
+		  <p id="descrizione"><a href="prodotti/visualizzaprodotto.jsp?prodotto=<%=beans.getNome()%>"><%=beans.getDescrizione() %></a><br>
 	 	 <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
 	
 	</div>
