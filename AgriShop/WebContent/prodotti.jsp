@@ -30,20 +30,31 @@ if(prodotti==null&&errore==null){
 
 <p>Categorie:
 <form action="prodotti" >
-<input type="checkbox" id="ortaggi" value="ortaggi" name="scelta">
+<div>
+<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
 <label for="ortaggi"> Ortaggi</label><br>
-<input type="checkbox" id="frutta" value="frutta" name="scelta">
+</div>
+<div>
+<input type="radio" id="frutta" value="frutta" name="scelta">
 <label for="ortaggi"> Frutta</label><br>
-<input type="checkbox" id="ortaggi" value="ortaggi">
+</div>
+<div>
+<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
 <label for="ortaggi"> Ortaggi</label><br>
-<input type="checkbox" id="ortaggi" value="ortaggi">
+</div>
+<div>
+<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
 <label for="ortaggi"> Ortaggi</label><br>
-<input type="checkbox" id="ortaggi" value="ortaggi">
+</div>
+<div>
+<input type="radio" id="ortaggi" value="ortaggi" name="scelta">
 <label for="ortaggi"> Ortaggi</label><br>
-<input type="submit" value="Submit">
+</div>
+    <input type="submit" value="Submit"> 
+
 
 </form>
-
+ 
 
 
 </div>
