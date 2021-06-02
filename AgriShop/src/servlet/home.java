@@ -30,6 +30,7 @@ public class home extends HttpServlet {
 		ProductModelDS model= new ProductModelDS(ds);
 		String[] categoria =request.getParameterValues("scelta");
 			
+			
 		if(categoria!=null) {
 	    for(String s:categoria) {
 			if(s!=null) {

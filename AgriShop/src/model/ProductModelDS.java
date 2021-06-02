@@ -152,6 +152,13 @@ public class ProductModelDS implements ProductModel<prodotto>{
 	}
 
 
+	@Override
+	public prodotto doRetrieveByprodotto(String code) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 	
 }

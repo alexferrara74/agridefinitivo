@@ -59,14 +59,13 @@ if(prodotti!=null&&prodotti.size()>0){
 		Iterator<?> it=prodotti.iterator();
 		while(it.hasNext()){
 			prodotto beans=(prodotto)it.next();
-	
+	String s=beans.getNome();
 	%>
-	
 
-	
 	<div id="singolo">
-	<a href=""><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
-	  <p id="descrizione"><a href=""><%=beans.getDescrizione() %></a><br>
+	
+	<a href="prodotti/visualizzaprodotto.jsp?prodotto=<%=s%>" ><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
+		  <p id="descrizione"><a href="prodotti/visualizzaprodotto.jsp?prodotto=<%=s%>"><%=beans.getDescrizione() %></a><br>
 	 	 <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
 	
 	</div>
