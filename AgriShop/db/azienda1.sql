@@ -201,6 +201,8 @@ CREATE TABLE carta (
 );
 INSERT INTO categoria VALUES
 ('ortaggi');
+INSERT INTO categoria VALUES
+('frutta');
 
 INSERT INTO azienda VALUES
 ('Azienda&co','Napoli',1000,'IT12359971632');
@@ -282,7 +284,7 @@ INSERT INTO prodotto VALUES
 INSERT INTO prodotto VALUES
 (2,'lattuga',147963258,20,'lattuga iceberg','ortaggi','ortaggi');
 INSERT INTO prodotto VALUES
-(4,'uva',159638257,33,'uva armonera del Cilento','ortaggi','ortaggi');
+(4,'uva',159638257,33,'uva armonera del Cilento','frutta','uva');
 
 
 INSERT INTO ordine (data)  VALUES
