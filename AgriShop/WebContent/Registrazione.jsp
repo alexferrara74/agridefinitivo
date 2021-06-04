@@ -9,7 +9,16 @@
 <script src="JS/controllo-registrazione.js"></script>
 
 <%@ include file="Header.jsp"%>
+<% String report=(String)request.getAttribute("passdiversa"); 
+if(report!=null){
+if(report.equals("passdiversa")){
 
+%>
+
+
+<p>errore
+
+<%} }%>
 </head>
 <body>
 

@@ -11,7 +11,7 @@
 
 <%
 String username= (String)request.getSession().getAttribute("nome");
-String error=(String)request.getAttribute("passerrata");
+String error=(String)request.getSession().getAttribute("passerrata");
 Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 %>
 

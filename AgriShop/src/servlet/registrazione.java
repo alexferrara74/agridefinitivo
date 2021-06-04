@@ -61,6 +61,8 @@ public class registrazione extends HttpServlet {
 		}
 		else {
 			
+			request.setAttribute("passdiversa", "passdiversa");
+			
 		}
 					
 		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");

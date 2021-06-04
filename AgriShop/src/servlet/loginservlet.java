@@ -37,7 +37,8 @@ public class loginservlet extends HttpServlet {
 		Negozio neg=new Negozio();
 		String passerrata="passerrata";
 		HttpSession ssn=request.getSession();
-		
+		ssn.setMaxInactiveInterval(-1);
+		ssn.setAttribute("nome", null);
 		try {
 			request.setAttribute("negozio", neg=(model.doRetrieveByKey(username)));
 		} catch (SQLException e) {
@@ -62,8 +63,8 @@ public class loginservlet extends HttpServlet {
 				ssn.setAttribute("neg", neg);
 		}
 		else {
-		
-			request.setAttribute("passerrata", passerrata);
+			ssn.setAttribute("errore",passerrata);
+			
 		}
 		}
 	

@@ -8,7 +8,7 @@
 <meta name="keywords" content="DataSource, Product, Cart, Session">
 <meta name="author" content="AgriShop">
 
-
+<script src="JS/homepage.js"></script>
 <link href="style/stylepage.css" rel="stylesheet" type="text/css">
 <link href="style/prodotti.css" rel="stylesheet" type="text/css">
 
@@ -24,9 +24,8 @@
 
 
 <div class="immagine">
-	<img class="imm" src="immagini/azienda.jpg" alt="azienda" width="1000px" height="400px">
-
-
+	
+	<img id="imm" src="immagini/azienda(1).jpg" alt="azienda" width="1000px" height="400px">
 </div>
 
 
@@ -35,6 +34,8 @@
 <div class="homepage">
 <p style=display:block; id="offerta">Prodotti in offerta:</p>
 <% 
+String controlloutente=(String)request.getSession().getAttribute("nome");
+if(controlloutente==null){}
 Collection<?> prodotti=(Collection<?>)request.getAttribute("offerta");
 if(prodotti==null){
 	response.sendRedirect(response.encodeRedirectURL("./home"));	}
@@ -57,7 +58,7 @@ if(prodotti!=null&&prodotti.size()>0){
 		  <form action="prodotti/visualizzaprodotto.jsp" id="sceltasingolo"></form>
 		  <img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png" onclick="funzione()">
 		  <p id="descrizione" onclick="funzione()"><%=beans.getDescrizione() %><br>
-	 	  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
+	 <%if(controlloutente!=null){ %>	 <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br><%} %>
 	</div>
 
 

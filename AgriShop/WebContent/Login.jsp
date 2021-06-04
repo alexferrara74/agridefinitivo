@@ -7,7 +7,7 @@
 <title>Login</title>
 <link href="style/stylelogreg.css" rel="stylesheet" type="text/css">
 
-<%String errorelogin=(String)request.getAttribute("passerrata"); %>
+<%String errorelogin=(String)request.getAttribute("passerrata");%>
 
 </head>
 <body>

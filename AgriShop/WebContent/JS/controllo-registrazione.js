@@ -57,17 +57,18 @@ function validapass(password){
 }
 
 function validaconferma(conferma){
-
+	var s=document.getElementById("password").value;
 	var ck_password = /^[A-Za-z0-9]{8,8}$/;
 	var pas1= conferma.value;
 
 	if(!ck_password.test(pas1)){
+		if(s!=pas1){
 		var p=document.getElementById("erroreconferma");
 	p.style.color="red";
 	p.innerHTML="X";
 conferma.focus();
 	return false;
-}	
+}}	
 	else 
 {
 	var q=document.getElementById("erroreconferma");

@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+
+#visualizzaprodotto{
+	
+	width:1280px;
+	margin: 0 20% 0 20%;
+	border-style:solid;
+}
+
+
+
+#foto img {
+
+display:inline;
+max-width: 200px;
+-moz-transition: all 0.3s;
+-webkit-transition: all 0.3s;
+transition: all 0.3s;
+}
+
+#foto:hover img {
+-moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+}
+#foto{
+	margin-left:10%;
+	float:left;
+	display:inline;
+	width:180px;
+	border-style:solid;
+}
+#nome{
+		float:left;
+	display:inline;
+	width:180px;
+	border-style:solid;
+}
+
+#descrizione{
+	display:inline;
+	width:180px;
+	border-style:solid;
+}
+#prezzo{
+	display:inline;
+	width:180px;
+	border-style:solid;
+}
+#categoria{
+	display:inline;
+	width:180px;
+	border-style:solid;
+}

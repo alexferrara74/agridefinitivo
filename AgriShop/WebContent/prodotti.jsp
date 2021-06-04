@@ -3,7 +3,8 @@
 
 <% 
 Collection<?> prodotti=(Collection<?>)request.getAttribute("prodotti");
-
+String controlloutente=(String)request.getSession().getAttribute("nome");
+if(controlloutente==null){}
 String errore= (String)request.getAttribute("error");
 if(prodotti==null&&errore==null){
 	response.sendRedirect(response.encodeRedirectURL("./prodotti"));
@@ -83,14 +84,15 @@ if(prodotti!=null&&prodotti.size()>0){
 		Iterator<?> it=prodotti.iterator();
 		while(it.hasNext()){
 			prodotto beans=(prodotto)it.next();
-	System.out.print(beans.getIdfoto());
+
 	%>
 
 	<div id="singolo">
-		  <form action="prodotti/visualizzaprodotto.jsp" id="sceltasingolo"></form>
-		  <img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png" onclick="funzione()">
-		  <p id="descrizione" onclick="funzione()"><%=beans.getDescrizione() %><br>
-	 	  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br>
+		 
+		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>"><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
+		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>" >	<p id="descrizione" ><%=beans.getDescrizione() %><br></p></a>
+	 	<%if (controlloutente!=null){ %>  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br><%} %>
+
 	</div>
 
 <% }
