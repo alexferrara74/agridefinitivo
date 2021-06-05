@@ -129,7 +129,7 @@ color: green;
 .menu-utente {
 	font-family: Arial, Helvetica, sans-serif;
   display: none;
-  position: fixed;
+  position: relative;
   background-color: lightgrey;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);

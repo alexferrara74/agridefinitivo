@@ -17,46 +17,58 @@ System.out.print(prodotto);
 if(prodotti==null){
 	response.sendRedirect(response.encodeRedirectURL(".././visualizzaprodotto?nomeprodotto="+prodotto+""));
 }
-
-
 %>
-
 </head>
-
-
 
 <body>
 <%@ include file="../Header.jsp"%><br>
 
 <% if(prodotti!=null){
 %>
+<div id="contenitore">
 <div id="foto">
 <img src="immagini/<%=prodotti.getIdfoto()%>.png">
 </div>
 
 <div id="visualizzaprodotto">
-<div id="quantita">
-
-<input type="number" id="quantita" name="quantita" step="1">
-</div>
-
 
 <div id="nome">
+<label>Prodotto: </label>
 <span><%=prodotti.getNome() %></span>
 </div>
 
 <div id="descrizione">
+<label>Descrizione: </label>
 <span><%=prodotti.getDescrizione() %></span>
 </div>
+
 <%if(controlloutente!=null){ %>
-<div id="prezzo">
-<%=prodotti.getPrezzo() %>
+
+<div id="quantita">
+<label>Quantità: </label>
+<input type="number" id="quantita" name="quantita" step="1">
 </div>
-<%} %>
+
+
+<div id="prezzo">
+<label>Prezzo: </label>
+<span><%=prodotti.getPrezzo() %></span>
+<span><img width="20px" src="immagini/euro.png"></span>
+</div>
+<%}%>
 
 <div id="categoria">
+<label>Categoria: </label>
 <span><%=prodotti.getCategoria() %></span>
 </div>
+<%if (controlloutente==null){ %>
+<div id="login">
+
+<a href="Login.jsp"><input type="button" value="Login"></a>
+
+</div>
+<%}else{ %>
+
 <div id="addcarrello">
 
 <input type="button" value="Aggiungi">
@@ -64,9 +76,9 @@ if(prodotti==null){
 </div>
 
 
-<%} %>
+<%} }%>
 </div>
-
-
+</div>
+	<%@ include file="../foother.jsp"%>
 </body>
 </html>

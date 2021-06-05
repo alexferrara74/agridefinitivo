@@ -1,21 +1,28 @@
 @charset "ISO-8859-1";
 
-#visualizzaprodotto{
-	
-	width:1280px;
-	margin: 0 20% 0 20%;
-	border-style:solid;
+#contenitore{
+	width:80%;
+	height:600px;
+	margin: 0 10% 2% 10%;
+	font-family: "Times New Roman", Times, serif;
+	font-size:30px;
+	border-style:inset;
 }
 
-
+#visualizzaprodotto{
+	  background-color: lightgrey;
+	width:1000px;
+	margin: 10px 10% 10px 25%;
+	
+}
 
 #foto img {
-
 display:inline;
-max-width: 200px;
+max-width: 280px;
 -moz-transition: all 0.3s;
 -webkit-transition: all 0.3s;
 transition: all 0.3s;
+
 }
 
 #foto:hover img {
@@ -23,32 +30,72 @@ transition: all 0.3s;
 -webkit-transform: scale(1.1);
 transform: scale(1.1);
 }
+
 #foto{
-	margin-left:10%;
 	float:left;
 	display:inline;
-	width:180px;
-	border-style:solid;
+	width:200px;
+	margin-left:20px;
+	margin-top:30px;
 }
+
 #nome{
-		float:left;
+	float:left;
 	display:inline;
-	width:180px;
-	border-style:solid;
+	width:90%;
+	margin-left:20px;
+	margin-top:20px;
 }
 
 #descrizione{
-	display:inline;
-	width:180px;
-	border-style:solid;
+	display:block;
+	width:90%;
+	margin-top:20px;
+	margin-left:20px;
 }
 #prezzo{
-	display:inline;
-	width:180px;
-	border-style:solid;
+	display:block;
+	width:90%;
+	margin-left:20px;
+	margin-top:20px;
 }
+
 #categoria{
 	display:inline;
-	width:180px;
-	border-style:solid;
+	width:90%;
+	margin-left:20px;
+	margin-top:20px;
+
+}
+#quantita{
+	display:inline;
+	width:90%;
+	margin-left:20px;
+	margin-top:20px;
+}
+#quantita input{
+	width:40px;
+	height:30px;
+		margin-left:20px;
+	margin-top:20px;
+}
+#addcarrello input {
+	float:right;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#login input {
+	float:right;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }

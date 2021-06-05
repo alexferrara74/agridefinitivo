@@ -64,7 +64,7 @@ Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 			<li><a href="homepage.jsp">Home</a>
 			<li><a href="url">Chi Siamo</a>
 			<li><a href="prodotti.jsp">Prodotti</a>
-			<li><a href="url">Visite</a>
+			<li><a href="Header.jsp">Visite</a>
 			<li><a href="">contatti</a>
 			
 			<%if(error!=null){
@@ -82,7 +82,7 @@ Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 			<li id="accesso">
 			<div class="utente-connesso">
   					<p id="username">Benvenuto <%=username %></p>
- 					 <div class="menu-utente">
+ 					 	<div class="menu-utente">
  					 <p><a href="./logout">Ordini</a></p>
   					<p><a href="utente/profilo.jsp">Dati Personali</a></p>
   					<p><a href="./logout">Logout</a></p>
@@ -92,8 +92,9 @@ Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 
 			<%} %>
 		</ul>
-		</div>
 	
+	
+		</div>
 	
 
 	<div id="sessione">
