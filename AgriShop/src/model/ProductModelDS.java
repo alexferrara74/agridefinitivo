@@ -130,7 +130,57 @@ public class ProductModelDS implements ProductModel<prodotto>{
 		
 		
 		
+	@Override
+	public prodotto doRetrieveByNome(String code) throws SQLException {
+		
+		Connection connection=null;
+		PreparedStatement prepareStatement=null;
+		
+		String selectSQL="SELECT * FROM prodotto WHERE nomep = ?";
+	
+		
+		prodotto bean= new prodotto();
+		
+		
+		try {
+			
+			connection= ds.getConnection();
+			prepareStatement= connection.prepareStatement(selectSQL);
+			prepareStatement.setString(1, code);
 
+			ResultSet rs=prepareStatement.executeQuery();
+			
+			while(rs.next()) {
+				
+				bean.setPrezzo(rs.getInt("prezzo"));
+				bean.setNome(rs.getString("nomep"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setQuantita(rs.getInt("disponibilità"));
+				bean.setSsn(rs.getString("ssn"));
+				bean.setCtegoria(rs.getString("categ"));
+				bean.setIdfoto(rs.getString("idfoto"));
+						
+			}
+			
+			
+			
+		}finally {
+			try {
+			if(prepareStatement!=null)
+			prepareStatement.close();
+			}finally {
+				
+			
+			
+			if(connection!=null)
+			connection.close();
+			}
+			
+		}
+		
+		return  bean;
+	}
+		
 		
 	
 	

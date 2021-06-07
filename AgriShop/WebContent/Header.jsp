@@ -53,7 +53,7 @@ Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 			<p id="img">
 				<img id="img" src="immagini/aaa3.png" alt="alternatetext">
 			<p id="carrello">
-				<a href="url" id="testocarrello"><img id="fotocarrello"
+				<a href="carrello.jsp" id="testocarrello"><img id="fotocarrello"
 					src="immagini/carrello.png " width="45px" height="45px"
 					alt="alternatetext">Carrello</a>
 		</div>

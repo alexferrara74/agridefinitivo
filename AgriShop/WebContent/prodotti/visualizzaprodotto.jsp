@@ -10,8 +10,6 @@
 String prodotto=(String)request.getParameter("nomeprodotto");
 String controlloutente=(String)request.getSession().getAttribute("nome");
 prodotto prodotti=(prodotto)request.getAttribute("prodotti");
-System.out.print(prodotto);
-
 
 
 if(prodotti==null){
@@ -70,9 +68,7 @@ if(prodotti==null){
 <%}else{ %>
 
 <div id="addcarrello">
-
-<input type="button" value="Aggiungi">
-
+<a href="<%=response.encodeURL("carrello?action=addcarrello&nome=" + prodotti.getNome())%>"><input type="button" value="Aggiungi"></a>
 </div>
 
 
