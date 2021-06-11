@@ -2,6 +2,17 @@
  * 
  */
 
+function controlloserver(rsociale){
+var x= new XMLHttpRequest();
+x.onreadystatechange=function(){
+if(x.readyState==4&& x.statut==200){
+document.getElementById("registrazione").innerHTML=x.responseText;
+}};
+x.open("GET","controlloregistrazione?ragionesociale="+rsociale+"",true);
+x.send();
+}
+
+
 
 
 function uppercase(){
