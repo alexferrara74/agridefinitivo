@@ -48,7 +48,7 @@ if(report.equals("passdiversa")){
 				</tr>
 				<tr>
 					<td>P.Iva</td>
-					<td><input id="piva" type="text" name="piva" onblur="validapiva(this)" required /></td><td><p id=errorepiva></td>
+					<td><input id="pivaa" type="text" name="piva" onblur="validapiva(this)" required /></td><td><p id=errorepiva></td>
 				</tr>
 				<tr>
 					<td>Indirizzo</td>
