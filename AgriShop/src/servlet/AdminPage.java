@@ -23,6 +23,7 @@ import utils.utility;
 @WebServlet("/AdminPage")
 public class AdminPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private Float floatObj;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,7 +41,7 @@ public class AdminPage extends HttpServlet {
 		ProductModelDS model= new ProductModelDS(ds);
 		prodotto prod=(prodotto) request.getSession().getAttribute("prod");
 		
-		Float prezzo= (Float.parseFloat(request.getParameter("prezzo")));
+		String prezzo=request.getParameter("prezzo");
 		String nome=request.getParameter("nome");
 		String SSN=request.getParameter("Ssn");
 		Integer disponibilit√= (Integer.parseInt(request.getParameter("disponibilit√")));
@@ -48,10 +49,12 @@ public class AdminPage extends HttpServlet {
 		String categ=request.getParameter("categ");
 		String idfoto=request.getParameter("idfoto");
 		
-		if(prezzo!=null) {			
-			if(!prezzo.equals("")) {
-				prod.setPrezzo(prezzo);;
-			}}
+		
+			 
+				Float prezzo1=Float.valueOf(prezzo);
+				
+				prod.setPrezzo(prezzo1);
+			
 		
 			if(nome!=null) {			
 				if(!nome.equals("")) {

@@ -21,14 +21,13 @@ prodotto prod=(prodotto)request.getSession().getAttribute("prod");
 <legend>Pagina di amministratore</legend>
 <p>Account di <%=username%></p>
 
-<form class="modprofilo"action="../AdminPage" method="post">
-
+<form class="AdminPage"action="../AdminPage" method="post">
+<h2>Inserimento prodotto</h2>
 <table>
 
 
-
 <tr>
-<td><input type="text" name="prezzo" placeholder="<%=prod.getPrezzo()%>"  ></td>
+<td><input type="text" name="prezzo" placeholder="<%=prod.getPrezzo()%>"></td>
 </tr>
 
 <tr>

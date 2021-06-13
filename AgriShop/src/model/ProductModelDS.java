@@ -198,7 +198,7 @@ public class ProductModelDS implements ProductModel<prodotto>{
 			connection.setAutoCommit(false);
 			preparedStatement = connection.prepareStatement(insertSQL);
 
-			preparedStatement.setDouble(1,item.getPrezzo());
+			preparedStatement.setFloat(1,item.getPrezzo());
 			preparedStatement.setString(2,item.getNome());
 			preparedStatement.setString(3,item.getSsn());
 			preparedStatement.setInt(4,item.getQuantita());
