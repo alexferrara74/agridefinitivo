@@ -40,15 +40,18 @@ public class AdminPage extends HttpServlet {
 		ProductModelDS model= new ProductModelDS(ds);
 		prodotto prod=(prodotto) request.getSession().getAttribute("prod");
 		
-		String prezzo= request.getParameter("prezzo");
+		Float prezzo= (Float.parseFloat(request.getParameter("prezzo")));
 		String nome=request.getParameter("nome");
 		String SSN=request.getParameter("Ssn");
-		String disponibilit√= request.getParameter("disponibilit√");
+		Integer disponibilit√= (Integer.parseInt(request.getParameter("disponibilit√")));
 		String descrizione=request.getParameter("descrizione");
 		String categ=request.getParameter("categ");
 		String idfoto=request.getParameter("idfoto");
 		
-		
+		if(prezzo!=null) {			
+			if(!prezzo.equals("")) {
+				prod.setPrezzo(prezzo);;
+			}}
 		
 			if(nome!=null) {			
 				if(!nome.equals("")) {
@@ -60,10 +63,10 @@ public class AdminPage extends HttpServlet {
 			prod.setSsn(SSN);
 		}
 		}
-	/*	if(disponibilit√!=null) {
+		if(disponibilit√!=null) {
 		if(!disponibilit√.equals("")){
 			prod.setQuantita(disponibilit√);;
-		}}*/
+		}}
 		
 		if(descrizione!=null) {
 		if(!descrizione.equals("")) {
@@ -74,6 +77,10 @@ public class AdminPage extends HttpServlet {
 			prod.setCtegoria(categ);
 		}
 		
+		if(idfoto!=null) {
+			if(!idfoto.equals("")){
+				prod.setIdfoto(idfoto);;
+			}}
 	
 		try {
 			 model.doSave(prod);

@@ -24,18 +24,17 @@ prodotto prod=(prodotto)request.getSession().getAttribute("prod");
 <form class="modprofilo"action="../AdminPage" method="post">
 
 <table>
-<!--  
-<tr>
-<td><input type="text" name="user " placeholder="<%=username%>"></td>
-</tr>
--->
-<tr>
-<td><input type="text" name="prezzo" placeholder="<%=prod.getPrezzo()%>" readonly="readonly" ></td>
-</tr>
-<tr>
 
+
+
+<tr>
+<td><input type="text" name="prezzo" placeholder="<%=prod.getPrezzo()%>"  ></td>
+</tr>
+
+<tr>
 <td><input type="text" name="nome" placeholder="<%=prod.getNome()%>"></td>
 </tr>
+
 <tr>
 
 <td><input type="text" name="Ssn" placeholder="<%=prod.getSsn()%>"></td>
