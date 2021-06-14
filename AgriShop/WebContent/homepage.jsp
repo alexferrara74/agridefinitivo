@@ -12,10 +12,38 @@
 <link href="style/stylepage.css" rel="stylesheet" type="text/css">
 <link href="style/prodotti.css" rel="stylesheet" type="text/css">
 
+<%String errorelogin=(String)request.getAttribute("loginsbagliata");
+
+System.out.print(errorelogin);
+
+%>
 </head>
 
 
 <body>
+
+<%if (errorelogin!=null){%>
+	
+	<script>
+	
+	setTimeout(function() {
+		
+		  window.location.href = "Login.jsp";
+		}, 4000);
+	
+	
+	 
+	</script>
+	
+	<div id="errorelogin">
+	<h1>Errore Mail/Password </h1>
+	<h2>Sarai reindirizzato alla pagine di login</h2>
+	</div>
+	
+	
+	
+<% }%>
+
 
 	<%@ include file="../Header.jsp"%><br>
 

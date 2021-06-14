@@ -31,11 +31,12 @@ public class loginservlet extends HttpServlet {
 		
 		String username= request.getParameter("Email");
 		String password=request.getParameter("password");
-	
+		String errore="errorelogin";
+		
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		LoginModelDS model= new LoginModelDS(ds);
 		Negozio neg=new Negozio();
-		String passerrata="passerrata";
+		
 		HttpSession ssn=request.getSession();
 		ssn.setMaxInactiveInterval(-1);
 		ssn.setAttribute("nome", null);
@@ -44,28 +45,20 @@ public class loginservlet extends HttpServlet {
 		} catch (SQLException e) {
 			utility.print(e);
 			
-			request.setAttribute("error", e.getMessage());
-		
-			
+			request.setAttribute("loginsbagliata", e.getMessage());		
 		}
-		if(neg.getPwd()==null) {
-		
-			request.setAttribute("passerrata", passerrata);
-			ssn.setAttribute("errore","errore");
-		}
-		
-		else {
+		if(neg.getPwd()!=null) {	
+		if((neg.getPwd().equals(password))&&neg.getEmail().equals(username)) {
 			
-		if(neg.getPwd().equals(password)&&neg.getEmail().equals(username)) {
 			
-		
 				ssn.setAttribute("nome",neg.getRs());
 				ssn.setAttribute("neg", neg);
+		
+		} else {
+				
+				request.setAttribute("loginsbagliata",errore);
 		}
-		else {
-			ssn.setAttribute("errore",passerrata);
-			
-		}
+		
 		}
 	
 	RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");

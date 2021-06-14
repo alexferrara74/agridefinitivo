@@ -41,7 +41,7 @@ public class visualizzaprodotto extends HttpServlet {
 			
 			
 		}
-	System.out.print(p);
+
 	RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/prodotti/visualizzaprodotto.jsp");
 	dispacher.forward(request, response);
 	}
