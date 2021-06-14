@@ -24,8 +24,7 @@ import utils.utility;
 public class loginservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
-
+ 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			// TODO Auto-generated method stub
 		
@@ -42,25 +41,24 @@ public class loginservlet extends HttpServlet {
 		ssn.setAttribute("nome", null);
 		try {
 			request.setAttribute("negozio", neg=(model.doRetrieveByKey(username)));
-		} catch (SQLException e) {
-			utility.print(e);
-			
-			request.setAttribute("loginsbagliata", e.getMessage());		
-		}
-		if(neg.getPwd()!=null) {	
-		if((neg.getPwd().equals(password))&&neg.getEmail().equals(username)) {
-			
-			
-				ssn.setAttribute("nome",neg.getRs());
-				ssn.setAttribute("neg", neg);
-		
-		} else {
+			if(neg.getPwd()!=null) {	
+				if((neg.getPwd().equals(password))&&neg.getEmail().equals(username)) {
+					
+					
+						ssn.setAttribute("nome",neg.getRs());
+						ssn.setAttribute("neg", neg);
+						ssn.setAttribute("passerrore", null);
 				
-				request.setAttribute("loginsbagliata",errore);
+				} else {
+						
+						ssn.setAttribute("passerrore",errore);
+				}}
+		
+		} catch (SQLException e) {
+			
+			ssn.setAttribute("passerrore", errore);		
 		}
 		
-		}
-	
 	RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");
 	dispacher.forward(request, response);
 	}	

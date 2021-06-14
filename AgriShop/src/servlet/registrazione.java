@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import model.LoginModelDS;
@@ -34,7 +35,7 @@ public class registrazione extends HttpServlet {
 		String indirizzo=request.getParameter("indirizzo");
 		String cap=request.getParameter("cap");
 		String civico=request.getParameter("civico");
-		
+		HttpSession ssn=request.getSession();
 		
 		nuovo.setEmail(email);
 		nuovo.setIndirizzo(indirizzo);
@@ -52,17 +53,18 @@ public class registrazione extends HttpServlet {
 				
 		try {
 			model.doSave(nuovo);
+			ssn.setAttribute("error", "vero");
+			
 		} catch (SQLException e) {
 			utility.print(e);
 			
-			request.setAttribute("error", e.getMessage());
-					
+			ssn.setAttribute("error", "falso");		
 		}
 		}
 		else {
 			
-			request.setAttribute("passdiversa", "passdiversa");
-			
+			ssn.setAttribute("passdiversa", "falso");
+		
 		}
 					
 		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");

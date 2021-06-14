@@ -12,17 +12,32 @@
 <link href="style/stylepage.css" rel="stylesheet" type="text/css">
 <link href="style/prodotti.css" rel="stylesheet" type="text/css">
 
-<%String errorelogin=(String)request.getAttribute("loginsbagliata");
-
-System.out.print(errorelogin);
+<%String errorepass=(String)request.getSession().getAttribute("passerrore");
+String erroreregistrazione=(String)request.getSession().getAttribute("error");
 
 %>
+
 </head>
 
 
 <body>
+<% if(erroreregistrazione!=null&&erroreregistrazione.equals("falso")){%>
 
-<%if (errorelogin!=null){%>
+		<script>
+	setTimeout(function() {
+		
+		  window.location.href = "Registrazione.jsp";
+		}, 4000);
+	</script>
+	<div id="errorelogin">
+	<h1>Errore Registrazione </h1>
+	<h2>Sarai reindirizzato alla pagine di Registrazione</h2>
+	</div>
+	
+<% }%>
+
+
+<%if (errorepass!=null&&errorepass.equals("errorelogin")){%>
 	
 	<script>
 	
