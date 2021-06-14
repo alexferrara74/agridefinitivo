@@ -191,7 +191,7 @@ public class ProductModelDS implements ProductModel<prodotto>{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		String insertSQL = "INSERT INTO prodotto" + " (prezzo, nomep, SSN, disponibilit√†,  descrizione, categ,idfoto) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		String insertSQL = "INSERT INTO prodotto" + " (prezzo, nomep, SSN, disponibilit‡, descrizione, categ, idfoto) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection=ds.getConnection();

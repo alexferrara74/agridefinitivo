@@ -25,31 +25,31 @@ Negozio neg=(Negozio)request.getSession().getAttribute("neg");
 
 <table>
 <tr>
-<td><input type="text" name="user " placeholder="<%=username%>"></td>
+<td><input id="rsociale" type="text" name="user " placeholder="<%=username%>" onblur="uppercase(this)"></td><td><p id=erroreragione></td>
 </tr>
 
 <tr>
-<td><input type="text" name="email" placeholder="<%=neg.getEmail()%>" readonly="readonly" ></td>
+<td><input id="email" type="text" name="email" placeholder="<%=neg.getEmail()%>" readonly="readonly" ></td>
 </tr>
 <tr>
 
-<td><input type="text" name="cap" placeholder="<%=neg.getCap()%>"></td>
+<td><input id="cap" type="text" name="cap" placeholder="<%=neg.getCap()%>" onblur="validacap(this)"></td><td><p id=errorecap></td>
 </tr>
 <tr>
 
-<td><input type="text" name="ncivico" placeholder="<%=neg.getCivico()%>"></td>
+<td><input id="ncivico" type="text" name="ncivico" placeholder="<%=neg.getCivico()%>" onblur="validacivico(this)"></td><td><p id=errorecivico></td>
 </tr>
 <tr>
 
-<td><input type="text" name="indirizzo" placeholder="<%=neg.getIndirizzo()%>"></td>
+<td><input id="indirizzo" type="text" name="indirizzo" placeholder="<%=neg.getIndirizzo()%>" onblur="validaindirizzo(this)"></td><td><p id=erroreindirizzo></td>
 </tr>
 <tr>
-<td><input type="text" name="piva" placeholder="<%=neg.getPiva()%>"></td>
+<td><input id="piva" type="text" name="piva" placeholder="<%=neg.getPiva()%>" onblur="validapiva(this)"></td><td><p id=errorepiva></td>
 </tr>
 
 <tr>
-<td><input type="password" name="password" placeholder="password" required></td>
-<td><input type="password" name="conferma" placeholder="conferma password" required></td>
+<td><input id="password" type="password" name="password" placeholder="password" required></td><td><p id=errorepassword></td>
+<td><input id="conferma" type="password" name="conferma" placeholder="conferma password" required></td><td><p id=erroreconferma></td>
 </tr>
 <tr>
 <td>
@@ -64,7 +64,7 @@ Negozio neg=(Negozio)request.getSession().getAttribute("neg");
 
 
 
-
+<script src="../JS/controllo-registrazione.js"></script>
 
 </div>
 </body>

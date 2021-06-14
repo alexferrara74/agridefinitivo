@@ -3,6 +3,7 @@
 	<name>agridefinitivo</name>
 	<comment></comment>
 	<projects>
+		<project>AgriShop</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

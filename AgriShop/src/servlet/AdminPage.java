@@ -23,7 +23,7 @@ import utils.utility;
 @WebServlet("/AdminPage")
 public class AdminPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Float floatObj;
+
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,21 +39,20 @@ public class AdminPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model= new ProductModelDS(ds);
-		prodotto prod=(prodotto) request.getSession().getAttribute("prod");
+		prodotto prod= new prodotto();
 		
-		String prezzo=request.getParameter("prezzo");
+		Float prezzo=(Float.parseFloat(request.getParameter("prezzo")));
 		String nome=request.getParameter("nome");
 		String SSN=request.getParameter("Ssn");
-		Integer disponibilit√= (Integer.parseInt(request.getParameter("disponibilit√")));
+		Integer disponibilita= (Integer.parseInt(request.getParameter("disponibilita")));
 		String descrizione=request.getParameter("descrizione");
-		String categ=request.getParameter("categ");
+		String categ=request.getParameter("categoria");
 		String idfoto=request.getParameter("idfoto");
 		
 		
-			 
-				Float prezzo1=Float.valueOf(prezzo);
-				
-				prod.setPrezzo(prezzo1);
+
+				if(prezzo!=null)
+				prod.setPrezzo(prezzo);
 			
 		
 			if(nome!=null) {			
@@ -66,10 +65,9 @@ public class AdminPage extends HttpServlet {
 			prod.setSsn(SSN);
 		}
 		}
-		if(disponibilit√!=null) {
-		if(!disponibilit√.equals("")){
-			prod.setQuantita(disponibilit√);;
-		}}
+		if(disponibilita!=null) {
+			prod.setQuantita(disponibilita);;
+		}
 		
 		if(descrizione!=null) {
 		if(!descrizione.equals("")) {
@@ -94,13 +92,10 @@ public class AdminPage extends HttpServlet {
 			request.setAttribute("error", e.getMessage());
 		}
 		
-		if(request.getSession() !=null) {
-			request.getSession().invalidate();
-		}
-		
+	
 	
 		
-		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/Login.jsp");
+		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");
 		dispacher.forward(request, response);
 		
 	}

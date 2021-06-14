@@ -10,7 +10,6 @@
 
 <%
 String username= (String)request.getSession().getAttribute("nome");
-prodotto prod=(prodotto)request.getSession().getAttribute("prod");
 %>
 
 </head>
@@ -27,38 +26,34 @@ prodotto prod=(prodotto)request.getSession().getAttribute("prod");
 
 
 <tr>
-<td><input type="text" name="prezzo" placeholder="<%=prod.getPrezzo()%>"></td>
+<td><input type="text" name="prezzo" placeholder="Prezzo" required></td>
 </tr>
 
 <tr>
-<td><input type="text" name="nome" placeholder="<%=prod.getNome()%>"></td>
+<td><input type="text" name="nome" placeholder="Nome" required></td>
 </tr>
 
 <tr>
 
-<td><input type="text" name="Ssn" placeholder="<%=prod.getSsn()%>"></td>
+<td><input type="text" name="Ssn" placeholder="Ssn" required></td>
 </tr>
 <tr>
 
-<td><input type="text" name="disponibilitÃ" placeholder="<%=prod.getQuantita()%>"></td>
+<td><input type="text" name="disponibilita" placeholder="disponibilità" required></td>
 </tr>
 
 <tr>
-<td><input type="text" name="descrizione" placeholder="<%=prod.getDescrizione()%>"></td>
+<td><input type="text" name="descrizione" placeholder="Descrizione" required></td>
 </tr>
 
 <tr>
-<td><input type="text" name="categoria" placeholder="<%=prod.getCategoria()%>"></td>
+<td><input type="text" name="categoria" placeholder="Categoria" required></td>
 </tr>
 
 <tr>
-<td><input type="text" name="idfoto" placeholder="<%=prod.getIdfoto()%>"></td>
+<td><input type="text" name="idfoto" placeholder="nomefoto" required></td>
 </tr>
 
-<tr>
-<td><input type="password" name="password" placeholder="password" required></td>
-<td><input type="password" name="conferma" placeholder="conferma password" required></td>
-</tr>
 <tr>
 <td>
 <input type="submit" value="invio">
