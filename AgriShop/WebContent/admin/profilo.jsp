@@ -146,6 +146,82 @@ String username= (String)request.getSession().getAttribute("nome");
 </form>
 </div>
 
+
+<div class="utente-figlio3">
+
+
+<form class="CancellaProdotto"action="../CancellaProdotto" method="post">
+<h2>Cancellazione prodotto</h2>
+<table>
+
+
+
+
+<tr>
+<td><input type="text" name="nome" placeholder="Nome" required></td>
+</tr>
+
+<tr>
+<td><input type="text" name="prezzo" placeholder="Prezzo" required></td>
+</tr>
+
+<tr>
+
+<td><input type="text" name="Ssn" placeholder="Ssn" required></td>
+</tr>
+<tr>
+
+<td><input type="text" name="disponibilita" placeholder="disponibilità" required></td>
+</tr>
+
+<tr>
+<td><input type="text" name="descrizione" placeholder="Descrizione" required></td>
+</tr>
+
+<tr>
+<td><select name="categoria"  required>
+	<option value= "Ortaggi">Ortaggi</option>
+	<option value="Frutta">Frutta</option>
+	<option value="Verdura">Verdura </option>
+	<option value="Semi">Semi</option>
+	<option value= "Frutta Secca">Frutta Secca</option>
+	<option value="Vino">Vino </option>
+	<option value="Olio">Olio</option>
+	
+	</select>
+	
+	
+	
+
+
+
+</td>
+</tr>
+
+<tr>
+<td><input type="text" name="idfoto" placeholder="nomefoto" required></td>
+</tr>
+
+<tr>
+<td>
+<input type="submit" value="invio">
+</td>
+</tr>
+</table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 </fieldset>
 
 

@@ -82,18 +82,31 @@ input {
 }
 
 .utente-container{
-	display:flex;
+	border:2px;
 }
 
+
 .utente-figlio1{
-	flex:1;
+	float:left;
+	padding:20px;
+	margin-top:2px;
+	margin-right:15px;
+	width:250px;
 }
 
 .utente-figlio2{
+	margin-top:2px;
 	float:center;
+	padding:50px;
+	margin-right:5px;
 }
 
-.flex-figlio1:first-child {
-    margin-right: 20px;
-} 
+.utente-figlio3{
+	
+	float:center;
+	margin-bottom:50px;
+
+	
+}
+
 
