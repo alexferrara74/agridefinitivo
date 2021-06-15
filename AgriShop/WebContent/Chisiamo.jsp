@@ -42,7 +42,8 @@
 <h2 style="text-align:left;"><strong>La Nostra Idea</strong></h2>
 <p></p>
 <p></p>
-<p style="text-align:left;">AgriShop offre frutta e verdura coltivate nelle zone più amate della Campania.Tramite AgriShop avrai a disposizione prodotti biologici garantiti, direttamente a casa tua con pochissimi click.</p>
+<p style="text-align:left;">AgriShop offre frutta e verdura coltivate nelle zone più amate della Campania.</p>
+<p style="text-align:left;">Tramite AgriShop avrai a disposizione prodotti biologici garantiti, direttamente a casa tua con pochissimi click.</p>
 <p style="text-align:left;">I prodotti ordinati vengono confezionati e spediti dal magazzino della nostra società.</p>
 <p style="text-align:left;"><strong><span style="color:#7cd320;"></span></strong></p>
 <p style="text-align:left;"></p>
