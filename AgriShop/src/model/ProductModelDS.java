@@ -225,7 +225,41 @@ public class ProductModelDS implements ProductModel<prodotto>{
 	}
 	@Override
 	public void doUpdate(prodotto item) throws SQLException {
-		// TODO Auto-generated method stub
+		Connection 	connection=null;
+		PreparedStatement preparedStatement=null;
+		
+		String SQL="UPDATE prodotto SET prezzo=?,nomep=?, disponibilità=?, descrizione=?, categ=?,idfoto=? WHERE SSN=?";
+		try {
+			connection = ds.getConnection();
+			connection.setAutoCommit(false);
+			preparedStatement = connection.prepareStatement(SQL);
+
+			preparedStatement.setFloat(1, item.getPrezzo());
+			preparedStatement.setString(2, item.getNome());
+			preparedStatement.setInt(3, item.getQuantita());
+			preparedStatement.setString(4, item.getDescrizione());
+			
+			preparedStatement.setString(5, item.getCategoria());
+			preparedStatement.setString(6, item.getIdfoto());
+			preparedStatement.setString(7, item.getSsn());
+
+			utility.print("doUpdate: " + preparedStatement.toString());
+			preparedStatement.executeUpdate();
+
+			connection.commit();
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null) {
+					connection.close();
+				}
+			}
+		}
+	
+	
 		
 	}
 	@Override

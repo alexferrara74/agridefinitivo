@@ -78,7 +78,7 @@ Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
   					<p id="username">Benvenuto <%=username %></p>
  					 	<div class="menu-utente">
  					 <p><a href="./logout">Ordini</a></p>
-  					<p><a href="utente/profilo.jsp">Dati Personali</a></p>
+  					<p><a href="admin/profilo.jsp">Dati Personali</a></p>
   					<p><a href="./logout">Logout</a></p>
   						</div>
 				</div>

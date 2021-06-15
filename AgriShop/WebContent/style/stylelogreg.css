@@ -34,6 +34,7 @@ input {
 
 #utente input:focus {
 	border: 3px solid green;
+	float:left;
 }
 
 
@@ -80,6 +81,19 @@ input {
 	color:blue;
 }
 
+.utente-container{
+	display:flex;
+}
 
+.utente-figlio1{
+	flex:1;
+}
 
+.utente-figlio2{
+	float:center;
+}
+
+.flex-figlio1:first-child {
+    margin-right: 20px;
+} 
 

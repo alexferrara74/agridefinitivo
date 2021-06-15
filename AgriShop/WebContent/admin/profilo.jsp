@@ -15,9 +15,12 @@ String username= (String)request.getSession().getAttribute("nome");
 </head>
 <body>
 
-<div id="utente">
+<div class="utente-container">
 <fieldset>
 <legend>Pagina di amministratore</legend>
+<div class="utente-figlio1">
+
+
 <p>Account di <%=username%></p>
 
 <form class="AdminPage"action="../AdminPage" method="post">
@@ -25,12 +28,14 @@ String username= (String)request.getSession().getAttribute("nome");
 <table>
 
 
-<tr>
-<td><input type="text" name="prezzo" placeholder="Prezzo" required></td>
-</tr>
+
 
 <tr>
 <td><input type="text" name="nome" placeholder="Nome" required></td>
+</tr>
+
+<tr>
+<td><input type="text" name="prezzo" placeholder="Prezzo" required></td>
 </tr>
 
 <tr>
@@ -77,7 +82,69 @@ String username= (String)request.getSession().getAttribute("nome");
 </tr>
 </table>
 </form>
+</div>
 
+<div class="utente-figlio2">
+
+<form class="AggiornaProdotto"action="../AggiornaProdotto" method="post">
+<h2>Modifica Prodotto</h2>
+<table>
+
+
+
+
+<tr>
+<td><input type="text" name="nome" placeholder="Nome" required></td>
+</tr>
+<tr>
+<td><input type="text" name="prezzo" placeholder="Prezzo" required></td>
+</tr>
+<tr>
+
+<td><input type="text" name="Ssn" placeholder="Ssn" required></td>
+</tr>
+<tr>
+
+<td><input type="text" name="disponibilita" placeholder="disponibilità" required></td>
+</tr>
+
+<tr>
+<td><input type="text" name="descrizione" placeholder="Descrizione" required></td>
+</tr>
+
+<tr>
+<td><select name="categoria"  required>
+	<option value= "Ortaggi">Ortaggi</option>
+	<option value="Frutta">Frutta</option>
+	<option value="Verdura">Verdura </option>
+	<option value="Semi">Semi</option>
+	<option value= "Frutta Secca">Frutta Secca</option>
+	<option value="Vino">Vino </option>
+	<option value="Olio">Olio</option>
+	
+	</select>
+	
+	
+	
+
+
+
+</td>
+</tr>
+
+<tr>
+<td><input type="text" name="idfoto" placeholder="nomefoto" required></td>
+</tr>
+
+<tr>
+<td>
+<input type="submit" value="invio">
+</td>
+</tr>
+
+</table>
+</form>
+</div>
 
 </fieldset>
 
@@ -86,5 +153,6 @@ String username= (String)request.getSession().getAttribute("nome");
 
 
 </div>
+
 </body>
 </html>
