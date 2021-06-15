@@ -61,7 +61,7 @@ Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 	<div class="menu">
 		<ul>
 			<li><a href="homepage.jsp">Home</a>
-			<li><a href="url">Chi Siamo</a>
+			<li><a href="Chisiamo.jsp">Chi Siamo</a>
 			<li><a href="prodotti.jsp">Prodotti</a>
 			<li><a href="utente/profilo.jsp">Visite</a>
 			<li><a href="">contatti</a>
