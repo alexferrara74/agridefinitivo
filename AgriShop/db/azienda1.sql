@@ -88,10 +88,10 @@ CREATE TABLE negozio (
 
 DROP TABLE IF EXISTS prodotto;
 CREATE TABLE prodotto (
- prezzo      int         not NULL,
+ prezzo      float         not NULL,
  nomep        varchar(10) not NULL,
  SSN         char(9)     not NULL,
- disponibilit√† int(5)   not NULL,
+ disponibilit‡† int(5)   not NULL,
  descrizione varchar(50) not NULL,
  categ varchar(10) not null,
  idfoto varchar(30) not null,

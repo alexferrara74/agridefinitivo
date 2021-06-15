@@ -24,50 +24,41 @@ import utils.utility;
 public class loginservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
-
+ 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			// TODO Auto-generated method stub
 		
 		String username= request.getParameter("Email");
 		String password=request.getParameter("password");
-	
+		String errore="errorelogin";
+		
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		LoginModelDS model= new LoginModelDS(ds);
 		Negozio neg=new Negozio();
-		String passerrata="passerrata";
+		
 		HttpSession ssn=request.getSession();
 		ssn.setMaxInactiveInterval(-1);
 		ssn.setAttribute("nome", null);
 		try {
 			request.setAttribute("negozio", neg=(model.doRetrieveByKey(username)));
+			if(neg.getPwd()!=null) {	
+				if((neg.getPwd().equals(password))&&neg.getEmail().equals(username)) {
+					
+					
+						ssn.setAttribute("nome",neg.getRs());
+						ssn.setAttribute("neg", neg);
+						ssn.setAttribute("passerrore", null);
+				
+				} else {
+						
+						ssn.setAttribute("passerrore",errore);
+				}}
+		
 		} catch (SQLException e) {
-			utility.print(e);
 			
-			request.setAttribute("error", e.getMessage());
-		
-			
-		}
-		if(neg.getPwd()==null) {
-		
-			request.setAttribute("passerrata", passerrata);
-			ssn.setAttribute("errore","errore");
+			ssn.setAttribute("passerrore", errore);		
 		}
 		
-		else {
-			
-		if(neg.getPwd().equals(password)&&neg.getEmail().equals(username)) {
-			
-		
-				ssn.setAttribute("nome",neg.getRs());
-				ssn.setAttribute("neg", neg);
-		}
-		else {
-			ssn.setAttribute("errore",passerrata);
-			
-		}
-		}
-	
 	RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");
 	dispacher.forward(request, response);
 	}	

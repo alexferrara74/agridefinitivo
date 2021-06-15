@@ -2,6 +2,11 @@
  * 
  */
 
+
+
+
+
+
 var numero=1;
 var myVar = setInterval(mySlide, 4000);
 
@@ -15,3 +20,4 @@ function mySlide(){
 	
 	
 }
+

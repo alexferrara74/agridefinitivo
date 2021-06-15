@@ -187,7 +187,40 @@ public class ProductModelDS implements ProductModel<prodotto>{
 	
 	@Override
 	public void doSave(prodotto item) throws SQLException {
-		// TODO Auto-generated method stub
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		String insertSQL = "INSERT INTO prodotto" + " (prezzo, nomep, SSN, disponibilità, descrizione, categ, idfoto) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+		try {
+			connection=ds.getConnection();
+			connection.setAutoCommit(false);
+			preparedStatement = connection.prepareStatement(insertSQL);
+
+			preparedStatement.setFloat(1,item.getPrezzo());
+			preparedStatement.setString(2,item.getNome());
+			preparedStatement.setString(3,item.getSsn());
+			preparedStatement.setInt(4,item.getQuantita());
+			preparedStatement.setString(5,item.getDescrizione());
+			preparedStatement.setString(6,item.getCategoria());
+			preparedStatement.setString(7,item.getIdfoto());
+			
+			utility.print("doSave: " + preparedStatement.toString());
+			preparedStatement.executeUpdate();
+
+			connection.commit();
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null) {
+					connection.close();
+				}
+			}
+		}
 		
 	}
 	@Override
