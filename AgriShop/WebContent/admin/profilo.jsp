@@ -47,7 +47,19 @@ String username= (String)request.getSession().getAttribute("nome");
 </tr>
 
 <tr>
-<td><input type="text" name="categoria" placeholder="Categoria" required></td>
+<td><select name="categoria"  required>
+
+	<option value="Frutta">Frutta</option>
+	<option value="Verdura">Verdura </option>
+	
+	</select>
+	
+	
+	
+
+
+
+</td>
 </tr>
 
 <tr>
