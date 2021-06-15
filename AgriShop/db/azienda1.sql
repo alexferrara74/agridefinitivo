@@ -280,11 +280,12 @@ INSERT INTO prodotto VALUES
 INSERT INTO prodotto VALUES
 (1,'patata',125987635,5,'patate novelle','ortaggi','patate');
 INSERT INTO prodotto VALUES
-(3,'melanzane',539512508,100,'melanzana cima di viola','ortaggi','ortaggi');
+(3,'melanzane',539512508,100,'melanzana cima di viola','ortaggi','melanzanaviola');
 INSERT INTO prodotto VALUES
-(2,'lattuga',147963258,20,'lattuga iceberg','ortaggi','ortaggi');
+(2,'lattuga',147963258,20,'lattuga iceberg','ortaggi','lattugaiceberg');
 INSERT INTO prodotto VALUES
 (4,'uva',159638257,33,'uva armonera del Cilento','frutta','uva');
+
 
 
 INSERT INTO ordine (data)  VALUES
