@@ -30,6 +30,9 @@ if(prodotti==null){
 
 <div id="visualizzaprodotto">
 
+<form action="carrello?action=aggiungi">
+
+
 <div id="nome">
 <label>Prodotto: </label>
 <span><%=prodotti.getNome() %></span>
@@ -37,10 +40,13 @@ if(prodotti==null){
 
 <div id="descrizione">
 <label>Descrizione: </label>
-<span><%=prodotti.getDescrizione() %></span>
+<input type="text" id="quantita" value="<%=prodotti.getDescrizione() %>" name="<%=prodotti.getDescrizione() %>" readonly>
 </div>
 
 <%if(controlloutente!=null){ %>
+
+
+
 
 <div id="quantita">
 <label>Quantità: </label>
@@ -68,9 +74,9 @@ if(prodotti==null){
 <%}else{ %>
 
 <div id="addcarrello">
-<a href="<%=response.encodeURL("carrello?action=addcarrello&nome=" + prodotti.getNome())%>"><input type="button" value="Aggiungi"></a>
+<a href="<%=response.encodeURL("carrello?action=addcarrello&nome=" + prodotti.getNome())%>"><input type="submit" value="Aggiungi" id="action"></a>
 </div>
-
+</form>
 
 <%} }%>
 </div>

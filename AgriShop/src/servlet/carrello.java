@@ -20,7 +20,8 @@ public class carrello extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		String quantita=request.getParameter("quantita");
+	
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model = new ProductModelDS(ds);
 
@@ -30,6 +31,7 @@ public class carrello extends HttpServlet {
 			carrello = new Carrello<prodotto>();
 			request.getSession().setAttribute("carrello", carrello);
 		}
+		
 		String action = request.getParameter("action");
 
 		try {
@@ -62,11 +64,12 @@ public class carrello extends HttpServlet {
 			request.setAttribute("error", e.getMessage());
 		}
 
+		request.setAttribute("quantita", quantita);
 		request.setAttribute("carrello", carrello);
 
 
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/carrello.jsp");
-		dispatcher.forward(request, response);
+		dispatcher.include(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

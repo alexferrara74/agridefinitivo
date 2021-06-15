@@ -6,6 +6,12 @@
 <meta charset="ISO-8859-1">
 
 <%
+String quantita=(String)request.getAttribute("quantita");
+
+if(quantita!=null){
+	int qnt=Integer.parseInt(quantita);
+	System.out.print(qnt);
+}
 
 Carrello <prodotto> carrello=(Carrello<prodotto>)request.getSession().getAttribute("carrello");
 if(carrello!=null){

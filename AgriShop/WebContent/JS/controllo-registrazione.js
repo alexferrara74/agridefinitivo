@@ -2,18 +2,6 @@
  * 
  */
 
-function controlloserver(mail){
-var x= new XMLHttpRequest();
-x.onreadystatechange=function(){
-if(x.readyState==4&& x.statut==200){
-document.getElementById("mail").innerHTML=x.responseText;
-}};
-x.open("GET","/controlloregistrazione?mail="+mail+"",true);
-x.send();
-}
-
-
-
 
 function uppercase(){
 var x=document.getElementById("rsociale");
