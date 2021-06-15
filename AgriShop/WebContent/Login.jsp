@@ -7,13 +7,14 @@
 <title>Login</title>
 <link href="style/stylelogreg.css" rel="stylesheet" type="text/css">
 
-<%String errorelogin=(String)request.getAttribute("errore");%>
+<%String errorelogin=(String)request.getAttribute("passerrore");
+String erroreaccount=(String)request.getAttribute("accounterrato");
+%>
 
 </head>
 <body>
 
  <%@ include file="Header.jsp"%><br>
-
 
 	<div class="login">
 		<form action="login" method="POST">
@@ -36,16 +37,17 @@
 			<h2>Oppure :</h2>
 			<a href="Registrazione.jsp" id="testocarrello">
 			<input class="bottone" type="submit" value="Registrati"></a>
-			</div>
+		</div>
 			
-			<%if(errorelogin!=null){
-				if(errorelogin=="passerrata"){
-				%>
+		<%if(errorelogin!=null){
+				if(errorelogin.equals("errorelogin")){
+		%>
 			
 			<div id="errorelogin">
 			<p>errore login
 			</div>
-			<%} }%>
+			
+		<%} }%>
 			
 	</div>
 	

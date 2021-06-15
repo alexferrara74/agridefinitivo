@@ -40,27 +40,37 @@ public class loginservlet extends HttpServlet {
 		ssn.setMaxInactiveInterval(-1);
 		ssn.setAttribute("nome", null);
 		try {
-			request.setAttribute("negozio", neg=(model.doRetrieveByKey(username)));
-			if(neg.getPwd()!=null) {	
-				if((neg.getPwd().equals(password))&&neg.getEmail().equals(username)) {
+			neg=(model.doRetrieveByKey(username));
+		
+			if(neg.isEmpty()) {
+				request.setAttribute("erroreaccount",errore);	
+			}
+			
+			
+			if(neg.getPwd()==null&&neg.getEmail()==null) {
+				
+				request.setAttribute("erroreaccount",errore);	
+			
+			} else {	
+				if((neg.getPwd().equals(password))&&(neg.getEmail().equals(username))) {
 					
 					
 						ssn.setAttribute("nome",neg.getRs());
 						ssn.setAttribute("neg", neg);
-						ssn.setAttribute("passerrore", null);
-				
+						response.sendRedirect("homepage.jsp");
 				} else {
-						
-						ssn.setAttribute("passerrore",errore);
+					
+						request.setAttribute("passerrore",errore);				
 				}}
-		
+				
 		} catch (SQLException e) {
 			
-			ssn.setAttribute("passerrore", errore);		
+					response.sendRedirect("homepage.jsp");		
 		}
 		
-	RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");
-	dispacher.forward(request, response);
+		
+		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/Login.jsp");
+		dispacher.include(request, response);
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

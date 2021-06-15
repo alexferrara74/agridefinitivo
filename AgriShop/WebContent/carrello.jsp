@@ -27,12 +27,9 @@ List<prodotto> prodcarrello=carrello.getOggetto();
 </head>
 
 <body>
-<%if(carrello!=null) {
-	
-%>
 
 
 
-<%} %>
+
 </body>
 </html>

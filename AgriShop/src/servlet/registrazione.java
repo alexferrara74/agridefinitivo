@@ -36,6 +36,8 @@ public class registrazione extends HttpServlet {
 		String cap=request.getParameter("cap");
 		String civico=request.getParameter("civico");
 		HttpSession ssn=request.getSession();
+		Negozio neg= new Negozio();
+		boolean check=false;
 		
 		nuovo.setEmail(email);
 		nuovo.setIndirizzo(indirizzo);
@@ -48,27 +50,44 @@ public class registrazione extends HttpServlet {
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		LoginModelDS model= new LoginModelDS(ds);
 		 
-		if(password.equals(conferma)) {
-			
-				
 		try {
-			model.doSave(nuovo);
-			ssn.setAttribute("error", "vero");
 			
-		} catch (SQLException e) {
-			utility.print(e);
-			
-			ssn.setAttribute("error", "falso");		
-		}
-		}
-		else {
-			
-			ssn.setAttribute("passdiversa", "falso");
+			neg=(model.doRetrieveByKey(email));
+			if(neg.getEmail().equals(email)) {
+				request.setAttribute("error", "falso");	
+				check=true;
+			}	
 		
+				neg=(model.doRetrieveByRs(ragionesociale));
+					if(neg.getRs().equals(ragionesociale)) {
+						request.setAttribute("error", "falso");	
+						check=true;
+					}
+			
+			if(check==false) {
+			if(password.equals(conferma)) {
+				model.doSave(nuovo);
+				request.setAttribute("error", "vero");}
+			else
+			{
+				
+				request.setAttribute("passdiversa", "falso");
+			
+			}
+					}
+			
+			
+		}catch(SQLException e) {
+			request.setAttribute("error", "falso");	
 		}
+		
+
+		
+		
+		
 					
-		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/homepage.jsp");
-		dispacher.forward(request, response);
+		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/Registrazione.jsp");
+		dispacher.include(request, response);
 		
 	}
 

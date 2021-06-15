@@ -10,8 +10,9 @@
 
 <%@ include file="Header.jsp"%>
 <% String report=(String)request.getAttribute("passdiversa"); 
+String errore=(String)request.getAttribute("error"); 
 if(report!=null){
-if(report.equals("passdiversa")){
+if(report.equals("falso")){
 
 %>
 
@@ -22,7 +23,12 @@ if(report.equals("passdiversa")){
 </head>
 <body>
 
+<%if(errore!=null&&errore.equals("falso")){ %>
 
+<p>Utente Già Registrato</p>
+
+
+<% } %>
 	<div class="registrazione">
 
 		<form id="formreg" action="registrazione" name="formreg" method="post" >

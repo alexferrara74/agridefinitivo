@@ -11,7 +11,6 @@
 
 <%
 String username= (String)request.getSession().getAttribute("nome");
-String error=(String)request.getSession().getAttribute("passerrata");
 Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 %>
 
@@ -67,11 +66,6 @@ Collection<?> ricerca=(Collection<?>)request.getAttribute("ricerca");
 			<li><a href="admin/profilo.jsp">Visite</a>
 			<li><a href="">contatti</a>
 			
-			<%if(error!=null){
-			if(error.equals("passerrata")){ 
-				response.sendRedirect("./Login.jsp"); %>
-					
-				<%} }%>
 			
 			<%if(username==null) {%>
 			

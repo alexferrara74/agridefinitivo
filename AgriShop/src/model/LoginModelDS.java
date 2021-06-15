@@ -23,6 +23,57 @@ public class LoginModelDS implements negozioModel<Negozio>{
 		this.ds=ds;
 	}
 	
+	
+	
+	public Negozio doRetrieveByRs(String rags) throws SQLException {
+		
+		java.sql.Connection connection=null;
+		PreparedStatement preparedStatement=null;
+		Negozio bean= new Negozio();
+		
+		String sql="SELECT * FROM negozio WHERE ragione_sociale=?";
+		
+		
+		
+		try {
+
+			connection= ds.getConnection();
+			preparedStatement= connection.prepareStatement(sql);
+			preparedStatement.setString(1,rags);
+			ResultSet rs=preparedStatement.executeQuery();
+			
+		
+		
+		while(rs.next()) {
+			bean.setCap(rs.getString("cap"));
+			bean.setCivico(rs.getString("ncivico"));
+			bean.setRs(rs.getString("ragione_sociale"));
+			bean.setIndirizzo(rs.getString("indirizzo"));
+			bean.setPiva(rs.getString("PIVA"));
+			bean.setPwd(rs.getString("pwd"));
+			bean.setEmail(rs.getString("email"));
+				
+		}
+		
+		
+		}finally {
+		try {
+		if(preparedStatement!=null)
+		preparedStatement.close();
+		}finally {
+			
+		
+		
+		if(connection!=null)
+		connection.close();
+		}
+		
+	}
+		return bean;
+		
+		}
+
+	
 	@Override
 	public Negozio doRetrieveByKey(String email) throws SQLException {
 	
@@ -166,6 +217,7 @@ public class LoginModelDS implements negozioModel<Negozio>{
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	
 	

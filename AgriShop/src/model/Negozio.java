@@ -1,6 +1,8 @@
 package model;
 
-public class Negozio {
+import java.io.Serializable;
+
+public class Negozio implements Serializable {
 
 	String rs;
 	String indirizzo;
@@ -10,7 +12,13 @@ public class Negozio {
 	String civico;
 	String cap;
 
-
+public Negozio() {
+	email="";
+	pwd="";
+	rs="";
+}
+	
+	
 	public String getCivico() {
 		return civico;
 	}
@@ -27,9 +35,7 @@ public class Negozio {
 		this.cap = cap;
 	}
 
-	public Negozio() {
-		
-	}
+	
 
 	public String getRs() {
 		return rs;
@@ -71,6 +77,9 @@ public class Negozio {
 		this.pwd = pwd;
 	}
 	
+	public boolean isEmpty() {
+		return email=="";
+	}
 	
 	
 }
