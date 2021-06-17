@@ -2,80 +2,57 @@
 	pageEncoding="ISO-8859-1" import="java.util.*" import="model.prodotto"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="ISO-8859-1">
-<meta name="description" content="Ingrosso Agricolo">
-<meta name="keywords" content="DataSource, Product, Cart, Session">
-<meta name="author" content="AgriShop">
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.css">
+<link rel="stylesheet" href="style/style.css">
 <script src="JS/homepage.js"></script>
-<link href="style/stylepage.css" rel="stylesheet" type="text/css">
-<link href="style/prodotti.css" rel="stylesheet" type="text/css">
-
-<%
-
-
-%>
-
 </head>
 
-
 <body>
+<%@ include file="Header.jsp"%>
 
+<div class="center">
 
-	<%@ include file="../Header.jsp"%><br>
+<div class="slogan">
+<h1>Primo messaggio slogan</h1>
+<h2>secondo messaggio slogan</h2>
 
-
+</div>
 
 <div class="immagine">
-	
-	<img id="imm" src="immagini/azienda(1).jpg" alt="azienda" width="1000px" height="400px">
+<img id="imm"src="immagini/azienda(1).jpg" alt="immagine">
+<div class="immagine__cerchio"><img src="immagini/vino.jpg"></div>
+<div class="immagine__cerchio"><img src="immagini/olio.jpg"></div>
+<div class="immagine__cerchio"><img src="immagini/vino.jpg"></div>
+<div class="immagine__cerchio"><img src="immagini/vino.jpg"></div>
+</div>
+
+<div class="offerta"></div>
+
+</div>
+
+
+<div class="banner clearfix">
+
+
+
+<a href="home.html" class="home"><img src="immagini/home.png" alt="home" class="home"></a>
+<a href="" class="home"><img src="immagini/shop.png" alt="home" class="home"></a>
+<a href="" class="home"><img src="immagini/shopping-cart.png" alt="home" class="home"></a>
+<a href="" class="home"><img src="immagini/user.png" alt="home" class="menu__mobile"></a>
+
 </div>
 
 
 
 
-<div class="homepage">
-<p style=display:block; id="offerta">Prodotti in offerta:</p>
-<% 
-String controlloutente=(String)request.getSession().getAttribute("nome");
-if(controlloutente==null){}
-Collection<?> prodotti=(Collection<?>)request.getAttribute("offerta");
-if(prodotti==null){
-	response.sendRedirect(response.encodeRedirectURL("./home"));	}
-%>
+<%@ include file="foother.jsp"%>
 
 
-<%
-if(prodotti!=null&&prodotti.size()>0){
-	
-		Iterator<?> it=prodotti.iterator();
-		
-		while(it.hasNext()){
-			prodotto beans=(prodotto)it.next();
-	
-	%>
-		
-		
-		
-		<div id="singolo">
-		  <form action="prodotti/visualizzaprodotto.jsp" id="sceltasingolo"></form>
-		  <img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png" onclick="funzione()">
-		  <p id="descrizione" onclick="funzione()"><%=beans.getDescrizione() %><br>
-	 <%if(controlloutente!=null){ %>	 <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br><%} %>
-	</div>
-
-
-<% } }%>
-
-	</div>
-
-
-
-
-
-	<%@ include file="foother.jsp"%>
 
 </body>
 </html>
-
