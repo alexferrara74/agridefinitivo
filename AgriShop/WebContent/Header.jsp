@@ -50,18 +50,16 @@ String username= (String)request.getSession().getAttribute("nome");
 <p class="accedi__mobile__item"><a href=""><%=username %></a></p>
 </div>
 
-<div class="header__menu__login">
-<a href="" onclick="menulogin()"><%=username %></a>
+<div class="header__menu__item">
+<a id="item_login" href="javascript:void(0)" onmouseover="menulogin()"><%=username %></a>
 </div>
 
-<%} %>
-
-<ul class="header__menu__sotto">
+<ul id="header__menu__sotto" onmouseleave="menuoff()">
 <li class="header__menu__item__sotto"><a href="">Ordini</a></li>
 <li class="header__menu__item__sotto"><a href="">Modifica</a></li>
-<li class="header__menu__item__sotto"><a href="">Logout</a></li>
+<li class="header__menu__item__sotto"><a href="/logout">Logout</a></li>
 </ul>
-
+<%} %>
 </header>
 
 

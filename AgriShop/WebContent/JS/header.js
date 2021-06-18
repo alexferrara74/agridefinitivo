@@ -2,11 +2,11 @@
  * 
  */
 function menulogin() {
-
-	document.getElementsByClassName("header__menu__item__sotto").style.display="inline";
-	
-	
+		
+	document.getElementById("header__menu__sotto").style.display="inline-block";
 	
 }
 
-
+function menuoff(){
+document.getElementById("header__menu__sotto").style.display="none";
+}
