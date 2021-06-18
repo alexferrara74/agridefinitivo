@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import javax.sql.DataSource;
 
+
 import model.prodotto;
 import utils.utility;
 
@@ -264,9 +265,35 @@ public class ProductModelDS implements ProductModel<prodotto>{
 	}
 	@Override
 	public void doDelete(prodotto item) throws SQLException {
-		// TODO Auto-generated method stub
-		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		String deleteSQL = "DELETE FROM prodotto WHERE Ssn = ?";
+
+		try {
+			connection = ds.getConnection();
+			connection.setAutoCommit(false);
+			preparedStatement = connection.prepareStatement(deleteSQL);
+			preparedStatement.setString(1, item.getSsn());
+
+			utility.print("doDelete: " + preparedStatement.toString());
+			preparedStatement.executeUpdate();
+
+			connection.commit();
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null) {
+					connection.close();
+				}
+			}
+		}
 	}
+	
+	
 
 
 	@Override
