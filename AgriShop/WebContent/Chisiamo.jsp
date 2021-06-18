@@ -8,47 +8,57 @@
 <link href="style/stylechisiamo.css" rel="stylesheet" type="text/css">
 
 </head>
+
 <body>
 
-<div class="banner">
-		<p id="descr">AgriShop </p>
-	</div>
-	
-	<section id="main">
+<div class="menu">
+		<ul>
+			<li><a href="homepage.jsp">Home</a>
+			<li><a href="Chisiamo.jsp">Chi Siamo</a>
+			<li><a href="prodotti.jsp">Prodotti</a>
+			<li><a href="utente/profilo.jsp">Visite</a>
+			<li><a href="">contatti</a>
+			
+				
+		</ul>
+		<section id="main"></section>
 	  <header class="page-header">
           <h1>
  L&#039;eccellenza della frutta e verdura campana
 </h1>
         </header>
-      
-    
+		
+		</div>
 
     
   <section id="content">
 
     
-      <h1 style="text-align:left;"><strong><span style="color:#7cd320;">Chi siamo</span></strong></h1>
+      <h1 style="text-align:center;"><strong><span style="color:#7cd320;">Chi siamo</span></strong></h1>
 <p></p>
-<h2 style="text-align:left;"><strong>Una rete di produttori su tutto il territorio nazionale!</strong></h2>
+<h2 style="text-align:center;"><strong>Una rete di produttori su tutto il territorio nazionale!</strong></h2>
 <p></p>
-<p style="text-align:left;">AgriShop è una piattaforma che mette a disposizione online i migliori prodotti ortofrutticoli campani.</p>
-<p style="text-align:left;">Origine, qualità e sicurezza sono garantiti dal rapporto diretto con la produzione e dalle procedure per il controllo del processo produttivo:</p>
-<p style="text-align:left;"><strong>produzioni biologiche e biodinamiche;</strong></p>
-<p style="text-align:left;"><strong>staff di tecnici specialisti</strong> per l'assistenza tecnica ai soci produttori.</p>
-<p style="text-align:left;"></p>
-<p style="text-align:left;">Ogni prodotto che portiamo sulla tua tavola è una storia da raccontare, rispetto della natura, della salute dei produttori e dei consumatori.</p>
-<p style="text-align:left;"></p>
-<p style="text-align:left;"></p>
-<h2 style="text-align:left;"><strong>La Nostra Idea</strong></h2>
+<p style="text-align:center;">AgriShop è una piattaforma che mette a disposizione online i migliori prodotti ortofrutticoli campani.</p>
+<p style="text-align:center;">Origine, qualità e sicurezza sono garantiti dal rapporto diretto con la produzione e dalle procedure per il controllo del processo produttivo:</p>
+<p style="text-align:center;"><strong>produzioni biologiche e innovative;</strong></p>
+<p style="text-align:center;"><strong>staff di tecnici specializzati</strong> per l'assistenza tecnica ai soci produttori.</p>
+<p style="text-align:center;"></p>
+<p style="text-align:center;">Ogni prodotto che portiamo sulla tua tavola è una storia da raccontare, rispetto della natura, della salute dei produttori e dei consumatori.</p>
+<p style="text-align:center;"></p>
+<p style="text-align:center;"></p>
+<h2 style="text-align:center;"><strong>La Nostra Idea</strong></h2>
 <p></p>
 <p></p>
-<p style="text-align:left;">AgriShop offre frutta e verdura coltivate nelle zone più amate della Campania.</p>
-<p style="text-align:left;">Tramite AgriShop avrai a disposizione prodotti biologici garantiti, direttamente a casa tua con pochissimi click.</p>
-<p style="text-align:left;">I prodotti ordinati vengono confezionati e spediti dal magazzino della nostra società.</p>
-<p style="text-align:left;"><strong><span style="color:#7cd320;"></span></strong></p>
-<p style="text-align:left;"></p>
+<p style="text-align:center;">AgriShop offre frutta e verdura coltivate nelle zone più amate della Campania.</p>
+<p style="text-align:center;">Tramite AgriShop avrai a disposizione prodotti biologici garantiti, direttamente a casa tua con pochissimi <strong>click.</strong></p>
+<p style="text-align:center;">I prodotti ordinati vengono confezionati e spediti dal magazzino della nostra azienda.</p>
+<p style="text-align:center;"><strong><span style="color:#7cd320;"></span></strong></p>
+<p style="text-align:center;"></p>
 
   </section>
+  	 			<iframe style="padding-left:640px;" width="700" height="315" src="https://www.youtube.com/embed/_JmM0UbyYiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  	 
+
     
 
 </body>
