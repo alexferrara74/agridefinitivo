@@ -19,7 +19,7 @@ if(prodotti==null){
 </head>
 
 <body>
-<%@ include file="../Header.jsp"%><br>
+
 
 <% if(prodotti!=null){
 %>
