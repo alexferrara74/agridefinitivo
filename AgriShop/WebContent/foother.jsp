@@ -7,8 +7,7 @@
 <link href="style/foother.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div id="foother">
-<a href="#contattaci">Contatti</a>
+
 <div class="block-contact col-md-4 links wrapper">
 	<div class="paddingMobile">
 		<p style="text-align:left;">INFORMAZIONI SHOP </p>

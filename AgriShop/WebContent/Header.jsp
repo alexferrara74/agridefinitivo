@@ -37,7 +37,7 @@ String username= (String)request.getSession().getAttribute("nome");
 <li class="header__menu__item"><a href="prodotti.jsp">Prodotti</a></li>
 <li class="header__menu__item"><a href="">Visite</a></li>
 <li class="header__menu__item"><a href="Chisiamo.jsp">Chi Siamo</a></li>
-<li class="header__menu__item"><a href="foother.jsp">Contatti</a></li>
+<li class="header__menu__item"><a href="#foother">Contatti</a></li>
 <%if(username==null) {%>
 <li class="header__menu__item"><a href="Login.jsp">Accedi</a></li>
 </ul>
