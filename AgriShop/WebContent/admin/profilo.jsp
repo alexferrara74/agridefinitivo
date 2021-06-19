@@ -124,11 +124,6 @@ String username= (String)request.getSession().getAttribute("nome");
 	
 	</select>
 	
-	
-	
-
-
-
 </td>
 </tr>
 
@@ -159,7 +154,7 @@ String username= (String)request.getSession().getAttribute("nome");
 
 <tr>
 
-<td><input type="text" name="Ssn" placeholder="Ssn" required></td>
+<td><input type="text" name="Nome Prodotto" placeholder="Nome Prodotto" required></td>
 </tr>
 
 

@@ -1,8 +1,33 @@
 @charset "ISO-8859-1";
 
+
 #foother{
 	width:100%;
-	height:200px;
-	background-color:grey;
+	height:300px;
+	background-color:silver;
 	border-style:solid;
+}
+
+.paddingMobile{
+	font-size: 20px;
+	padding-left:1;
+	font-family: "Times New Roman", Times, serif;
+	color: teal;
+	text-decoration: none;
+}
+
+.block-contact.links{
+	font-size: 15px;
+	padding-left:1;
+	font-family: "Courier New", Courier,monospace;
+	color: navy;
+	text-decoration: none;
+}
+
+.contactSpan{
+	font-size: 15px;
+	padding-left:1;
+	font-family: Arial, Helvetica, sans-serif;
+	color: navy;
+	text-decoration: none;
 }

@@ -268,14 +268,14 @@ public class ProductModelDS implements ProductModel<prodotto>{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		String deleteSQL = "DELETE FROM prodotto WHERE Ssn = ?";
+		String deleteSQL = "DELETE FROM prodotto WHERE nomep = ?";
 
 		try {
 			connection = ds.getConnection();
 			connection.setAutoCommit(false);
 			preparedStatement = connection.prepareStatement(deleteSQL);
-			preparedStatement.setString(1, item.getSsn());
-
+			
+			preparedStatement.setString(1, item.getNome());
 			utility.print("doDelete: " + preparedStatement.toString());
 			preparedStatement.executeUpdate();
 

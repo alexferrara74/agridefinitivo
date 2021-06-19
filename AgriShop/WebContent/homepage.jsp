@@ -49,9 +49,9 @@
 
 
 
-
+<div id="foother">
 <%@ include file="foother.jsp"%>
-
+</div>
 
 
 </body>

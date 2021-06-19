@@ -40,15 +40,15 @@ public class CancellaProdotto extends HttpServlet {
 		prodotto prod= new prodotto();
 		
 		
-		String SSN=request.getParameter("Ssn");
+		String Nome=request.getParameter("Nome Prodotto");
 		
 		
 
 	
 		
-		if(SSN!=null) {			
-		if(!SSN.equals("")) {
-			prod.setSsn(SSN);
+		if(Nome!=null) {			
+		if(!Nome.equals("")) {
+			prod.setNome(Nome);;
 		}
 		}
 	
