@@ -26,20 +26,23 @@ String username= (String)request.getSession().getAttribute("nome");
 <header class="header clearfix">
 
 <a href="" class="header__logo"><img src="immagini/aaa3.png" alt="logo"></a>
-
-	<form class="ricerca" action="ricerca" method="POST">
-		<input class="ricerca_testo" type="text" placeholder="Ricerca">
-	</form>
-
-
+	<form action="ricerca" method="POST">
+	<div class="ricerca">
+	
+		<div class="ricerca_testo">
+		<input id="input_ricerca"  type="text" placeholder="Ricerca">
+		</div>
+		<div class="ricerca_img">
+		<img id="img_ricerca"src="immagini/search.png" alt="ricerca">
+		</div>
+	
+	</div>
+</form>
 
 <ul class="header__menu">
 <li class="header__menu__item"><a href="prodotti.jsp">Prodotti</a></li>
 
 <li class="header__menu__item"><a href="admin/profilo.jsp">Visite</a></li>
-<li class="header__menu__item"><a href="Chisiamo.jsp">ChiSiamo</a></li>
-
-<li class="header__menu__item"><a href="">Visite</a></li>
 <li class="header__menu__item"><a href="Chisiamo.jsp">Chi Siamo</a></li>
 <li class="header__menu__item"><a href="#foother">Contatti</a></li>
 
@@ -57,13 +60,13 @@ String username= (String)request.getSession().getAttribute("nome");
 </div>
 
 <div class="header__menu__item">
-<a id="item_login" href="javascript:void(0)" onmouseover="menulogin()"><%=username %></a>
+<a id="item_login" href="javascript:void(0)" onClick="menulogin()"><%=username %></a>
 </div>
 
 <ul id="header__menu__sotto" onmouseleave="menuoff()">
 <li class="header__menu__item__sotto"><a href="">Ordini</a></li>
 <li class="header__menu__item__sotto"><a href="">Modifica</a></li>
-<li class="header__menu__item__sotto"><a href="/logout">Logout</a></li>
+<li class="header__menu__item__sotto"><a href="logout">Logout</a></li>
 </ul>
 <%} %>
 </header>

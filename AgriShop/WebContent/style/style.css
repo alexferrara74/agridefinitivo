@@ -25,8 +25,13 @@ html,body{height:99%;}
 .is-open{height:200px; width: 200px;color:black; display:inline; background:lightgrey;z-index:2; }
 .accedi__mobile{display:none;}
 
-.ricerca{display:inline; float:left; width:300px; border-radius:12px; margin-left:220px; margin-top:30px;}
-.ricerca_testo{width:400px; border: 4px solid green; border-radius:12px; background:white;}
+.ricerca{display:inline; float:left; width:450px; height:40px; border-style:2px solid;border-radius:12px; margin-left:220px; margin-top:15px; padding:0;}
+.ricerca_testo {display:inline;float:left;width:85%; height:100%; border-radius: 12px 0px 0px 12px;background:white;}
+#input_ricerca{width:98%; height:90%; margin:0;padding:0;border-radius:12px 0px 0px 12px; border-style:none;}
+.ricerca_img{display:inline;float:right; width:15%;height:100%; padding :0; margin:0;border-radius:0px 12px 12px 0px; background:green; }
+#img_ricerca{ width:35px; height:35px; padding:2px 0px 10px 10px;}
+
+
 
 .ricerca_testo:a {border: 8px solid green; border-radius:12px;}
 

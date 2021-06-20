@@ -2,18 +2,22 @@
 
 
 #foother{
-	width:100%;
+	width:auto;
 	height:300px;
 	background-color:silver;
-	border-style:solid;
 }
-
 .paddingMobile{
 	font-size: 20px;
 	padding-left:1;
 	font-family: "Times New Roman", Times, serif;
 	color: teal;
 	text-decoration: none;
+	
+}
+.paddingMobile li{
+	width:200px;
+	display:inline-block;
+	margin-top:10px;
 }
 
 .block-contact.links{

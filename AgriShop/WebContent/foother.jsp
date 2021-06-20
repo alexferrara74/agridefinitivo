@@ -19,11 +19,13 @@
 		<br>
 		</span>
 		
-		<li>Email.</li><a href= "AgriShop@gmail.com"></a>
-		<span>AgriShop@gmail.com</span>
+		<li>Email.<a href= "AgriShop@gmail.com"></a>
+		<span>AgriShop@gmail.com </span>
+		</li>
+		
 		<br>
-		<li>Tel.<a href="tel:+393483283439"></a></li>
-		<span>+39 348 328 3439 </span>
+		<li>Tel.<a href="tel:+393483283439"></a>
+		<span>+39 348 328 3439 </span></li>
 		<br>
 		
 		<li>C.F.:
