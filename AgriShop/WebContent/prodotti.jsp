@@ -105,7 +105,9 @@ if(prodotti!=null&&prodotti.size()>0){
 <% } %>
 
 </div>
-
+<div id="foother">
+<%@ include file="foother.jsp"%>
+</div>
 </body>
 
 

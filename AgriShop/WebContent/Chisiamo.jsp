@@ -58,7 +58,9 @@
   </section>
   	 			<iframe style="padding-left:640px;" width="700" height="315" src="https://www.youtube.com/embed/_JmM0UbyYiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   	 
-
+<div id="foother">
+<%@ include file="foother.jsp"%>
+</div>
     
 
 </body>
