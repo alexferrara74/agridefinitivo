@@ -9,7 +9,7 @@
 	margin-right:10%;
 }
 #singolo{
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: "Sofia", sans-serif;
 	display:inline;
 	float:left;
 	width:280px;
@@ -26,11 +26,14 @@
 	
 }
 #parametriconfigurazione{
+	font-family: "Sofia", sans-serif;
 	float:left;
 	width: 15%;
 	height:1080px;
 	border-style:solid;
 	margin-left:70px;
+	color:green;
+	background-color:beige;
 }
 #parametriconfigurazione.label{
 	color:blue;

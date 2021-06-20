@@ -30,43 +30,43 @@ if(prodotti==null&&errore==null){
 
 <div id="parametriconfigurazione">
 
-<p>Categorie:
+<p><h3><strong>Categorie:</strong></h3>
 <form action="prodotti" id="prodaction" >
 <div>
 <input type="radio" id="ortaggi" value="ortaggi" name="scelta" onclick="esegui()">
-<label for="ortaggi"> Ortaggi</label><br>
+<label for="ortaggi"> ORTAGGI</label><br>
 </div>
-
+<br>
 <div>
 <input type="radio" id="frutta" value="frutta" name="scelta" onclick="esegui()">
-<label for="ortaggi"> Frutta</label><br>
+<label for="ortaggi"> FRUTTA</label><br>
 </div>
-
+<br>
 <div>
 <input type="radio" id="verdura" value="verdura" name="scelta" onclick="esegui()">
-<label for="ortaggi"> Verdura</label><br>
+<label for="ortaggi"> VERDURA</label><br>
 </div>
-
+<br>
 <div>
 <input type="radio" id="semi" value="semi" name="scelta" onclick="esegui()">
-<label for="ortaggi"> Semi</label><br>
+<label for="ortaggi"> SEMI</label><br>
 </div>
-
+<br>
 <div>
 <input type="radio" id="fruttasecca" value="fruttasecca" name="scelta" onclick="esegui()">
-<label for="ortaggi">Frutta Secca</label><br>
+<label for="ortaggi">FRUTTA SECCA</label><br>
 </div>
- 
+ <br>
  <div>
 <input type="radio" id="vino" value="vino" name="scelta" onclick="esegui()">
-<label for="ortaggi">Vino</label><br>
+<label for="ortaggi">VINO</label><br>
 </div>
-
+<br>
 <div>
 <input type="radio" id="olio" value="olio" name="scelta" onclick="esegui()">
-<label for="ortaggi">Olio</label><br>
+<label for="ortaggi">OLIO</label><br>
 </div>
-
+<br>
 </form>
  
 
