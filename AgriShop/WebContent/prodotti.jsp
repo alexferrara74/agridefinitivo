@@ -38,17 +38,17 @@ if(prodotti==null&&errore==null){
 </div>
 <br>
 <div>
-<input type="radio" id="frutta" value="frutta" name="scelta" onclick="esegui()">
+<input  type="radio" id="frutta" value="frutta" name="scelta" onclick="esegui()">
 <label for="ortaggi"> FRUTTA</label><br>
 </div>
 <br>
 <div>
-<input type="radio" id="verdura" value="verdura" name="scelta" onclick="esegui()">
+<input  type="radio" id="verdura" value="verdura" name="scelta" onclick="esegui()">
 <label for="ortaggi"> VERDURA</label><br>
 </div>
 <br>
 <div>
-<input type="radio" id="semi" value="semi" name="scelta" onclick="esegui()">
+<input  type="radio" id="semi" value="semi" name="scelta" onclick="esegui()">
 <label for="ortaggi"> SEMI</label><br>
 </div>
 <br>
@@ -58,12 +58,12 @@ if(prodotti==null&&errore==null){
 </div>
  <br>
  <div>
-<input type="radio" id="vino" value="vino" name="scelta" onclick="esegui()">
+<input  type="radio" id="vino" value="vino" name="scelta" onclick="esegui()">
 <label for="ortaggi">VINO</label><br>
 </div>
 <br>
 <div>
-<input type="radio" id="olio" value="olio" name="scelta" onclick="esegui()">
+<input  type="radio" id="olio" value="olio" name="scelta" onclick="esegui()">
 <label for="ortaggi">OLIO</label><br>
 </div>
 <br>

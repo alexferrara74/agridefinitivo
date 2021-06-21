@@ -20,7 +20,7 @@ public class carrello extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String quantita=request.getParameter("quantita");
+		
 	
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model = new ProductModelDS(ds);
@@ -64,7 +64,7 @@ public class carrello extends HttpServlet {
 			request.setAttribute("error", e.getMessage());
 		}
 
-		request.setAttribute("quantita", quantita);
+		
 		request.setAttribute("carrello", carrello);
 
 

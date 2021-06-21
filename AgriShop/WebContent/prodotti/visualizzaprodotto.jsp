@@ -30,7 +30,7 @@ if(prodotti==null){
 
 <div id="visualizzaprodotto">
 
-<form action="carrello?action=aggiungi">
+<form action="carrello">
 
 
 <div id="nome">
@@ -74,7 +74,7 @@ if(prodotti==null){
 <%}else{ %>
 
 <div id="addcarrello">
-<a href="<%=response.encodeURL("carrello?action=addcarrello&nome=" + prodotti.getNome())%>"><input type="submit" value="Aggiungi" id="action"></a>
+<input type="submit" value="Aggiungi" id="action">
 </div>
 </form>
 

@@ -23,12 +23,7 @@ if(report.equals("falso")){
 </head>
 <body>
 
-<%if(errore!=null&&errore.equals("falso")){ %>
 
-<p>Utente Già Registrato</p>
-
-
-<% } %>
 	<div class="registrazione">
 
 		<form id="formreg" action="registrazione" name="formreg" method="post" >
@@ -37,7 +32,15 @@ if(report.equals("falso")){
 				<tr>
 
 					<td>Email</td>
-					<td><input id="email" type="text" name="email" placeholder="utente@estensione.it" onblur="validamail(this)"  required/></td><td><p id=erroremail></td>
+					<td><input id="email" type="text" name="email" placeholder="utente@estensione.it" onblur="validamail(this)"  required/></td><td><p id=erroremail>
+					<%if(errore!=null&&errore.equals("falso")){ %>
+
+					<p>	Utente Già Registrato</p>
+
+
+				<% } %>
+									
+					</td>
 				</tr>
 				<tr>
 					<td>Password</td>
@@ -63,7 +66,7 @@ if(report.equals("falso")){
 				
 					<tr>
 						<td>Civico</td>
-			<td><input id="civco" type="text" name="civico" placeholder="Civico" onblur="validacivico(this)"  required/></td><td><p id=errorecivico></td>
+					<td><input id="civco" type="text" name="civico" placeholder="Civico" onblur="validacivico(this)"  required/></td><td><p id=errorecivico></td>
 					</tr>
 				
 				<tr>
@@ -71,9 +74,7 @@ if(report.equals("falso")){
 				<td><input id="cap" type="text" name="cap" placeholder="Cap" onblur="validacap(this)" required  /></td><td><p id=errorecap></td>
 				</tr>
 				
-				<tr>
-
-				</tr>
+				
 			</table>
 			<input id="iscriviti" class="iscriviti" type="submit" value="Iscriviti"   />
 

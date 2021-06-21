@@ -15,11 +15,11 @@ html,body{height:99%;}
 .header__menu__item:hover{background:green;}
 .header__menu__item a{text-decoration:none;}
 
-#item_login:hover{background:white;}
+
 
 .header__menu__item__sotto:a{color:white; display:block;padding:5px;}
 .header__menu__item__sotto a:hover{background:white;}
-#header__menu__sotto{display:none;float:right; border-style:solid; margin-right:50px; margin-top:100px;width:200px; z-index:100;  }
+.header__menu__sotto{display:inline;float:right; border-style:solid; margin-right:50px; margin-top:100px;width:200px; z-index:100;  }
 .header__menu__item__sotto{width:40px; margin:0; font-size:25px; font-family:"Sofia";text-decoration:none; }
 
 .is-open{height:200px; width: 200px;color:black; display:inline; background:lightgrey;z-index:2; }

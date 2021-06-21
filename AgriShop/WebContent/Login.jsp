@@ -21,33 +21,19 @@ String erroreaccount=(String)request.getAttribute("accounterrato");
 			<table style="with: 50%">
 
 				<tr>
-					<td>Email</td>
-					<td><input type="text" name="Email" required/></td>
+					
+					<td><input type="text" name="Email" placeholder="Email" required/></td>
 				</tr>
 				<tr>
-					<td>Password</td>
-					<td><input type="password" name="password" required/></td>
+					
+					<td><input type="password" name="password" placeholder="Password" required/></td>
 				</tr>
 			</table>
 			<input class="bottone" type="submit" value="Accedi" />
 		</form>
-
 	
-		<div >
-			<h2>Oppure :</h2>
 			<a href="Registrazione.jsp" id="testocarrello">
 			<input class="bottone" type="submit" value="Registrati"></a>
-		</div>
-			
-		<%if(errorelogin!=null){
-				if(errorelogin.equals("errorelogin")){
-		%>
-			
-			<div id="errorelogin">
-			<p>errore login
-			</div>
-			
-		<%} }%>
 			
 	</div>
 	

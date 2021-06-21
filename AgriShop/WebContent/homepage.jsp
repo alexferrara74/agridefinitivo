@@ -25,10 +25,10 @@
 
 <div class="immagine">
 <img id="imm"src="immagini/azienda(1).jpg" alt="immagine">
-<div class="immagine__cerchio"><img src="immagini/vino.jpg"></div>
-<div class="immagine__cerchio"><img src="immagini/olio.jpg"></div>
-<div class="immagine__cerchio"><img src="immagini/vino.jpg"></div>
-<div class="immagine__cerchio"><img src="immagini/vino.jpg"></div>
+<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/vino.jpg"></div></a>
+<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/olio.jpg"></div></a>
+<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/vino.jpg"></div></a>
+<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/vino.jpg"></div></a>
 </div>
 
 <div class="offerta"></div>

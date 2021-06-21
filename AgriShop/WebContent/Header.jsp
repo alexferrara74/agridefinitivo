@@ -60,12 +60,13 @@ String username= (String)request.getSession().getAttribute("nome");
 </div>
 
 <div class="header__menu__item">
-<a id="item_login" href="javascript:void(0)" onClick="menulogin()"><%=username %></a>
+<a id="item_login" href="javascript:void(0)" onClick="menulogin()" ><%=username %></a>
 </div>
 
-<ul id="header__menu__sotto" onmouseleave="menuoff()">
+<ul class="header__menu__sotto" >
 <li class="header__menu__item__sotto"><a href="">Ordini</a></li>
-<li class="header__menu__item__sotto"><a href="">Modifica</a></li>
+<li class="header__menu__item__sotto"><a href="utente/profilo.jsp">Modifica</a></li>
+<li class="header__menu__item__sotto"><a href="carrello.jsp">Carrello</a></li>
 <li class="header__menu__item__sotto"><a href="logout">Logout</a></li>
 </ul>
 <%} %>
