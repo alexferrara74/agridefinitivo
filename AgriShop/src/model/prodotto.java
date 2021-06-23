@@ -16,6 +16,17 @@ public class prodotto implements Serializable {
 	int quantita;
 	String categoria;
 	String idfoto;
+	int dispcarrello;
+	
+	public int getDispcarrello() {
+		return dispcarrello;
+	}
+
+
+	public void setDispcarrello(int dispcarrello) {
+		this.dispcarrello = dispcarrello;
+	}
+
 
 	public String getIdfoto() {
 		return idfoto;

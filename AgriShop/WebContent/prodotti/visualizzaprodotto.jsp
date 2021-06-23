@@ -30,12 +30,12 @@ if(prodotti==null){
 
 <div id="visualizzaprodotto">
 
-<form action="carrello">
+<form action="carrello?action=aggiungi" method="POST">
 
 
 <div id="nome">
 <label>Prodotto: </label>
-<span><%=prodotti.getNome() %></span>
+<input type="text" id="nome" name="nome" value="<%=prodotti.getNome()%>"  readonly>
 </div>
 
 <div id="descrizione">
@@ -74,7 +74,7 @@ if(prodotti==null){
 <%}else{ %>
 
 <div id="addcarrello">
-<input type="submit" value="Aggiungi" id="action">
+<input type="submit" value="Aggiungi">
 </div>
 </form>
 

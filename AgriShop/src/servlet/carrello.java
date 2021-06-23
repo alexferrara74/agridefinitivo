@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,8 +22,10 @@ public class carrello extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-	
+		String quantita=request.getParameter("quantita");
+		int qnt=Integer.parseInt(quantita);
+		String nome = request.getParameter("nome");
+		System.out.println(nome);
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model = new ProductModelDS(ds);
 
@@ -31,22 +35,33 @@ public class carrello extends HttpServlet {
 			carrello = new Carrello<prodotto>();
 			request.getSession().setAttribute("carrello", carrello);
 		}
-		
+		List<prodotto> prodotti=carrello.getOggetto();
 		String action = request.getParameter("action");
-
+		
 		try {
 			if (action != null) {
-				if (action.equals("aggiungi")) {
-					String id = request.getParameter("id");
-					request.removeAttribute("product");
-					request.setAttribute("prodotti", model.doRetrieveByNome(id));
-				} else if (action.equals("addcarrello")) {
-					String id = request.getParameter("nome");
-					prodotto bean = (prodotto) model.doRetrieveByNome(id);
-					if (bean != null && !bean.isEmpty()) {
-						carrello.addOggetto(bean);
-						request.setAttribute("message", "Product " + bean.getNome() + " added to cart");
-					}
+				if (action.equals("aggiungi")) {			
+					prodotto bean = (prodotto) model.doRetrieveByNome(nome);
+					if (bean != null && !bean.isEmpty()) {		
+						if(prodotti.isEmpty()) {
+							bean.setDispcarrello(qnt);
+							carrello.addOggetto(bean);
+						}else {
+						
+						for(int i=0;i<prodotti.size();i++) {
+							if(prodotti.get(i).equals(bean)){
+								prodotti.get(i).setDispcarrello(qnt);
+							}else {
+								bean.setDispcarrello(qnt);
+								carrello.addOggetto(bean);
+							}
+						}
+						
+						
+						
+						
+						
+					}}
 				} else if (action.equals("clearCart")) {
 					carrello.deleteOggetto();
 					request.setAttribute("message", "Cart cleaned");
@@ -63,12 +78,10 @@ public class carrello extends HttpServlet {
 			utility.print(e);
 			request.setAttribute("error", e.getMessage());
 		}
-
-		
 		request.setAttribute("carrello", carrello);
+		request.getSession().setAttribute("nomeprod", nome);
 
-
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/carrello.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
 		dispatcher.include(request, response);
 	}
 

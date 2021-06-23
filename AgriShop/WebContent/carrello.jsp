@@ -6,29 +6,33 @@
 <meta charset="ISO-8859-1">
 
 <%
-String quantita=(String)request.getAttribute("quantita");
 
-if(quantita!=null){
-	int qnt=Integer.parseInt(quantita);
-	System.out.print(qnt);
-}
-
+String nomeprodotto=(String)request.getSession().getAttribute("nomeprod");
 Carrello <prodotto> carrello=(Carrello<prodotto>)request.getSession().getAttribute("carrello");
+int count=0;
+
 if(carrello!=null){
 	
 List<prodotto> prodcarrello=carrello.getOggetto();
 
-%>
 
-<%
- for(int i=0;i<prodcarrello.size();i++){
+
 
 %>
 
-<%prodotto p=prodcarrello.get(i); %>
-<%=p.getDescrizione() %>
+<%for(int i=0;i<prodcarrello.size();i++){ %>
+
+<% prodotto p=prodcarrello.get(i);     %>
+
+<div>
 <%=p.getNome() %>
+<%=p.getDispcarrello() %>
+
+</div>
+
+
 <%}} %>
+
 
 </head>
 
