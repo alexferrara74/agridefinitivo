@@ -16,24 +16,28 @@ html,body{height:99%;}
 .header__menu__item a{text-decoration:none;}
 
 
-
-.header__menu__item__sotto:a{color:white; display:block;padding:5px;}
-.header__menu__item__sotto a:hover{background:white;}
-.header__menu__sotto{display:inline;float:right; border-style:solid; margin-right:50px; margin-top:100px;width:200px; z-index:100;  }
-.header__menu__item__sotto{width:40px; margin:0; font-size:25px; font-family:"Sofia";text-decoration:none; }
-
-.is-open{height:200px; width: 200px;color:black; display:inline; background:lightgrey;z-index:2; }
+.header__menu__sotto{  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;}
+.header__menu__sotto a{color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+.header__menu__sotto a:hover{background:green;}
+#username:hover .header__menu__sotto{display:block;}
 .accedi__mobile{display:none;}
 
-.ricerca{display:inline; float:left; width:450px; height:40px; border-style:2px solid;border-radius:12px; margin-left:220px; margin-top:15px; padding:0;}
+.ricerca{display:inline; float:left; width:450px; height:40px; border-style:2px solid;border-radius:12px; margin-left:220px; margin-top:25px; padding:0;}
 .ricerca_testo {display:inline;float:left;width:85%; height:100%; border-radius: 12px 0px 0px 12px;background:white;}
-#input_ricerca{width:98%; height:90%; margin:0;padding:0;border-radius:12px 0px 0px 12px; border-style:none;}
+#input_ricerca{width:98%; height:90%; margin:0;padding-left:10px; padding-right:5px;border-radius:12px 0px 0px 12px; border-style:none; outline: none;}
 .ricerca_img{display:inline;float:right; width:15%;height:100%; padding :0; margin:0;border-radius:0px 12px 12px 0px; background:green; }
 #img_ricerca{ width:35px; height:35px; padding:2px 0px 10px 10px;}
-
-
-
-.ricerca_testo:a {border: 8px solid green; border-radius:12px;}
+#carrello{display:inline; float:left; width:50px;height:35px; margin:18px 0 0 25px;}
+#carrello img{width:100%;}
+#carrello img:hover{-moz-transform: scale(1.1);-webkit-transform: scale(1.1);transform: scale(1.1);}.ricerca_testo:a {border: 8px solid green; border-radius:12px;}
 
 .header__icon-bar span{display:block; height:3px;width:40px;background:black; margin:7px 5px 5px 5px;}
 .header__icon-bar {display:block;float:right; padding: 20px; }
@@ -41,14 +45,14 @@ html,body{height:99%;}
 .center{width:96%; height:90%; border-style:solid; margin-left:2%;display:inline-block;}
 
 .slogan{float:left;display:inline;width:20% ;margin-left:35px;margin-top:15px; height:80%;border-style:solid;}
-.immagine{position:relative;float:left;display:inline;width:50% ;margin-left:25px;margin-top:15px;height:80%;border-style:solid;}
+.immagine{position:relative;float:left;display:inline;width:50% ;margin-left:25px;margin-top:15px;height:80%;}
 .immagine img{width:100%; height:70%;}
 .offerta{float:left;display:inline;width:20% ;margin-left:35px;margin-top:15px;height:80%;border-style:solid;}
 
 .slogan h1,h2{font-family:"Sofia"; color:blue; }
 
 
-.immagine__cerchio{display:inline; float:left;width:120px;height:120px; border-radius:100%;  margin-left:40px; margin-top:10px;}
+.immagine__cerchio{display:inline; float:left;width:120px;height:120px; border-radius:100%;  margin-left:50px; margin-top:10px;}
 .immagine__cerchio img{width:100%;height:100%;border-radius:100%;padding:0; margin : 0;}
 .immagine__cerchio :hover{border:3px;border-style:solid;border-color:green;}
 .home{ display:none;}

@@ -7,8 +7,10 @@
 <title>Login</title>
 <link href="style/stylelogreg.css" rel="stylesheet" type="text/css">
 
-<%String errorelogin=(String)request.getAttribute("passerrore");
-String erroreaccount=(String)request.getAttribute("accounterrato");
+<%
+String erroreaccount=(String)request.getAttribute("erroreaccount");
+String errorelogin=(String)request.getAttribute("passerrore");
+
 %>
 
 </head>
@@ -37,6 +39,20 @@ String erroreaccount=(String)request.getAttribute("accounterrato");
 			
 	</div>
 	
+<%if(erroreaccount!=null&&erroreaccount.equals("errorelogin")){ %>	
+	<div id="errorelogin">
+	<p>errore account
+	
+	</div>
+<%}%>
+
+
+<%if(errorelogin!=null&&errorelogin.equals("errorelogin")){ %>	
+	<div id="errorelogin">
+	<p>errore account
+	
+	</div>
+<%}%>
 
 
 </body>

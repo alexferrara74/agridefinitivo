@@ -33,19 +33,21 @@ String username= (String)request.getSession().getAttribute("nome");
 		<input id="input_ricerca"  type="text" placeholder="Ricerca">
 		</div>
 		<div class="ricerca_img">
-		<img id="img_ricerca"src="immagini/search.png" alt="ricerca">
+		<a href=""><img id="img_ricerca"src="immagini/search.png" alt="ricerca"></a>
 		</div>
 	
 	</div>
 </form>
 
+<div id="carrello">
+<a href="carrello.jsp"><img src="immagini/carrello.png"></a>
+
+</div>
+
 <ul class="header__menu">
+<li class="header__menu__item"><a href="homepage.jsp">Home</a></li>
 <li class="header__menu__item"><a href="prodotti.jsp">Prodotti</a></li>
-
 <li class="header__menu__item"><a href="admin/profilo.jsp">Visite</a></li>
-<li class="header__menu__item"><a href="Chisiamo.jsp">Chi Siamo</a></li>
-<li class="header__menu__item"><a href="#foother">Contatti</a></li>
-
 <%if(username==null) {%>
 <li class="header__menu__item"><a href="Login.jsp">Accedi</a></li>
 </ul>
@@ -56,19 +58,24 @@ String username= (String)request.getSession().getAttribute("nome");
 
 <%} else{ %>
 <div class="accedi__mobile">
-<p class="accedi__mobile__item"><a href=""><%=username %></a></p>
+<p class="accedi__mobile__item" ><a href=""><%=username %></a></p>
 </div>
 
-<div class="header__menu__item">
-<a id="item_login" href="javascript:void(0)" onClick="menulogin()" ><%=username %></a>
+<div class="header__menu__item" id="username">
+<a ><%=username %></a>
+
+<div class="header__menu__sotto">
+<a href="">Ordini</a>
+<a href="utente/profilo.jsp">Modifica</a>
+<a href="carrello.jsp">Carrello</a>
+<a href="logout">Logout</a>
+
 </div>
 
-<ul class="header__menu__sotto" >
-<li class="header__menu__item__sotto"><a href="">Ordini</a></li>
-<li class="header__menu__item__sotto"><a href="utente/profilo.jsp">Modifica</a></li>
-<li class="header__menu__item__sotto"><a href="carrello.jsp">Carrello</a></li>
-<li class="header__menu__item__sotto"><a href="logout">Logout</a></li>
-</ul>
+
+</div>
+
+
 <%} %>
 </header>
 

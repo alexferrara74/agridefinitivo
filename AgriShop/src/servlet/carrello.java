@@ -28,14 +28,14 @@ public class carrello extends HttpServlet {
 		System.out.println(nome);
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model = new ProductModelDS(ds);
-
+		boolean controllo=false;
 		@SuppressWarnings("unchecked")
 		Carrello<prodotto> carrello = (Carrello<prodotto>) request.getSession().getAttribute("carrello");
 		if (carrello == null) {
 			carrello = new Carrello<prodotto>();
 			request.getSession().setAttribute("carrello", carrello);
 		}
-		List<prodotto> prodotti=carrello.getOggetto();
+		
 		String action = request.getParameter("action");
 		
 		try {
@@ -43,18 +43,48 @@ public class carrello extends HttpServlet {
 				if (action.equals("aggiungi")) {			
 					prodotto bean = (prodotto) model.doRetrieveByNome(nome);
 					if (bean != null && !bean.isEmpty()) {		
-						if(prodotti.isEmpty()) {
+						if(carrello.getOggetto().isEmpty()) {
+							if(bean.getQuantita()>=(bean.getDispcarrello()+qnt)) {
 							bean.setDispcarrello(qnt);
 							carrello.addOggetto(bean);
-						}else {
-						
-						for(int i=0;i<prodotti.size();i++) {
-							if(prodotti.get(i).equals(bean)){
-								prodotti.get(i).setDispcarrello(qnt);
 							}else {
+								bean.setDispcarrello(bean.getQuantita());
+								carrello.addOggetto(bean);
+								request.getSession().setAttribute("quantitaerr", "erroredisponibilita");
+							
+							}
+							}else {
+
+						for(int i=0;i<carrello.getOggetto().size();i++) {
+							if(carrello.getOggetto().get(i).getNome().equals(bean.getNome())){
+								int valore=carrello.getOggetto().get(i).getDispcarrello();
+								int disponibilita=carrello.getOggetto().get(i).getQuantita();
+								System.out.println(valore);
+								System.out.println(disponibilita);
+								if(disponibilita>=(valore+qnt)) {
+								carrello.getOggetto().get(i).setDispcarrello(valore+qnt);
+								controllo=true;
+								}
+								else {
+									bean.setDispcarrello(bean.getQuantita());
+						
+									request.getSession().setAttribute("quantitaerr", "erroredisponibilita");
+									controllo=true;
+								}
+							}}
+							if(controllo==false) {
+								if(bean.getQuantita()>=(bean.getDispcarrello()+qnt)) {
 								bean.setDispcarrello(qnt);
 								carrello.addOggetto(bean);
-							}
+								}else {
+									bean.setDispcarrello(bean.getQuantita());
+									carrello.addOggetto(bean);
+									request.getSession().setAttribute("quantitaerr", "erroredisponibilita");
+								
+								}
+								}
+									
+							
 						}
 						
 						
@@ -72,7 +102,7 @@ public class carrello extends HttpServlet {
 						carrello.deleteOggetto(bean);
 						request.setAttribute("message", "Product " + bean.getNome() + " deleted from cart");
 					}
-				}}
+				}
 			
 		} catch (SQLException | NumberFormatException e) {
 			utility.print(e);

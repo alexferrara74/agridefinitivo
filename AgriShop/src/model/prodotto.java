@@ -46,7 +46,7 @@ public class prodotto implements Serializable {
 		prezzo=0;
 		quantita=0;
 		categoria="";
-
+		dispcarrello=0;
 	}
 
 
