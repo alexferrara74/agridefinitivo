@@ -40,6 +40,11 @@
 }
 
 
-
+#img {
+	cursor: pointer;
+	display: inline;
+	width: 45%;
+	margin-left: 5%;
+}
 
 
