@@ -33,7 +33,7 @@ String username= (String)request.getSession().getAttribute("nome");
 		<input id="input_ricerca"  type="text" placeholder="Ricerca">
 		</div>
 		<div class="ricerca_img">
-		<a href=""><img id="img_ricerca"src="immagini/search.png" alt="ricerca"></a>
+		<a href="ricerca"><img id="img_ricerca"src="immagini/search.png" alt="ricerca"></a>
 		</div>
 	
 	</div>

@@ -33,7 +33,7 @@ public class ricerca extends HttpServlet {
 		prodotto prod;
 		
 		
-		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/Header.jsp");
+		RequestDispatcher dispacher=this.getServletContext().getRequestDispatcher("/prodotti.jsp");
 		dispacher.forward(request, response);
 		
 	
