@@ -65,10 +65,11 @@ color: green;
 }
 
 .logo {
-	width: 80%;
+	width: 15%;
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-top: 0%;
+	
 }
 
 #img {
@@ -130,7 +131,7 @@ color: green;
 	font-family: Arial, Helvetica, sans-serif;
   display: none;
   position: relative;
-  background-color: lightgrey;
+  background-color: grey;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;

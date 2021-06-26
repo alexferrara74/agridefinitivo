@@ -25,7 +25,7 @@ String username= (String)request.getSession().getAttribute("nome");
 
 <header class="header clearfix">
 
-<a href="" class="header__logo"><img src="immagini/aaa3.png" alt="logo"></a>
+<a href="" class="header__logo"><img src="immagini/LogoOk.png" alt="logo"></a>
 	<form action="ricerca" method="POST">
 	<div class="ricerca">
 	

@@ -28,45 +28,42 @@ if(prodotti==null&&errore==null){
 	<%@ include file="Header.jsp"%><br>
 
 
+
 <div id="parametriconfigurazione">
 
-<p><h3><strong>Categorie:</strong></h3>
+<p><h3><strong>CATEGORIE:</strong></h3>
 <form action="prodotti" id="prodaction" >
-<div>
+
+<div class="img">
 <input type="radio" id="ortaggi" value="ortaggi" name="scelta" onclick="esegui()">
-<label for="ortaggi"> ORTAGGI</label><br>
-</div>
+<label for="ortaggi">  <a href=""><img id="img"src="immagini/logo_ortaggi.png" alt="logof"></a></label><br>
 <br>
-<div>
-<input  type="radio" id="frutta" value="frutta" name="scelta" onclick="esegui()">
-<label for="ortaggi"> FRUTTA</label><br>
-</div>
 <br>
-<div>
-<input  type="radio" id="verdura" value="verdura" name="scelta" onclick="esegui()">
-<label for="ortaggi"> VERDURA</label><br>
-</div>
+<input type="radio" id="frutta" value="frutta" name="scelta" onclick="esegui()">
+<label for="ortaggi"> <a href=""><img id="img"src="immagini/logo_frutta.png" alt="logof"></a></label><br>
 <br>
-<div>
-<input  type="radio" id="semi" value="semi" name="scelta" onclick="esegui()">
-<label for="ortaggi"> SEMI</label><br>
-</div>
 <br>
-<div>
+ <input type="radio" id="verdura" value="verdura" name="scelta" onclick="esegui()">
+<label for="ortaggi"> <a href=""><img id="img"src="immagini/logo_verdure.png" alt="logof"></a></label><br>
+<br>
+<br>
+<input type="radio" id="semi" value="semi" name="scelta" onclick="esegui()">
+<label for="ortaggi"> <a href=""><img id="img"src="immagini/logo_semi.png" alt="logof"></a></label><br>	
+<br>
+<br>
 <input type="radio" id="fruttasecca" value="fruttasecca" name="scelta" onclick="esegui()">
-<label for="ortaggi">FRUTTA SECCA</label><br>
-</div>
- <br>
- <div>
-<input  type="radio" id="vino" value="vino" name="scelta" onclick="esegui()">
-<label for="ortaggi">VINO</label><br>
-</div>
+<label for="ortaggi"><a href=""><img id="img"src="immagini/logo_secca.png" alt="logof"></a></label><br>
 <br>
-<div>
-<input  type="radio" id="olio" value="olio" name="scelta" onclick="esegui()">
-<label for="ortaggi">OLIO</label><br>
-</div>
 <br>
+<input type="radio" id="vino" value="vino" name="scelta" onclick="esegui()">
+<label for="ortaggi"><a href=""><img id="img"src="immagini/logo_vino.png" alt="logof"></a></label><br>
+<br>
+<br>
+<input type="radio" id="olio" value="olio" name="scelta" onclick="esegui()">
+<label for="ortaggi"><a href=""><img id="img"src="immagini/logo_olio.png" alt="logof"></a></label><br>
+<br>
+<br>
+</div>
 </form>
  
 
@@ -105,9 +102,7 @@ if(prodotti!=null&&prodotti.size()>0){
 <% } %>
 
 </div>
-<div id="foother">
-<%@ include file="foother.jsp"%>
-</div>
+
 </body>
 
 
