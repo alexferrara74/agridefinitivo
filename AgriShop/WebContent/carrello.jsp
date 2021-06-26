@@ -38,16 +38,18 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <span><%=p.getDispcarrello() %></span>
 <span><%=p.getPrezzo() %></span>
 <span class="errore__quantita"><%if(erroreqnt!=null&&erroreqnt.equals("erroredisponibilita")) {%> <p>errore<%} %></span>
+</div>
+
 <%}}else{ %>
+
 <div class="carrello__vuoto">
 
 <img src="immagini/carrellovuoto.png">
-<a href="prodotti.jsp">Clicca Qui!</a>
+<a id="cliccaqui" href="prodotti.jsp"><button>Clicca Qui!</button></a>
 
 </div>
 
 <%} %>
-</div>
 
 
 

@@ -68,6 +68,7 @@ html,body{height:99%;}
 
 
 @media(max-width:767px){
+	#carrello{display:none;}
 	.accedi__mobile{width:70px;display:inline; float:right;  font-size:40px; text-decoration:none; font-family:"Sofia";color:black;z-index:3;}
 	.accedi__mobile__item{display:inline;}
 	.header__logo img{width:180px; height:40px; padding :5px 5px 5px 5px;}
