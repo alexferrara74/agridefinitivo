@@ -302,6 +302,61 @@ public class ProductModelDS implements ProductModel<prodotto>{
 		return null;
 	}
 
+	public Collection<prodotto> doRetrieveByparametro(String parametro) throws SQLException {
+		Connection connection=null;
+		PreparedStatement prepareStatement=null;
+		
+		String selectSQL="SELECT * FROM prodotto WHERE descrizione LIKE  '%' ? '%'  ";
+	
+		
+		Collection <prodotto> prodotti= new LinkedList<prodotto>(); 
+		
+		
+		try {
+			
+			connection= ds.getConnection();
+			prepareStatement= connection.prepareStatement(selectSQL);
+			prepareStatement.setString(1, parametro);
+
+			ResultSet rs=prepareStatement.executeQuery();
+			
+			while(rs.next()) {
+				prodotto bean= new prodotto();
+				bean.setPrezzo(rs.getInt("prezzo"));
+				bean.setNome(rs.getString("nomep"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setQuantita(rs.getInt("disponibilità"));
+				bean.setSsn(rs.getString("ssn"));
+				bean.setCtegoria(rs.getString("categ"));
+				bean.setIdfoto(rs.getString("idfoto"));
+			
+				prodotti.add(bean);
+				
+		
+				
+			}
+			
+			
+			
+		}finally {
+			try {
+			if(prepareStatement!=null)
+			prepareStatement.close();
+			}finally {
+				
+			
+			
+			if(connection!=null)
+			connection.close();
+			}
+			
+		}
+		
+		return  prodotti;
+	}
+	
+	
+	
 
 	@Override
 

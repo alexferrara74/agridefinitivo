@@ -9,7 +9,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.css">
 <link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="style/prodotti.css">
 <script src="JS/homepage.js"></script>
+<%
+Collection<?> prodotti=(Collection<?>)request.getAttribute("prodotti");
+String controlloutente=(String)request.getSession().getAttribute("nome");
+if(controlloutente==null){}
+String errore= (String)request.getAttribute("error");
+if(prodotti==null&&errore==null){
+	response.sendRedirect(response.encodeRedirectURL("./offerta"));
+}
+
+%>
+
 </head>
 
 <body>
@@ -18,17 +30,17 @@
 <div class="center">
 
 <div class="slogan">
-<h1>Primo messaggio slogan</h1>
-<h2>secondo messaggio slogan</h2>
-
+<h1>Se vuoi veramente saperlo</h1>
+<h2>guarda nel biologico</h2>
+<img src="immagini/biologico.jpg" alt="biologico">
 </div>
 
 <div class="immagine">
 <img id="imm"src="immagini/azienda(1).jpg" alt="immagine">
-<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/vino.jpg"></div></a>
-<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/olio.jpg"></div></a>
-<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/vino.jpg"></div></a>
-<a href="prodotti.jsp?scelta=ortaggi"><div class="immagine__cerchio"><img src="immagini/vino.jpg"></div></a>
+<div class="immagine__cerchio"><a href="prodotti?scelta=vino"><img src="immagini/vino.jpg"></a></div>
+<div class="immagine__cerchio"><a href="prodotti?scelta=olio"><img src="immagini/olio.jpg"></a></div>
+<div class="immagine__cerchio"><a href="prodotti?scelta=frutta"><img src="immagini/fruttacateg.jpg"></a></div>
+<div class="immagine__cerchio"><a href="prodotti?scelta=ortaggi"><img src="immagini/ortaggicateg.jpg"></a></div>
 </div>
 
 <div class="offerta"></div>
@@ -47,11 +59,59 @@
 
 </div>
 
+<div id="contenitore_prodotti">
+<%
+
+if(prodotti!=null&&prodotti.size()>0){
+	int i=0;
+		Iterator<?> it=prodotti.iterator();
+		while(it.hasNext()&& i<=4){
+			prodotto beans=(prodotto)it.next();
+			i++;
+	%>
+
+	<div id="singolo_homepage">
+		 
+		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>"><img id="immagineprod" src="immagini/<%=beans.getIdfoto()%>.png"></a>
+		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>" ><p id="descrizione" ><%=beans.getDescrizione() %><br></p></a>
+	 	<%if (controlloutente!=null){ %>  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br><%} %>
+
+	</div>
+
+<% }
+		
+	}else{
+%>
+
+ <a href="errore.jsp">Errore</a>
+
+<% } %>
+
+</div>
+
+
+<div id="slogan-bio">
+<div class="bio">
+<img src="immagini/bio-mondo.jpg" alt="mondo-bio">
+</div>
+
+<div class="bio">
+<h1>La parola "biologica" deriva da greco "bios" e significa vita.</h1>
+<h2>
+ Sono riconosciuti come biologici solo i prodotti sottoposti ad accurati controlli.
+ La nostra azienda ha il 100% dei prodotti riconosciuti.
+</h2>
+</div>
+
+</div>
+
 
 
 <div id="foother">
 <%@ include file="foother.jsp"%>
 </div>
+
+
 
 
 </body>

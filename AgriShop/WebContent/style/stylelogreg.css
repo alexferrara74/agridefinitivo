@@ -1,7 +1,5 @@
 @charset "ISO-8859-1";
-body{
-	background:lightgrey;
-}
+
 .login {
 	width: 50%;
 	margin-top:7%;
@@ -20,8 +18,9 @@ body{
 	margin-top: 5%;
 }
 
-input {
+.login input {
 	width: 100%;
+	height:50px;
 	padding: 12px 20px;
 	margin: 8px 0;
 	box-sizing: border-box;
@@ -31,9 +30,7 @@ input {
 	outline: none;
 }
 
-input:focus {
-	border: 3px solid green;
-}
+
 
 
 #utente input:focus {
@@ -49,14 +46,14 @@ input:focus {
 
 
 
-.bottone {
+#bottone{
 	width: 30%;
 	margin-top: 50px;
 	margin-left: 35%;
 	margin-right:35%;
 	border-radius: 5px;
 }
-.bottone:hover{
+#bottone:hover{
 	border: 3px solid green;
 }
 
@@ -86,10 +83,18 @@ input:focus {
 
 .registrazione{
 	width:58%;
+	HEIGHT:AUTO;
 	margin-left:20%;
 	margin-right:20%;
+
 }
 
 .registrazione table{
 	width:60%;
-	margin: 8% 20% 2% 20%;}
+	margin: 8% 15% 2% 20%;
+	HEIGHT:AUTO;
+	}
+	.tegistrazione td,input{width:80%; height:40px; margin:0;}
+
+#utente{width:100%;border-style:solid;}	
+	#utente input{width:400px; border-style:solid;}

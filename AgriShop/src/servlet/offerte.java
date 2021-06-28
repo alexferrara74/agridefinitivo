@@ -17,7 +17,7 @@ import utils.utility;
 /**
  * Servlet implementation class offerte
  */
-@WebServlet(description = "/home", urlPatterns = { "/home" })
+@WebServlet(description = "/offerta", urlPatterns = { "/offerta" })
 public class offerte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +27,7 @@ public class offerte extends HttpServlet {
 		ProductModelDS model= new ProductModelDS(ds);
 		
 		try {
-			request.setAttribute("offerta", model.doRetrieveAll(""));
+			request.setAttribute("prodotti", model.doRetrieveByKey("ortaggi"));
 		} catch (SQLException e) {
 			utility.print(e);
 			

@@ -2,31 +2,52 @@
 
 
 #risultato{
-	width :60%px;
-	height:1080px;
+	width :60%;
+	height:1280px;
 	border-style:solid;
 	margin-left:20%;
 	margin-right:10%;
 }
 #singolo{
-		font-family: "Sofia", sans-serif;
+
 	display:inline;
 	float:left;
-	width:280px;
-	height:220px;
+	width:22%;
+	height:20%;
 	border-style:solid;
 	padding: 5px 5px 5px 5px;
 	margin: 10px 10px 10px 10px;
 }
+#singolo a{ 	font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:16px; text-decoration:none;margin :0;}
+#singolo #prezzo{font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:25px; text-decoration:none; margin :0 0 0 20%;}
 
-#immagineprod{
-	width: 70px;
-	height:80px;
-	margin-left:20%;
+#singolo_homepage{
+
+	display:inline;
+	float:left;
+	width:22%;
+	height:80%;
+	border-style:solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 10px 10px 10px;
+}
+#singolo_homepage a{ 	font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:27px; text-decoration:none;}
+
+
+#singolo #immagineprod{
+	width: 80%;
+	height:40%;
+	
+	
+}
+#singolo_homepage #immagineprod{
+	width: 100%;
+	height:60%;
+	
 	
 }
 #parametriconfigurazione{
-	font-family: "Sofia", sans-serif;
+	font-family: "Lucida Console", "Courier New", monospace;
 	float:left;
 	width: 15%;
 	height:1080px;
@@ -46,5 +67,13 @@
 	width: 45%;
 	margin-left: 5%;
 }
+
+#contenitore_prodotti{width:90%; height:40%; border-style:none; margin:2% 5% 0 5%; }
+#slogan-bio{width:90%; height:45%; border-style:none; margin:2% 5% 0 5%; }
+.bio{display:inline; float:left;width:50%;height:100%;}
+.bio img{width:95%; height:100%;}
+.bio h1{  font-weight: bold;font-size:30px;font-family: "Lucida Console", "Courier New", monospace; color:black; padding:10px 10px 10px 10px; margin:0 0 0 0;}
+.bio h2{font-style: italic;font-size:20px;font-family: "Lucida Console", "Courier New", monospace; color:black;padding:10px 10px 30px 10px; margin:0 0 0 0;}
+
 
 

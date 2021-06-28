@@ -31,11 +31,11 @@ String errorelogin=(String)request.getAttribute("passerrore");
 					<td><input type="password" name="password" placeholder="Password" required/></td>
 				</tr>
 			</table>
-			<input class="bottone" type="submit" value="Accedi" />
+			<input id="bottone" type="submit" value="Accedi" />
 		</form>
 	
 			<a href="Registrazione.jsp" id="testocarrello">
-			<input class="bottone" type="submit" value="Registrati"></a>
+			<input id="bottone" type="submit" value="Registrati"></a>
 			
 	</div>
 	

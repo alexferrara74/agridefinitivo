@@ -7,7 +7,7 @@ public interface ProductModel<T>{
 
 		public Collection<T> doRetrieveByKey(String code) throws SQLException;
 		public T doRetrieveByprodotto(String code) throws SQLException;
-		
+		public Collection<T> doRetrieveByparametro(String parametro) throws SQLException;
 		public T doRetrieveByscelta(String order) throws SQLException ;
 		public T doRetrieveByNome(String code) throws SQLException;
 		public Collection<T> doRetrieveAll(	String order) throws SQLException ;

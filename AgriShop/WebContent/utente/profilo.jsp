@@ -49,6 +49,8 @@ Negozio neg=(Negozio)request.getSession().getAttribute("neg");
 
 <tr>
 <td><input id="password" type="password" name="password" placeholder="password" required></td><td><p id=errorepassword></td>
+</tr>
+<tr>
 <td><input id="conferma" type="password" name="conferma" placeholder="conferma password" required></td><td><p id=erroreconferma></td>
 </tr>
 <tr>

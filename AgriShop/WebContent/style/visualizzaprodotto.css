@@ -99,3 +99,4 @@ transform: scale(1.1);
   margin: 4px 2px;
   cursor: pointer;
 }
+#contenitore input{border-style:none;}

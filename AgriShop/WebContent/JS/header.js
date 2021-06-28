@@ -1,14 +1,13 @@
-/**
- * 
- */
-function menulogin() {
-		if(document.getElementById){
-	if(document.getElementById("header__menu__sotto").style.display=="none"){
-		document.getElementById("header__menu__sotto").style.display=="inline";
-	}
-	}else{
-	document.getElementById("header__menu__sotto").style.display=="none";
-	
-	}
+
+
+document.getElementById("input_ricerca").addEventListener("click", ricerca);
+
+
+function ricerca(){
+
+document.getElementById("ris__ricerca").style.display="none";
 }
+
+
+
 
