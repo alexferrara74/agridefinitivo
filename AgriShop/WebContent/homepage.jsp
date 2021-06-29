@@ -47,7 +47,6 @@ if(prodotti==null&&errore==null){
 
 </div>
 
-
 <div class="banner clearfix">
 
 
@@ -58,6 +57,7 @@ if(prodotti==null&&errore==null){
 <a href="" class="home"><img src="immagini/user.png" alt="home" class="menu__mobile"></a>
 
 </div>
+
 
 <div id="contenitore_prodotti">
 <%
@@ -70,14 +70,35 @@ if(prodotti!=null&&prodotti.size()>0){
 			i++;
 	%>
 
-	<div id="singolo_homepage">
+	
 		 
-		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>"><img id="immagineprod" src="immagini/<%=beans.getIdfoto()%>.png"></a>
-		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>" ><p id="descrizione" ><%=beans.getDescrizione() %><br></p></a>
-	 	<%if (controlloutente!=null){ %>  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br><%} %>
-
+		<div id="singolohomepage">
+		 
+		<div id="immagineprodhome">
+		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
+		<img src="immagini/<%=beans.getIdfoto()%>.png">
+		</a>
+		</div>
+		
+	<div id="descrizionehome">		
+		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
+		<%=beans.getDescrizione() %><br>
+		</a>
 	</div>
+	 	<div id="prezzohome">
+	 	<%if (controlloutente!=null){ %>  <p><%=(float)beans.getPrezzo()%></p> <p><img width="20px" src="immagini/euro.png"></p> <br><%} %>
+	 	</div>
+	 	<div id="sceltahome">
+		<form action="" method="POST">
+		<input type="number" id="quantita" name="quantita" step="1"><%if (controlloutente!=null){ %>
+														 <button type="submit">AGGIUNGI</button><%}else{ %>
+		
+															<a href="Login.jsp">Login</a>
+					<%} %>
+		</form>
+		</div>
 
+</div>
 <% }
 		
 	}else{
@@ -104,6 +125,8 @@ if(prodotti!=null&&prodotti.size()>0){
 </div>
 
 </div>
+
+
 
 
 

@@ -86,10 +86,25 @@ if(prodotti!=null&&prodotti.size()>0){
 
 	<div id="singolo">
 		 
-		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>"><img id="immagineprod" width="60px" src="immagini/<%=beans.getIdfoto()%>.png"></a>
-		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>" >	<p id="descrizione" ><%=beans.getDescrizione() %><br></p></a>
-	 	<%if (controlloutente!=null){ %>  <p id="prezzo"><%=(float)beans.getPrezzo()%>0 <img width="20px" src="immagini/euro.png"> <br><%} %>
-
+		<div id="immagineprod">
+		<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
+		<img src="immagini/<%=beans.getIdfoto()%>.png">
+		</a>
+		</div>
+		
+<div id="descrizione">		
+<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
+<p><%=beans.getDescrizione() %><br></p>
+</a>
+</div>
+	 	<div id="prezzo">
+	 	<%if (controlloutente!=null){ %>  <p><%=(float)beans.getPrezzo()%></p> <p><img width="20px" src="immagini/euro.png"></p> <br><%} %>
+	 	</div>
+	 	<div id="scelta">
+		<form action="" method="POST">
+		<input type="number" id="quantita" name="quantita" step="1"><button type="submit">AGGIUNGI</button>
+		</form>
+		</div>
 	</div>
 
 <% }
