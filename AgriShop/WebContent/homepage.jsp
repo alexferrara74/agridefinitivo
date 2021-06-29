@@ -120,8 +120,8 @@ if(prodotti!=null&&prodotti.size()>0){
 <div class="bio">
 <h1>La parola "biologica" deriva da greco "bios" e significa vita.</h1>
 <h2>
- Sono riconosciuti come biologici solo i prodotti sottoposti ad accurati controlli.
- La nostra azienda ha il 100% dei prodotti riconosciuti.
+ Vengono riconosciuti come biologici solo i prodotti sottoposti ad accurati controlli.
+ Il nostro shop offre il 100% dei prodotti riconosciuti.
 </h2>
 </div>
 
