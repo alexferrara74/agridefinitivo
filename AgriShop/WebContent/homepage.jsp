@@ -38,9 +38,10 @@ if(prodotti==null&&errore==null){
 <div class="immagine">
 <img id="imm"src="immagini/azienda(1).jpg" alt="immagine">
 <div class="immagine__cerchio"><a href="prodotti?scelta=vino"><img src="immagini/vino.jpg"></a></div>
+<div class="immagine__cerchio"><a href="prodotti?scelta=ortaggi"><img src="immagini/ins.jpg"></a></div>
 <div class="immagine__cerchio"><a href="prodotti?scelta=olio"><img src="immagini/olio.jpg"></a></div>
-<div class="immagine__cerchio"><a href="prodotti?scelta=frutta"><img src="immagini/fruttacateg.jpg"></a></div>
-<div class="immagine__cerchio"><a href="prodotti?scelta=ortaggi"><img src="immagini/ortaggicateg.jpg"></a></div>
+<div class="immagine__cerchio"><a href="prodotti?scelta=frutta"><img src="immagini/frutt.jpg"></a></div>
+
 </div>
 
 <div class="offerta"></div>
