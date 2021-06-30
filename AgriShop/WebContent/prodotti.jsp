@@ -51,7 +51,7 @@ if(prodotti==null&&errore==null){
 <label for="ortaggi"> <a href="prodotti?scelta=semi"><img id="img"src="immagini/semiii.png" alt="logof"></a></label><br>	
 <br>
 
-<label for="ortaggi"><a href="prodotti?scelta=fruttasecca"><img id="img"src="immagini/noccioline.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=fruttasecca"><img id="img"src="immagini/nocciolinee.png" alt="logof"></a></label><br>
 <br>
 
 <label for="ortaggi"><a href="prodotti?scelta=vino"><img id="img"src="immagini/vinooo.png" alt="logof"></a></label><br>
