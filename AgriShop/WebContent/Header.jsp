@@ -13,14 +13,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.css">
 <link rel="stylesheet" href="style/style.css">
-
+<script src="JS/header.js"></script>
 
 <%
 String username= (String)request.getSession().getAttribute("nome");
-Collection<?> ricercacateg=(Collection<?>)request.getAttribute("ricercacategoria");
-prodotto ricercanome=(prodotto)request.getAttribute("ricercanome");
-if(ricercacateg==null){System.out.print("erroreeee");}
-if(ricercanome==null){}
+
 %>
 
 </head>
@@ -30,52 +27,29 @@ if(ricercanome==null){}
 
 
 <header class="header clearfix" >
-<h1>
+
 <a href="" class="header__logo"><img src="immagini/LogoOk.png" alt="logo"></a>
 	
 	<div class="ricerca">
-	<form action="ricerca" method="POST" name="form">
+	<form action="" method="POST" name="form">
 		<div class="ricerca_testo">
-		<input id="input_ricerca" name="input_ricerca" type="text" placeholder="Ricerca" >
+		<input id="input_ricerca" name="input_ricerca" type="text" placeholder="Ricerca" onkeyup="tastoPremuto();">
 		</div>
 		<div class="ricerca_img">
 		<button type="submit"><img id="img_ricerca"src="immagini/search.png" alt="ricerca" ></button>
 		</div>
 </form>
-	
-	<%if(ricercanome!=null){ %>
-
 	<div id="ris__ricerca">
   
-<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=ricercanome.getNome()%>"><%=ricercanome.getNome()%>        <%=ricercanome.getDescrizione()%></a>
 
 	</div>
 
-<%} %>
 
-
-<%
-if(ricercacateg!=null&&ricercacateg.size()>0){%>
-
-<div id="ris__ricerca">
-	
-	<%	Iterator<?> it=ricercacateg.iterator();
-		while(it.hasNext()){
-			prodotto beans=(prodotto)it.next();
-
-	%>
-	
-	
- 
-<a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>"><%=beans.getNome()%>        <%=beans.getDescrizione()%></a>
-
-	
-
-
-<%}} %>
-	</div>
 	</div>
 	
+
+
+
 <div id="carrello">
 <a href="carrello.jsp"><img src="immagini/carrello.png"></a>
 

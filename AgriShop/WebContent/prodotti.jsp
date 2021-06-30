@@ -35,32 +35,28 @@ if(prodotti==null&&errore==null){
 <form action="prodotti" id="prodaction" >
 
 <div class="img">
-<input type="radio" id="ortaggi" value="ortaggi" name="scelta" onclick="esegui()">
-<label for="ortaggi">  <a href=""><img id="img"src="immagini/logo_ortagg.png" alt="logof"></a></label><br>
+
+<label for="ortaggi">  <a href="prodotti?scelta=ortaggi"><img id="img"src="immagini/logo_ortagg.png" alt="logof"></a></label><br>
+<br>
+
+
+<label for="ortaggi"> <a href="prodotti?scelta=frutta"><img id="img"src="immagini/logo_frutt.png" alt="logof"></a></label><br>
 <br>
 <br>
-<input type="radio" id="frutta" value="frutta" name="scelta" onclick="esegui()">
-<label for="ortaggi"> <a href=""><img id="img"src="immagini/logo_frutt.png" alt="logof"></a></label><br>
+
+<label for="ortaggi"> <a href="prodotti?scelta=verdura"><img id="img"src="immagini/logo_verdura.png" alt="logof"></a></label><br>
 <br>
+
+
+<label for="ortaggi"> <a href="prodotti?scelta=semi"><img id="img"src="immagini/logo_semii.png" alt="logof"></a></label><br>	
 <br>
- <input type="radio" id="verdura" value="verdura" name="scelta" onclick="esegui()">
-<label for="ortaggi"> <a href=""><img id="img"src="immagini/logo_verdura.png" alt="logof"></a></label><br>
+
+<label for="ortaggi"><a href="prodotti?scelta=fruttasecca"><img id="img"src="immagini/logo_seccaf.png" alt="logof"></a></label><br>
 <br>
+
+<label for="ortaggi"><a href="prodotti?scelta=vino"><img id="img"src="immagini/logo_vinoo.png" alt="logof"></a></label><br>
 <br>
-<input type="radio" id="semi" value="semi" name="scelta" onclick="esegui()">
-<label for="ortaggi"> <a href=""><img id="img"src="immagini/logo_semii.png" alt="logof"></a></label><br>	
-<br>
-<br>
-<input type="radio" id="fruttasecca" value="fruttasecca" name="scelta" onclick="esegui()">
-<label for="ortaggi"><a href=""><img id="img"src="immagini/logo_seccaf.png" alt="logof"></a></label><br>
-<br>
-<br>
-<input type="radio" id="vino" value="vino" name="scelta" onclick="esegui()">
-<label for="ortaggi"><a href=""><img id="img"src="immagini/logo_vinoo.png" alt="logof"></a></label><br>
-<br>
-<br>
-<input type="radio" id="olio" value="olio" name="scelta" onclick="esegui()">
-<label for="ortaggi"><a href=""><img id="img"src="immagini/logo_olioo.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=olio"><img id="img"src="immagini/logo_olioo.png" alt="logof"></a></label><br>
 <br>
 <br>
 </div>
