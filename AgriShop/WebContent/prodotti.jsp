@@ -36,27 +36,27 @@ if(prodotti==null&&errore==null){
 
 <div class="img">
 
-<label for="ortaggi">  <a href="prodotti?scelta=ortaggi"><img id="img"src="immagini/logo_ortagg.png" alt="logof"></a></label><br>
+<label for="ortaggi">  <a href="prodotti?scelta=ortaggi"><img id="img"src="immagini/ortaggi.png" alt="logof"></a></label><br>
 <br>
 
 
-<label for="ortaggi"> <a href="prodotti?scelta=frutta"><img id="img"src="immagini/logo_frutt.png" alt="logof"></a></label><br>
+<label for="ortaggi"> <a href="prodotti?scelta=frutta"><img id="img"src="immagini/frutta.png" alt="logof"></a></label><br>
 <br>
 <br>
 
-<label for="ortaggi"> <a href="prodotti?scelta=verdura"><img id="img"src="immagini/logo_verdura.png" alt="logof"></a></label><br>
+<label for="ortaggi"> <a href="prodotti?scelta=verdura"><img id="img"src="immagini/verduraa.png" alt="logof"></a></label><br>
 <br>
 
 
-<label for="ortaggi"> <a href="prodotti?scelta=semi"><img id="img"src="immagini/logo_semii.png" alt="logof"></a></label><br>	
+<label for="ortaggi"> <a href="prodotti?scelta=semi"><img id="img"src="immagini/semiii.png" alt="logof"></a></label><br>	
 <br>
 
-<label for="ortaggi"><a href="prodotti?scelta=fruttasecca"><img id="img"src="immagini/logo_seccaf.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=fruttasecca"><img id="img"src="immagini/nocciolinee.png" alt="logof"></a></label><br>
 <br>
 
-<label for="ortaggi"><a href="prodotti?scelta=vino"><img id="img"src="immagini/logo_vinoo.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=vino"><img id="img"src="immagini/vinooo.png" alt="logof"></a></label><br>
 <br>
-<label for="ortaggi"><a href="prodotti?scelta=olio"><img id="img"src="immagini/logo_olioo.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=olio"><img id="img"src="immagini/oliooo.png" alt="logof"></a></label><br>
 <br>
 <br>
 </div>
