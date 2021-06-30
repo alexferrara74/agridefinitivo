@@ -30,7 +30,7 @@ if(ricercanome==null){}
 
 
 <header class="header clearfix" >
-
+<h1>
 <a href="" class="header__logo"><img src="immagini/LogoOk.png" alt="logo"></a>
 	
 	<div class="ricerca">
