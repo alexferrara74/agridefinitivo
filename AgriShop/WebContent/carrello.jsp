@@ -46,7 +46,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <img src="immagini/carrellovuoto.png">
 <a id="cliccaqui" href="prodotti.jsp"><button>Clicca Qui!</button></a>
-
+<h1></h1>
 </div>
 
 <%} %>
