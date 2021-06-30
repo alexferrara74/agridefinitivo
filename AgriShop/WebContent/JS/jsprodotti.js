@@ -14,3 +14,5 @@ function esegui(){
 	 document.getElementById("sceltasingolo").submit();
 		
 	}
+
+	
