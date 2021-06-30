@@ -111,7 +111,7 @@ public class carrello extends HttpServlet {
 		request.setAttribute("carrello", carrello);
 		request.getSession().setAttribute("nomeprod", nome);
 
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/prodotti.jsp");
 		dispatcher.include(request, response);
 	}
 

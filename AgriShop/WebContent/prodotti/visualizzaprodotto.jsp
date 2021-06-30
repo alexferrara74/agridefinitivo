@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="style/visualizzaprodotto.css" rel="stylesheet" type="text/css">
-
+<script src="JS/jsprodotti.js"></script>
 <%
 String prodotto=(String)request.getParameter("nomeprodotto");
 String controlloutente=(String)request.getSession().getAttribute("nome");
@@ -30,17 +30,17 @@ if(prodotti==null){
 
 <div id="visualizzaprodotto">
 
-<form action="carrello?action=aggiungi" method="POST">
+<form id="form" action="carrello?action=aggiungi" method="POST">
 
 
 <div id="nome">
-<label>Prodotto: </label>
-<input type="text" id="nome" name="nome" value="<%=prodotti.getNome()%>"  readonly>
+<p>Prodotto: </p>
+<span><input type="text" id="" name="nome" value="<%=prodotti.getNome() %>"  readonly ></span>
 </div>
 
 <div id="descrizione">
-<label>Descrizione: </label>
-<input type="text" id="quantita" value="<%=prodotti.getDescrizione() %>" name="<%=prodotti.getDescrizione() %>" readonly>
+<p>Descrizione: </p>
+<span id="desc"><input type="text" id="" value="<%=prodotti.getDescrizione() %>" name="<%=prodotti.getDescrizione() %>" readonly></span>
 </div>
 
 <%if(controlloutente!=null){ %>
@@ -49,8 +49,8 @@ if(prodotti==null){
 
 
 <div id="quantita">
-<label>Quantità: </label>
-<input type="number" id="quantita" name="quantita" step="1">
+<p>Quantità: </p>
+<span id="qnt"><input type="number" id="quantita" name="quantita" step="1"></span>
 </div>
 
 
@@ -72,6 +72,8 @@ if(prodotti==null){
 
 </div>
 <%}else{ %>
+
+
 
 <div id="addcarrello">
 <input type="submit" value="Aggiungi">
