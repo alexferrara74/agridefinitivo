@@ -4,7 +4,7 @@
 #risultato{
 	width :60%;
 	height:1280px;
-	border-style:solid;
+	
 	margin-left:20%;
 	margin-right:10%;
 }
@@ -24,16 +24,17 @@
 
 
 #singolo:hover {background:lightgrey;}
-#immagineprod {display:inline;float:left;width:80%;height:40%; border: 2px solid red;margin-left:10%;}
+#singolo a{text-decoration:none;}
+#immagineprod {display:inline;float:left;width:80%;height:40%;margin-left:10%;}
 #immagineprod img{width:100%;height:100%; }
-#descrizione{display:inline;float:left;border: 2px solid red; width:90%;height:20%;margin-left:5%;}
-#descrizione p{font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:18px; text-decoration:none; margin :0; padding:0 0 0 10px;;}
-#prezzo{display:inline;float:left;width:90%; height:20%;margin-left:5%;font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:25px; text-decoration:none;  ;border: 2px solid red;}
-#prezzo p{width:50%;display:inline; float:left; margin:10% 0 0 0 ;  font-weight: bold; font-size:25px; text-align:center;}
-#prezzo img{width:35%;display:inline; float:left; margin-top:-5%; margin-left:0;}
-#scelta{display:inline;float:left;width:90%; height:10%; margin-left:5%; padding-top:1%; border-style:solid; border: 2px solid red;}
-#scelta input{width:20%; height:100%; border-style:solid; border-radius:10px;margin-left:5%;outline: none;}
-#scelta button{width:50%;margin-left:20%; border-radius:10px; background:green;}
+#descrizione{display:inline;float:left; width:90%;height:20%;margin-left:5%;}
+#descrizione p{font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:17px; text-decoration:none; margin :0; padding:0 0 0 0;}
+#prezzo{display:inline;float:left;width:90%; height:15%;margin-left:5%;font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:25px; text-decoration:none;  }
+#prezzo p{width:50%;display:inline; float:left; margin:0 0 0 0 ;  font-weight: bold; font-size:25px; text-align:center;}
+#prezzo img{width:25%;display:inline; float:left; margin-top:0%; margin-left:0;}
+#scelta{display:inline;float:left;width:90%; height:15%; margin-left:5%; padding-top:1%; }
+#scelta input{width:20%; height:100%; border-style:solid; border-radius:10px; margin: 0 0 0 5% ; outline: none;}
+#scelta button{width:52%;margin-left:10%; border-radius:10px; background:green;}
 #scelta button:hover{background:orange;}
 
 
@@ -72,27 +73,50 @@
 
 
 #parametriconfigurazione{
-	font-family: "Lucida Console", "Courier New", monospace;
+	
 	float:left;
 	width: 15%;
 	height:1080px;
-	border-style:solid;
 	margin-left:70px;
 	color:black;
 	background-color:white;
+
 }
-#parametriconfigurazione.label{
+#parametriconfigurazione a{
+	 
+	margin-top:5px;
+	margin-left:20px;
+	font-size:20px;
+	
+	display:inline;
+	float:left;
+	width:70%;
+
 	color:black;
+	text-decoration:none;
 }
+#parametriconfigurazione a:hover{background:green;}
+#parametriconfigurazione a p{
+	font-family: American Typewriter, serif	;
+
+	display:inline;
+	float:left;
+	width:60%;
+	margin-top:25px;
+	
+	}
 
 
-#img {
-	cursor: pointer;
-	display: inline;
-	width: 25%;
-	margin-left: 45%;
+#parametriconfigurazione img{
+	display:inline;
+	float:left;
+	width:40%;
+	height:60px;
+
 	
 }
+
+
 
 #contenitore_prodotti{width:80%; height:40%; border-style:none; margin:2% 5% 0 15%; }
 #slogan-bio{width:90%; height:45%; border-style:none; margin:2% 5% 3% 5%; }

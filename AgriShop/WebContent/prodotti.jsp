@@ -4,11 +4,17 @@
 <% 
 Collection<?> prodotti=(Collection<?>)request.getAttribute("prodotti");
 String controlloutente=(String)request.getSession().getAttribute("nome");
+String errorequantita=(String)request.getAttribute("nexquantita");
+
+
+
 if(controlloutente==null){}
 String errore= (String)request.getAttribute("error");
 if(prodotti==null&&errore==null){
 	response.sendRedirect(response.encodeRedirectURL("./prodotti"));
 }
+
+
 
 	
 %>
@@ -19,7 +25,7 @@ if(prodotti==null&&errore==null){
 <meta charset="ISO-8859-1">
 <link href="style/prodotti.css" rel="stylesheet" type="text/css">
 
-<script src="JS/jsprodotti.js"></script>
+
 
 </head>
 
@@ -36,27 +42,27 @@ if(prodotti==null&&errore==null){
 
 <div class="img">
 
-<label for="ortaggi">  <a href="prodotti?scelta=ortaggi"><img id="img"src="immagini/ortaggi.png" alt="logof"></a></label><br>
+<a href="prodotti?scelta=ortaggi"><p>Ortaggi</p><img id="img"src="immagini/ortaggi.png" alt="logof"></a><br>
 <br>
 
 
-<label for="ortaggi"> <a href="prodotti?scelta=frutta"><img id="img"src="immagini/frutta.png" alt="logof"></a></label><br>
+<label for="ortaggi"> <a href="prodotti?scelta=frutta"><p>Frutta</p><img id="img"src="immagini/frutta.png" alt="logof"></a></label><br>
 <br>
 <br>
 
-<label for="ortaggi"> <a href="prodotti?scelta=verdura"><img id="img"src="immagini/verduraa.png" alt="logof"></a></label><br>
+<label for="ortaggi"> <a href="prodotti?scelta=verdura"><p>Verdura</p><img id="img"src="immagini/verduraa.png" alt="logof"></a></label><br>
 <br>
 
 
-<label for="ortaggi"> <a href="prodotti?scelta=semi"><img id="img"src="immagini/semiii.png" alt="logof"></a></label><br>	
+<label for="ortaggi"> <a href="prodotti?scelta=semi"><p>Semi</p><img id="img"src="immagini/semiii.png" alt="logof"></a></label><br>	
 <br>
 
-<label for="ortaggi"><a href="prodotti?scelta=fruttasecca"><img id="img"src="immagini/nocciolinee.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=fruttasecca"><p>F.Secca</p><img id="img"src="immagini/nocciolinee.png" alt="logof"></a></label><br>
 <br>
 
-<label for="ortaggi"><a href="prodotti?scelta=vino"><img id="img"src="immagini/vinooo.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=vino"><p>Vino</p><img id="img"src="immagini/vinooo.png" alt="logof"></a></label><br>
 <br>
-<label for="ortaggi"><a href="prodotti?scelta=olio"><img id="img"src="immagini/oliooo.png" alt="logof"></a></label><br>
+<label for="ortaggi"><a href="prodotti?scelta=olio"><p>Olio</p><img id="img"src="immagini/oliooo.png" alt="logof"></a></label><br>
 <br>
 <br>
 </div>
@@ -72,6 +78,8 @@ if(prodotti==null&&errore==null){
 
 
 <%
+
+
 if(prodotti!=null&&prodotti.size()>0){
 	
 		Iterator<?> it=prodotti.iterator();
@@ -90,17 +98,26 @@ if(prodotti!=null&&prodotti.size()>0){
 		
 <div id="descrizione">		
 <a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
+
 <p><%=beans.getDescrizione() %><br></p>
 </a>
 </div>
 	 	<div id="prezzo">
-	 	<%if (controlloutente!=null){ %>  <p><%=(float)beans.getPrezzo()%></p> <p><img width="20px" src="immagini/euro.png"></p> <br><%} %>
+	 	<%if (controlloutente!=null){ %>  <p><%=(float)beans.getPrezzo()%></p> <p><img width="20px" src="immagini/euro.png"></p> <br>
 	 	</div>
 	 	<div id="scelta">
-		<form action="" method="POST">
-		<input type="number" id="quantita" name="quantita" step="1"><button type="submit">AGGIUNGI</button>
+	 	
+		<form action="carrello?action=aggiungi&nome=<%=beans.getNome() %>" method="POST">
+			<input type="number" id="quantita" name="quantita" min="1" max="<%=beans.getQuantita()%>"step="1" value="1"> <button type="submit">AGGIUNGI</button>
 		</form>
 		</div>
+		<%} else{%>
+		<div id="scelta">
+		<form action="Login.jsp" method="POST">
+		<button type="submit">Login</button>
+		</form>
+		</div>	
+		<%} %>
 	</div>
 
 <% }
@@ -112,8 +129,16 @@ if(prodotti!=null&&prodotti.size()>0){
 
 <% } %>
 
+
+
+
+
 </div>
 
+
+
+
+<script src="JS/prodotti.js"></script>
 </body>
 
 

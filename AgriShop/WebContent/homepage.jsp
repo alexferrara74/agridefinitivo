@@ -90,8 +90,8 @@ if(prodotti!=null&&prodotti.size()>0){
 	 	<%if (controlloutente!=null){ %>  <p><%=(float)beans.getPrezzo()%></p> <p><img width="20px" src="immagini/euro.png"></p> <br><%} %>
 	 	</div>
 	 	<div id="sceltahome">
-		<form action="" method="POST">
-		<input type="number" id="quantita" name="quantita" step="1"><%if (controlloutente!=null){ %>
+		<form action="carrello?action=aggiungi&nome=<%=beans.getNome() %>" method="POST">
+		<input type="number" id="quantita" name="quantita" min="1" max="<%=beans.getQuantita()%>"step="1" value="1"> <%if (controlloutente!=null){ %>
 														 <button type="submit">AGGIUNGI</button><%}else{ %>
 		
 															<a href="Login.jsp">Login</a>

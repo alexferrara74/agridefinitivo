@@ -36,18 +36,23 @@ public class ricerca extends HttpServlet {
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model= new ProductModelDS(ds);
 		prodotto prod=new prodotto();	
-		
+		response.setContentType("text/html");
 		
 		Collection <prodotto> prodotto= new LinkedList<prodotto>(); 
+		StringBuffer risposta=new StringBuffer();
+		
 		if(!parametro.equals("")) {
 		try {
 			request.setAttribute("ricercanome",prod= model.doRetrieveByscelta(parametro));
 		
-			response.setContentType("text/html");
-			PrintWriter out=response.getWriter();
-			if(!prod.getNome().equals("")) {
-			out.print("<a href=visualizzaprodotto?nomeprodotto="+prod.getNome()+">"+prod.getNome()+" "+prod.getDescrizione()+" "+prod.getPrezzo()+"</a>");
+		
 			
+			if(!prod.getNome().equals("")) {
+				risposta.append("<a href=visualizzaprodotto?nomeprodotto="+prod.getNome()+">");
+				risposta.append(prod.getDescrizione());
+				risposta.append(prod.getPrezzo());
+				risposta.append("</a>");
+				
 			}
 			
 			if(prod.getNome().equals("")) {
@@ -56,7 +61,11 @@ public class ricerca extends HttpServlet {
 					Iterator<?> it=prodotto.iterator();
 					while(it.hasNext()){
 						prodotto beans=(prodotto)it.next();
-						out.print("<a href=visualizzaprodotto?nomeprodotto="+beans.getNome()+">"+beans.getNome()+" "+beans.getDescrizione()+" "+beans.getPrezzo()+"</a>");
+						risposta.append("<a href=visualizzaprodotto?nomeprodotto="+beans.getNome()+">");
+						risposta.append(beans.getDescrizione());
+						risposta.append(" ");
+						risposta.append(beans.getPrezzo());
+						risposta.append("</a>");
 						
 				}
 				
@@ -72,6 +81,7 @@ public class ricerca extends HttpServlet {
 		}
 		
 		
+	response.getWriter().write(risposta.toString());
 	}
 		
 		

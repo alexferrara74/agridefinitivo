@@ -1,14 +1,20 @@
 @charset "ISO-8859-1";
 
 #mostra__carrello{width:80%; margin-left:10%; height:700px;border-style:solid;}
+#conferma__carrello{display:inline;float:right;width:20%; position:fixed; height:60%; margin:0 0 0 5%; border:3px solid black;}
 
-.prodotti__carrello{width:100%; height:80%; border-style:solid;}
-.prodotti__carrello span{display:inline;float:left;width:200px; border-style:solid; margin-top:10px;}
+
+.prodotti__carrello{display:inline;float:left;width:60%; height:30%; margin:0 0% 0 10%; border-bottom:2px solid orange;font-family: "Lucida Console", "Courier New", monospace;font-size:18px; }
+.prodotti__carrello span img{display:inline;float:left;width:20%;margin:5% 0 0 0;}
+.prodotti__carrello #nomeprod input{display:inline;float:left;width:40%;height:20%; margin:5% 0 0 2%; border:none; background:#F8F8FF; outline: none;}
+.prodotti__carrello #quantita input{display:inline;float:left;width:8%; height:17%;margin:5% 0 0 0; border-radius:5px; border:2px solid green; background:#F8F8FF; }
+
+.prodotti__carrello #prezzo{display:inline;float:right;width:20%; margin:15% 2% 0 0; font-size:25px;}
+
+
 .errore__quantita{width:100px; height:10px; border-style:solid; }
 
 
 .carrello__vuoto{width:100%; height:80%; border-style:solid;}
 .carrello__vuoto img{margin:50px 0 0 50px}
 .carrello__vuoto button{width:200px; height:50px; background:green;color:black; border-radius:20px;font-family: "Sofia"";}
-
-@media(max-width:767px){ }

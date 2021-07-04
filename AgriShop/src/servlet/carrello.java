@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -23,9 +24,9 @@ public class carrello extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String quantita=request.getParameter("quantita");
-		int qnt=Integer.parseInt(quantita);
+		String indirizzo="";
 		String nome = request.getParameter("nome");
-		System.out.println(nome);
+		
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model = new ProductModelDS(ds);
 		boolean controllo=false;
@@ -38,10 +39,40 @@ public class carrello extends HttpServlet {
 		
 		String action = request.getParameter("action");
 		
+		if(nome==null) {}
+		
+		
 		try {
+			
+			
+			
 			if (action != null) {
-				if (action.equals("aggiungi")) {			
+				
+				
+
+				 if (action.equals("deleteCart")) {
+						indirizzo="carrello";
+						prodotto bean = (prodotto) model.doRetrieveByNome(nome);
+						if (bean != null && !bean.isEmpty()) {
+							carrello.deleteOggetto(bean);
+							
+						
+							
+						}
+					}
+				
+				
+				if (action.equals("clearCart")) {
+					carrello.deleteOggetto();
+					indirizzo="carrello.jsp";
+				
+				}
+				
+				
+				if (action.equals("aggiungi")) {	
+					int qnt=Integer.parseInt(quantita);
 					prodotto bean = (prodotto) model.doRetrieveByNome(nome);
+					indirizzo="prodotti?scelta="+bean.getCategoria()+"";
 					if (bean != null && !bean.isEmpty()) {		
 						if(carrello.getOggetto().isEmpty()) {
 							if(bean.getQuantita()>=(bean.getDispcarrello()+qnt)) {
@@ -59,8 +90,7 @@ public class carrello extends HttpServlet {
 							if(carrello.getOggetto().get(i).getNome().equals(bean.getNome())){
 								int valore=carrello.getOggetto().get(i).getDispcarrello();
 								int disponibilita=carrello.getOggetto().get(i).getQuantita();
-								System.out.println(valore);
-								System.out.println(disponibilita);
+							
 								if(disponibilita>=(valore+qnt)) {
 								carrello.getOggetto().get(i).setDispcarrello(valore+qnt);
 								controllo=true;
@@ -83,26 +113,13 @@ public class carrello extends HttpServlet {
 								
 								}
 								}
-									
-							
+											
 						}
-						
-						
-						
-						
-						
+									
 					}}
-				} else if (action.equals("clearCart")) {
-					carrello.deleteOggetto();
-					request.setAttribute("message", "Cart cleaned");
-				} else if (action.equals("deleteCart")) {
-					String id = request.getParameter("id");
-					prodotto bean = (prodotto) model.doRetrieveByKey(id);
-					if (bean != null && !bean.isEmpty()) {
-						carrello.deleteOggetto(bean);
-						request.setAttribute("message", "Product " + bean.getNome() + " deleted from cart");
-					}
-				}
+				}  
+					
+			
 			
 		} catch (SQLException | NumberFormatException e) {
 			utility.print(e);
@@ -111,7 +128,7 @@ public class carrello extends HttpServlet {
 		request.setAttribute("carrello", carrello);
 		request.getSession().setAttribute("nomeprod", nome);
 
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/prodotti.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/"+indirizzo+"");
 		dispatcher.include(request, response);
 	}
 
