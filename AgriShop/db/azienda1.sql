@@ -83,7 +83,8 @@ CREATE TABLE negozio (
   PIVA      varchar(16)           not NULL,
   email    varchar(35)  not NULL,
   pwd       varchar(8)   not NULL,
-  primary key (PIVA)
+  primary key (PIVA),
+  foreign key (numero) references ordine(numero)
 );
 
 DROP TABLE IF EXISTS prodotto;
@@ -103,16 +104,10 @@ DROP TABLE IF EXISTS ordine;
 CREATE TABLE ordine (
 data      date not NULL,
 numero    int auto_increment not NULL,
- primary key (numero)
+ primary key (numero),
+ foreign key (PIVA) references negozio(PIVA),
 );
 
-DROP TABLE IF EXISTS esegue;
-CREATE TABLE esegue (
- PIVA      varchar(16)  not NULL,
-numero    int auto_increment not NULL,
-foreign key (PIVA) references negozio(PIVA),
-foreign key (numero) references ordine(numero)
-);
 
 DROP TABLE IF EXISTS composto;
 CREATE TABLE composto (
@@ -286,18 +281,6 @@ INSERT INTO prodotto VALUES
 INSERT INTO prodotto VALUES
 (4,'uva',159638257,33,'uva armonera del Cilento','frutta','uva');
 
-
-
-INSERT INTO ordine (data)  VALUES
-('2021-11-14');
-INSERT INTO ordine (data)  VALUES
-('2021-11-16');
-INSERT INTO ordine (data)  VALUES
-('2020-01-16');
-INSERT INTO ordine (data)  VALUES
-('2020-12-06');
-INSERT INTO ordine (data)  VALUES
-('2021-07-25');
 
 
 INSERT INTO composto VALUES
