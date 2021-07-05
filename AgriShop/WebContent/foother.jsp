@@ -9,7 +9,8 @@
 <body>
 
 <div class="block-contact col-md-4 links wrapper">
-	<div class="paddingMobile">
+<div class="paddingMobile">
+	
 		<p style="text-align:left;">INFORMAZIONI SHOP </p>
 		<span class="contactSpan">
 		<ul>
@@ -19,13 +20,11 @@
 		<br>
 		</span>
 		
-		<li>Email.<a href= "AgriShop@gmail.com"></a>
-		<span>AgriShop@gmail.com </span>
+		<li>Email:<a href= "AgriShop@gmail.com"><span>AgriShop@gmail.com </span></a>
 		</li>
-		
 		<br>
-		<li>Tel.<a href="tel:+393483283439"></a>
-		<span>+39 348 328 3439 </span></li>
+		<li>Tel.<a href="tel:+393483283439"><span>+39 348 328 3439 </span></a>
+		</li>
 		<br>
 		
 		<li>C.F.:
@@ -37,11 +36,19 @@
 		<br>
 		</ul>
 	</div>
+	<br>
+		<h3><span>INVIA UNA RECENZIONE</span></h3>
+<textarea cols="45" rows="8" maxlength="65525" required="required"></textarea>
+		
+<p>
+<ul>Email:<label for="email" style="display: none;">Email</label>
+<input id="email" name="email" type="text" value="" size="33" maxlength="105" aria-describedby="email-notes" required="required"></ul></p>
 
+
+<p><input name="submit" type="submit" id="submit" value="Invia"></p> 
+	
 </div>
-
-
-</div>
+	
 
 
 
