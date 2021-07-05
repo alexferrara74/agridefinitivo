@@ -47,8 +47,8 @@
 	<img src="immagini/pagamento.png">
 	</div>
 	
-	<div class="recenzione">
-	<p>INVIA UNA RECENZIONE</p>
+	<div class="recensione">
+	<p>INVIA Una Recensione</p>
 <textarea cols="40" rows="8" maxlength="65525" required="required"></textarea>
 		
 <p>
