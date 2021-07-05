@@ -37,16 +37,22 @@
 		</ul>
 	</div>
 	<br>
-		<h3><span>INVIA UNA RECENZIONE</span></h3>
-<textarea cols="45" rows="8" maxlength="65525" required="required"></textarea>
+	
+	<div class="pagamento">
+	<p>MODALITA' DI PAGAMENTO</p>
+	<img src="immagini/pagamento.png">
+	</div>
+	
+	<div class="recenzione">
+	<p>INVIA UNA RECENZIONE</p>
+<textarea cols="40" rows="8" maxlength="65525" required="required"></textarea>
 		
 <p>
 <ul>Email:<label for="email" style="display: none;">Email</label>
 <input id="email" name="email" type="text" value="" size="33" maxlength="105" aria-describedby="email-notes" required="required"></ul></p>
-
-
-<p><input name="submit" type="submit" id="submit" value="Invia"></p> 
 	
+<p><input name="submit" type="submit" id="submit" value="Invia"></p>
+</div>
 </div>
 	
 

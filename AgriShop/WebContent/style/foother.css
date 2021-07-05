@@ -3,10 +3,12 @@
 
 #foother{
 	width:auto;
-	height:500px;
+	height:400px;
 	background-color:silver;
 }
 .paddingMobile{
+	float: left;
+	width:20%;
 	font-size: 20px;
 	padding-left:1;
 	font-family: "Times New Roman", Times, serif;
@@ -36,6 +38,28 @@
 
 	font-family: Arial, Helvetica, sans-serif;
 	color: navy;
+	text-decoration: none;
+}
+
+.pagamento{
+	float:left;
+	width:30%;
+	font-size: 20px;
+	padding-left:1;
+	margin-left: 5%;
+	font-family: "Times New Roman", Times, serif;
+	color: teal;
+	text-decoration: none;
+}
+
+.recenzione{
+	float:left;
+	width:30%;
+	font-size: 20px;
+	margin-left: 5%;
+	padding-left:1;
+	font-family: "Times New Roman", Times, serif;
+	color: teal;
 	text-decoration: none;
 }
 
