@@ -34,10 +34,14 @@
 		<li>P.IVA: 
 		<span>01297780663</span></li>
 		<br>
+		
+		<li><p  style="color:teal;">OPPURE CONTATTACI:</p>
+		<img src="immagini/social1.png" align="top" width="150" height="50"></li>
+		<br>
 		</ul>
 	</div>
 	<br>
-	
+
 	<div class="pagamento">
 	<p>MODALITA' DI PAGAMENTO</p>
 	<img src="immagini/pagamento.png">
