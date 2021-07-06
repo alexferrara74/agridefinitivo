@@ -44,19 +44,29 @@
 
 	<div class="pagamento">
 	<p>MODALITA' DI PAGAMENTO</p>
-	<img src="immagini/pagamento.png">
+	<img src="immagini/pagamento.png" width="300" height="100">
+	
 	</div>
 	
-	<div class="recenzione">
-	<p>INVIA UNA RECENZIONE</p>
-<textarea cols="40" rows="8" maxlength="65525" required="required"></textarea>
-		
-<p>
-<ul>Email:<label for="email" style="display: none;">Email</label>
-<input id="email" name="email" type="text" value="" size="33" maxlength="105" aria-describedby="email-notes" required="required"></ul></p>
+	<div class="spedizione">
+	<p>SPEDITO DA</p>
+	<img src="immagini/spedizione.png" width="300" height="100">
+	</div>
 	
-<p><input name="submit" type="submit" id="submit" value="Invia"></p>
+	<div class="domande">
+	<p>LINK UTILI</p>
+	<li><a  href="./Chisiamo.jsp" title="Chi Siamo">Chi Siamo</a></li>
+	<br>
+	<li><a  href="./Contatti.jsp" title="Contatti">Contatti</a></li>
+	<br>
+	<li><a  href="./carrello.jsp" title="I tuoi ordini">I tuoi ordini</a></li>
+	<br>
+	
 </div>
+	
+	<div class="altro">
+		<img src="immagini/LogoOk.png"  width="350" height="150">
+	</div>
 </div>
 	
 
