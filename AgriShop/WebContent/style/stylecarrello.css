@@ -10,6 +10,10 @@
 .prodotti__carrello #quantita input{display:inline;float:left;width:8%; height:17%;margin:5% 0 0 0; border-radius:5px; border:2px solid green; background:#F8F8FF; }
 
 .prodotti__carrello #prezzo{display:inline;float:right;width:20%; margin:15% 2% 0 0; font-size:25px;}
+#totale{width:10%; height:10%;}
+
+
+
 
 
 .errore__quantita{width:100px; height:10px; border-style:solid; }

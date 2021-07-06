@@ -25,17 +25,7 @@ public class AdminPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AdminPage() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+ 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model= new ProductModelDS(ds);
@@ -49,8 +39,11 @@ public class AdminPage extends HttpServlet {
 		String categ=request.getParameter("categoria");
 		String idfoto=request.getParameter("idfoto");
 		
+		String action=request.getParameter("action");
 		
-
+		
+		
+		
 				if(prezzo!=null)
 				prod.setPrezzo(prezzo);
 			
@@ -83,6 +76,22 @@ public class AdminPage extends HttpServlet {
 				prod.setIdfoto(idfoto);;
 			}}
 	
+		if(action!=null&&action.equals("modifica")) {
+			
+			try {
+				model.doUpdate(prod);
+				
+			} catch (SQLException e) {
+				utility.print(e);
+				
+				request.setAttribute("error", e.getMessage());
+			}
+			
+			
+			
+		}
+		
+		
 		try {
 			 model.doSave(prod);
 			
