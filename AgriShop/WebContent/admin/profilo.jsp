@@ -6,7 +6,6 @@
 <meta charset="ISO-8859-1">
 <link href="../style/stylelogreg.css" rel="stylesheet" type="text/css">
 
-<script src="../JS/controllo-profilo.js"></script>
 
 <%
 String username= (String)request.getSession().getAttribute("nome");
@@ -63,10 +62,6 @@ String username= (String)request.getSession().getAttribute("nome");
 	
 	</select>
 	
-	
-	
-
-
 
 </td>
 </tr>
@@ -80,43 +75,24 @@ String username= (String)request.getSession().getAttribute("nome");
 <input type="submit" value="invio">
 </td>
 </tr>
+
 </table>
 </form>
 </div>
 
 <div class="utente-figlio2">
 
-<form class="AggiornaProdotto"action="../AggiornaProdotto" method="post">
+<form class="AggiornaProdotto" action="../AdminPage?action=modifica" method="post">
 <h2>Modifica Prodotto</h2>
 <table>
 
 
-
-
 <tr>
-<td><input type="text" name="nome" placeholder="Nome" required></td>
-</tr>
-<tr>
-<td><input type="text" name="prezzo" placeholder="Prezzo" required></td>
-</tr>
-<tr>
+<td><select id="categ" name="categoria"  required>
 
-<td><input type="text" name="Ssn" placeholder="Ssn" required></td>
-</tr>
-<tr>
-
-<td><input type="text" name="disponibilita" placeholder="disponibilità" required></td>
-</tr>
-
-<tr>
-<td><input type="text" name="descrizione" placeholder="Descrizione" required></td>
-</tr>
-
-<tr>
-<td><select name="categoria"  required>
-	<option value= "Ortaggi">Ortaggi</option>
-	<option value="Frutta">Frutta</option>
-	<option value="Verdura">Verdura </option>
+	<option  value= "Ortaggi">Ortaggi</option>
+	<option value="Frutta"  >Frutta</option>
+	<option value="Verdura" >Verdura </option>
 	<option value="Semi">Semi</option>
 	<option value= "Frutta Secca">Frutta Secca</option>
 	<option value="Vino">Vino </option>
@@ -128,14 +104,20 @@ String username= (String)request.getSession().getAttribute("nome");
 </tr>
 
 <tr>
-<td><input type="text" name="idfoto" placeholder="nomefoto" required></td>
+<td >
+<select id="seleziona_opzione" name="categoria"  required>
+
+</select>
+</td>
 </tr>
 
 <tr>
-<td>
-<input type="submit" value="invio">
+<td id="risposta_prodotto">
+
+
 </td>
 </tr>
+
 
 </table>
 </form>
@@ -190,5 +172,7 @@ String username= (String)request.getSession().getAttribute("nome");
 
 </div>
 
+
 </body>
+<script src="../JS/admin.js"></script>
 </html>

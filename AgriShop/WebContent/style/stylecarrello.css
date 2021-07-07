@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 
-#mostra__carrello{width:80%; margin-left:10%; height:700px;border-style:solid;}
+#mostra__carrello{width:80%; margin-left:10%; height:700px;}
 #conferma__carrello{display:inline;float:right;width:20%; position:fixed; height:60%; margin:0 0 0 5%; border:3px solid black;}
 
 
@@ -10,11 +10,29 @@
 .prodotti__carrello #quantita input{display:inline;float:left;width:8%; height:17%;margin:5% 0 0 0; border-radius:5px; border:2px solid green; background:#F8F8FF; }
 
 .prodotti__carrello #prezzo{display:inline;float:right;width:20%; margin:15% 2% 0 0; font-size:25px;}
+#totale{width:10%; height:10%;}
+
+
+
 
 
 .errore__quantita{width:100px; height:10px; border-style:solid; }
 
 
-.carrello__vuoto{width:100%; height:80%; border-style:solid;}
+.carrello__vuoto{width:60%; margin-left:20%;height:80%; }
 .carrello__vuoto img{margin:50px 0 0 50px}
-.carrello__vuoto button{width:200px; height:50px; background:green;color:black; border-radius:20px;font-family: "Sofia"";}
+.carrello__vuoto button{width:200px; height:50px; background:green;color:black; border-radius:20px;font-family: "Lucida Console", "Courier New", monospace;font-size:18px;}
+.carrello__vuoto button:hover{background:orange;}
+
+.riepilogo__prodotti__carrello {display:inline-block;width:60%;height:5%; margin:1% 0 0 2%; border:3px solid red; background:#F8F8FF; outline: none;}
+.riepilogo__prodotti__carrello input{width:30%;background:#F8F8FF; outline: none; border:none;font-family: "Lucida Console", "Courier New", monospace;font-size:16px;}
+#prezzo{font-family: "Lucida Console", "Courier New", monospace;font-size:20px;}
+
+
+
+#totale__spesa{width:30%;display:inline-block;padding-left:30%;margin-left:2%;font-family: "Lucida Console", "Courier New", monospace;font-size:18px;}
+
+#modalita_pagamento{width:20%; margin:2% 0 0 5%;}
+#modalita_pagamento div{padding : 10% 0 0 0;}
+
+

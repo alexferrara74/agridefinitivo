@@ -66,7 +66,7 @@ if(prodotti==null&&errore==null){
 if(prodotti!=null&&prodotti.size()>0){
 	int i=0;
 		Iterator<?> it=prodotti.iterator();
-		while(it.hasNext()&& i<=4){
+		while(it.hasNext()&& i<4){
 			prodotto beans=(prodotto)it.next();
 			i++;
 	%>

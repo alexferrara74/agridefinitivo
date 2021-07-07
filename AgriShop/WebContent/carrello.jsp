@@ -8,7 +8,6 @@
 
 
 <%
-String erroreqnt=(String)request.getSession().getAttribute("quantitaerr");
 String nomeprodotto=(String)request.getSession().getAttribute("nomeprod");
 Carrello <prodotto> carrello=(Carrello<prodotto>)request.getSession().getAttribute("carrello");
 int count=0;
@@ -49,12 +48,12 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <div class="prodotti__carrello">
 <span><img src="immagini/<%=p.getIdfoto()%>.png"></span>
-<span id="nomeprod"><input type="text"  name="nome" value="<%=p.getDescrizione() %>"  readonly ></span>
+<input type="text" id="nomeprodotto" name="nome" value="<%=p.getNome() %>" style="display:none"  readonly >
+<span id="nomeprod"><input type="text" name="nome" value="<%=p.getDescrizione() %>"  readonly ></span>
 
-<span id="quantita"><input type="number"name="quantita" min="0" step="1" value="<%=p.getDispcarrello() %>"></span>
+<span id="quantita"><input id="quantitanumero"  type="number" name="quantita" min="0" max="<%=p.getQuantita() %>" step="1" value="<%=p.getDispcarrello() %>"></span>
 <span id="prezzo">EUR <%=p.getPrezzo() %></span>
-
-
+<a href="carrello?action=modificaqnt" id="aggcarrello">Aggiorna </a>
 </div>
 
 
@@ -67,18 +66,28 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <img src="immagini/carrellovuoto.png">
 <a id="cliccaqui" href="prodotti.jsp"><button>Clicca Qui!</button></a>
-<h1></h1>
+
 </div>
 
 <%} %>
 
 
 <div id="conferma__carrello">
-<form action="" method="POST">
-<input type="submit" value="Vai Al Pagamento">
-</form>
 
-<p>Prezzo Totale: <%=totale%>
+
+
+<a href="confermaordine.jsp"> Conferma Ordine</a>
+
+
+<%=totale %>
+
+
+<%
+if(carrello!=null){
+
+carrello.setValorecarrello(totale);} %>
+
+
 </div>
 
 
