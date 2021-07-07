@@ -3,6 +3,8 @@
  */
 
 
+
+
 function cancellaprodotto(){
 
 	
@@ -20,3 +22,6 @@ function cancellaprodotto(){
 	http.open("GET","carrello?action=deleteCart&nome="+nome+"",true);
 	http.send();	
 }
+
+
+

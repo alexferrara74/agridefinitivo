@@ -17,6 +17,7 @@
 	  <header class="page-header">
 	  
       <h1 style="text-align:center;"><strong><em><span style="color:#7cd320;">Cerchi aiuto per i tuoi ordini?</span></em></strong></h1>
+<form id="chiediaiuto" action="mailto:alexferrara74@gmail.com" method="post">
 <div class="contatto">
 <div class="nome">
 <label>Nome </label><br>
@@ -32,7 +33,7 @@
 <div class="contatto">
 <div class="numero">
 <label>Numero Ordine </label><br>
-<span class="ciao"><input type="text" name="order" value="" size="40"  aria-invalid="false"></span>
+<span class="ciao"><input type="text" name="subject" value="" size="40"  aria-invalid="false"></span>
 </div>
 <div class="telefono">
 <label>Telefono </label><br>
@@ -42,11 +43,11 @@
 <div class="contatto">
 <div class="messaggio">
 <label>Messaggio </label><br>
-<span class="ciao"><textarea name="message" cols="75" rows="20"></textarea></span>
+<span class="ciao"><textarea id="textarea"name="body" cols="45" rows="10"></textarea></span>
 <input type="submit" value="Invia" class="ciao" aria-invalid="false">
 </div>
 </div>
-
+</form>
 <div id="foother">
 <%@ include file="foother.jsp"%>
 </div>

@@ -1,53 +1,48 @@
 @charset "ISO-8859-1";
 
+.block-contact{width:99%; margin:0 0 0 0.5%; padding:0;height:350px; border:none; background:silver;}
 
-#foother{
-	width:auto;
-	height:300px;
-	background-color:silver;
-}
 .paddingMobile{
+	margin:1% 0 0 0;
 	float: left;
 	width:20%;
+	height:90%;
 	font-size: 20px;
-	padding-left:1;
+	padding:0;
 	font-family: "Times New Roman", Times, serif;
 	color: teal;
 	text-decoration: none;
-	
-}
 
+}
+.paddingMobile p{padding: 1% 0 0 1%;}
 
 .paddingMobile li{
-	width:250px;
+	width:100%;
 	display:inline-block;
-	margin-top:5px;
-	margin-left:1px;
+	padding:0;
+	margin:0;
+}
+
+
+
+
+.paddingMobile Span{
+	display:inline-block;
 	
-}
-
-.block-contact.links{
-	font-size: 15px;
-	padding-left:1;
+	font-size: 18px;
+	padding:-5% 0 0 0;
+	margin:0;
 	font-family: "Times New Roman", Times, serif;
-	color: teal;
-	text-decoration: none;
-}
-
-.contactSpan{
-	font-size: 15px;
-	padding-left:1;
-
-	font-family: Arial, Helvetica, sans-serif;
-	color: navy;
+	color: black;
 	text-decoration: none;
 }
 
 .pagamento{
+	display:inline;
 	float:left;
 	width:20%;
 	font-size: 20px;
-	padding-left:1;
+	padding-left:1%;
 	margin-left: 5%;
 	font-family: "Times New Roman", Times, serif;
 	color: teal;
@@ -61,7 +56,6 @@
 	float:left;
 	width:20%;
 	font-size: 20px;
-	padding-left:1;
 	margin-left: 5%;
 	font-family: "Times New Roman", Times, serif;
 	color: teal;
@@ -72,7 +66,7 @@
 	float: left;
 	width:20%;
 	font-size: 20px;
-	padding-left:1;
+	padding-left:5%;
 	font-family: "Times New Roman", Times, serif;
 	color: teal;
 	text-decoration: none;
@@ -83,15 +77,15 @@
 	display:inline-block;
 	margin-top:5px;
 	margin-left:1px;
-	
 }
 
+ .domande a{text-decoration:none; color:black;font-family: "Times New Roman", Times, serif;font-size:25px; }
+ .domande a:hover{color:orange;}
 .altro{
-	float:left;
+	float:right;
 	width:20%;
 	font-size: 20px;
-	padding-left:1;
-	margin-left: 10%;
+	padding-right:1%;
 	font-family: "Times New Roman", Times, serif;
 	color: teal;
 	text-decoration: none;

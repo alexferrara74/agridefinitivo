@@ -5,6 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="style/stylecarrello.css" rel="stylesheet" type="text/css">
+<script type="JS/prodotti.j"></script>
+
+
 <%
 
 Carrello <prodotto> carrello=(Carrello<prodotto>)request.getSession().getAttribute("carrello");
@@ -16,13 +19,13 @@ Carrello <prodotto> carrello=(Carrello<prodotto>)request.getSession().getAttribu
 <%@ include file="Header.jsp"%><br>
 
 <%if(carrello!=null&&carrello.getOggetto().size()>0){
-	
+
 List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <%for(int i=0;i<prodcarrello.size();i++){ %>
 
 <% prodotto p=prodcarrello.get(i);
-	
+
 
 %>
 
@@ -53,35 +56,29 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </div>
 
 <div id="modalita_pagamento">
-  <div>
-  <label>
-  <a href="https://www.paypal.com/it/home">
-  <input type="radio" id="paypal" name="paypal" value="paypal" checked>
-  <img src="immagini/paypal.png" style=width:60px;height:40px;>
-  	</a>
+
+ <label class="container" onClick="attiva()">One
+  <input type="radio" checked="checked" name="radio" onchange="attiva()">
+  <span class="checkmark"></span>
 </label>
-</div>
-
-<div>
-  <label>
-  <input type="radio" id="mastercad" name="mastercad" value="mastercad" >
-  <img src="immagini/mastercard.png" style=width:60px;height:40px;>
-
+<label class="container">Two
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
 </label>
-</div>
+<label class="container">Three
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
 
-  <div>
-   <label>
-  <input type="radio" id="huey" name="drone" value="huey" >
-  <img src="immagini/contrassegno.png" style=width:60px;height:50px;>
-  </label>
-  </div>
+
 
 </div>
+<div id="dati_pagamento">ciao a tutti</div>
+
 
 
 <div id="modalita_spedizione">
-  
+
 
 </div>
 
@@ -91,4 +88,5 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </div>
 
 </body>
+
 </html>

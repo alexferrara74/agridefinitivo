@@ -34,5 +34,7 @@
 
 #modalita_pagamento{width:20%; margin:2% 0 0 5%;}
 #modalita_pagamento div{padding : 10% 0 0 0;}
+#dati_pagamento {display:none;}
+ .container input:checked #dati_pagamento:after {display:inline;background:orange;}
 
 

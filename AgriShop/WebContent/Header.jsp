@@ -24,8 +24,6 @@ String username= (String)request.getSession().getAttribute("nome");
 <body>
 
 
-
-
 <header class="header clearfix" >
 
 <a href="" class="header__logo"><img src="immagini/LogoOk.png" alt="logo"></a>
@@ -40,15 +38,10 @@ String username= (String)request.getSession().getAttribute("nome");
 		</div>
 </form>
 	<div id="ris__ricerca">
-  
-
+ 	
 	</div>
-
-
 	</div>
 	
-
-
 
 <div id="carrello">
 <a href="carrello.jsp"><img src="immagini/carrello.png"></a>
@@ -72,6 +65,20 @@ String username= (String)request.getSession().getAttribute("nome");
 <p class="accedi__mobile__item" ><a href=""><%=username %></a></p>
 </div>
 
+<%if (username.equals("admin")){ %>
+<div class="header__menu__item" id="username">
+<a ><%=username %></a>
+
+<div class="header__menu__sotto">
+<a href="admin/profilo.jsp">Pannello-Controllo</a>
+
+<a href="logout">Logout</a>
+
+</div>
+</div>
+
+
+<%} else{ %>
 <div class="header__menu__item" id="username">
 <a ><%=username %></a>
 
@@ -87,11 +94,8 @@ String username= (String)request.getSession().getAttribute("nome");
 </div>
 
 
-<%} %>
+<%}} %>
 </header>
-
-
-
 
 </body>
 <script src="JS/header.js"></script>
