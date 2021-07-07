@@ -98,8 +98,8 @@ if(prodotti!=null&&prodotti.size()>0){
 		
 <div id="descrizione">		
 <a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
-
 <p><%=beans.getDescrizione() %><br></p>
+
 </a>
 </div>
 	 	<div id="prezzo">

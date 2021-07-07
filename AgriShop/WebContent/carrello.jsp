@@ -48,12 +48,12 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <div class="prodotti__carrello">
 <span><img src="immagini/<%=p.getIdfoto()%>.png"></span>
-<span id="nomeprod"><input type="text"  name="nome" value="<%=p.getDescrizione() %>"  readonly ></span>
+<input type="text" id="nomeprodotto" name="nome" value="<%=p.getNome() %>" style="display:none"  readonly >
+<span id="nomeprod"><input type="text" name="nome" value="<%=p.getDescrizione() %>"  readonly ></span>
 
-<span id="quantita"><input type="number"name="quantita" min="0" max="<%=p.getQuantita() %>" step="1" value="<%=p.getDispcarrello() %>"></span>
+<span id="quantita"><input id="quantitanumero"  type="number" name="quantita" min="0" max="<%=p.getQuantita() %>" step="1" value="<%=p.getDispcarrello() %>"></span>
 <span id="prezzo">EUR <%=p.getPrezzo() %></span>
-
-
+<a href="carrello?action=modificaqnt" id="aggcarrello">Aggiorna </a>
 </div>
 
 
@@ -66,7 +66,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <img src="immagini/carrellovuoto.png">
 <a id="cliccaqui" href="prodotti.jsp"><button>Clicca Qui!</button></a>
-<h1></h1>
+
 </div>
 
 <%} %>
@@ -86,7 +86,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 if(carrello!=null){
 
 carrello.setValorecarrello(totale);} %>
-</form>
+
 
 </div>
 

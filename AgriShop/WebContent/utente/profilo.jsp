@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <link href="../style/stylelogreg.css" rel="stylesheet" type="text/css">
 
-<script src="../JS/controllo-profilo.js"></script>
+<script src="../JS/controllo-pregistrazione.js"></script>
 
 <%
 String username= (String)request.getSession().getAttribute("nome");

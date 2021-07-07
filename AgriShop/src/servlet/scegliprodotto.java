@@ -80,7 +80,7 @@ public class scegliprodotto extends HttpServlet {
 				rispostaprodotto.append("<input type=text name=prezzo placeholder="+prod.getPrezzo()+">");
 				rispostaprodotto.append("<input type=text name=descrizione placeholder="+prod.getDescrizione()+">");
 				rispostaprodotto.append("<input type=text name=idfoto placeholder="+prod.getIdfoto()+">");
-				rispostaprodotto.append("<input type= submit>");
+				rispostaprodotto.append("<input type= submit value=conferma>");
 				
 				
 				

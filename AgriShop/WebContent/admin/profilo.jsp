@@ -82,7 +82,7 @@ String username= (String)request.getSession().getAttribute("nome");
 
 <div class="utente-figlio2">
 
-<form class="AggiornaProdotto"action="../AdminPage?action=modifica" method="post">
+<form class="AggiornaProdotto" action="../AdminPage?action=modifica" method="post">
 <h2>Modifica Prodotto</h2>
 <table>
 

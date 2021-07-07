@@ -32,6 +32,7 @@ public class AdminPage extends HttpServlet {
 		prodotto prod= new prodotto();
 		
 		Float prezzo=(Float.parseFloat(request.getParameter("prezzo")));
+		System.out.print(prezzo);
 		String nome=request.getParameter("nome");
 		String SSN=request.getParameter("Ssn");
 		Integer disponibilita= (Integer.parseInt(request.getParameter("disponibilita")));
@@ -76,7 +77,7 @@ public class AdminPage extends HttpServlet {
 				prod.setIdfoto(idfoto);;
 			}}
 	
-		if(action!=null&&action.equals("modifica")) {
+		if(action!=null&&!action.equals("")) {
 			
 			try {
 				model.doUpdate(prod);
