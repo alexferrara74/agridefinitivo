@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="style/stylecarrello.css" rel="stylesheet" type="text/css">
-<script type="JS/prodotti.j"></script>
+<script src="JS/conferma-carrello.js"></script>
 
 
 <%
@@ -55,25 +55,34 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <%} %>
 </div>
 
+
+
+
 <div id="modalita_pagamento">
 
- <label class="container" onClick="attiva()">One
-  <input type="radio" checked="checked" name="radio" onchange="attiva()">
+ <label class="container" ><img src="immagini/paypal.png">
+  <input type="radio"  name="radio" value="PayPal" onchange="handleChange(this);">
   <span class="checkmark"></span>
 </label>
-<label class="container">Two
-  <input type="radio" name="radio">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Three
-  <input type="radio" name="radio">
+<label class="container"><img src="immagini/mastercard.png">
+  <input type="radio" name="radio" value="mastercard" onchange="handleChange(this);">
   <span class="checkmark"></span>
 </label>
 
+<div id="dati_pagamento">
+<input type="text" placeholder="">
+<input type="text" placeholder="">
+<input type="text" placeholder="">
+</div>
 
+<label class="container"><img src="immagini/contrassegno.png">
+  <input type="radio" name="radio" value="contanti" onchange="handleChange(this);">
+  <span class="checkmark"></span>
+</label>
 
 </div>
-<div id="dati_pagamento">ciao a tutti</div>
+
+
 
 
 

@@ -32,9 +32,11 @@
 
 #totale__spesa{width:30%;display:inline-block;padding-left:30%;margin-left:2%;font-family: "Lucida Console", "Courier New", monospace;font-size:18px;}
 
-#modalita_pagamento{width:20%; margin:2% 0 0 5%;}
-#modalita_pagamento div{padding : 10% 0 0 0;}
-#dati_pagamento {display:none;}
- .container input:checked #dati_pagamento:after {display:inline;background:orange;}
+#modalita_pagamento{width:20%; margin:2% 0 0 5%; border: 3px solid;}
+#modalita_pagamento img{width:20%; height:20%;}
+.container{display:block;}
+.container input{float:left;}
+#dati_pagamento {display:none; width:100%;height:60%; border:2px solid red;}
+ 
 
 
