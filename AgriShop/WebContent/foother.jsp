@@ -48,20 +48,12 @@
 	
 	</div>
 	
-<<<<<<< HEAD
+
 	<div class="spedizione">
 	<p>SPEDITO DA</p>
 	<img src="immagini/spedizione.png" width="300" height="100">
 	</div>
-=======
-	<div class="recensione">
-	<p>INVIA Una Recensione</p>
-<textarea cols="40" rows="8" maxlength="65525" required="required"></textarea>
-		
-<p>
-<ul>Email:<label for="email" style="display: none;">Email</label>
-<input id="email" name="email" type="text" value="" size="33" maxlength="105" aria-describedby="email-notes" required="required"></ul></p>
->>>>>>> branch 'master' of https://github.com/alexferrara74/agridefinitivo
+
 	
 	<div class="domande">
 	<p>LINK UTILI</p>
