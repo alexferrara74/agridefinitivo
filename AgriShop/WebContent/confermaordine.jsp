@@ -61,11 +61,17 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <div id="modalita_pagamento">
 
  <label class="container" ><img src="immagini/paypal.png">
-  <input type="radio"  name="radio" value="PayPal" onchange="handleChange(this);">
+  <input type="radio"  name="radio" value="PayPal" onchange="pagamento(this);">
   <span class="checkmark"></span>
 </label>
+
+<div id="conferma_paypal">
+<h1>agrishop@gmail.com</h1>
+
+</div>
+
 <label class="container"><img src="immagini/mastercard.png">
-  <input type="radio" name="radio" value="mastercard" onchange="handleChange(this);">
+  <input type="radio" name="radio" value="mastercard" onchange="pagamento(this);">
   <span class="checkmark"></span>
 </label>
 
@@ -75,8 +81,11 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <input type="text" placeholder="">
 </div>
 
+
+
+
 <label class="container"><img src="immagini/contrassegno.png">
-  <input type="radio" name="radio" value="contanti" onchange="handleChange(this);">
+  <input type="radio" id="contr" name="radio" value="contanti"  onchange="pagamento(this);">
   <span class="checkmark"></span>
 </label>
 
@@ -90,6 +99,16 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 </div>
+
+<button onclick="calcolo()">Conferma carrello</button>
+
+
+<div id="totale__carrello">
+
+
+
+</div>
+
 
 <div id="inserisci__ordine">
 

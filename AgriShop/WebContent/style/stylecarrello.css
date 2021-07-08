@@ -37,6 +37,6 @@
 .container{display:block;}
 .container input{float:left;}
 #dati_pagamento {display:none; width:100%;height:60%; border:2px solid red;}
- 
-
+#conferma_paypal{display:none; width:100%;height:60%; border:2px solid red;}
+#totale__carrello{display:none;width:60%; border:3px solid red;}
 
