@@ -143,9 +143,10 @@ transform: scale(1.1);
 	
 	#foto img {
 	
-display:block;
+display:inline;
 margin-left:25%;
 margin-right:auto;
+padding-top:30%;
 
 max-width: 240px;
 -moz-transition: all 0.3s;
