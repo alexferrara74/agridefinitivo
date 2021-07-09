@@ -35,6 +35,12 @@ if(prodotti==null&&errore==null){
 <img src="immagini/biologico.jpg" alt="biologico">
 </div>
 
+<div class="slo">
+<h1>Agricoltura biologica</h1>
+<h2>fa bene alla natura,fa bene a te</h2>
+<img src="immagini/bio.jpeg" alt="slo">
+</div>
+
 <div class="immagine">
 <img id="imm"src="immagini/azienda(1).jpg" alt="immagine">
 <div class="immagine__cerchio"><a href="prodotti?scelta=vino"><img src="immagini/vino.jpg"></a></div>

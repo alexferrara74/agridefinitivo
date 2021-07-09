@@ -18,8 +18,14 @@
 
 @media(max-width:767px){
 
-	
- .banner{width:78%; height:80px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
+	.contatto{
+	width:30%;
+	font-size: 12px;
+	margin-left: 3%;
+	margin-top: 10%;
+	padding-left:0;
+	}
+ .banner{width:78%; height:50px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
 	
 .clearfix:after {
   visibility: hidden;
