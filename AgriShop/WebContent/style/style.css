@@ -94,7 +94,7 @@ html,body{height:98%; background:#F8F8FF;}
 .home-generale{display:none;}
 
 #contenitore_prodotti{width:80%; height:40%; border-style:none; margin:2% 5% 0 15%; }
-#slogan-bio{width:90%; height:45%; border-style:solid; margin:2% 5% 3% 5%; }
+#slogan-bio{width:90%; height:45%; border-style:none; margin:2% 5% 3% 5%; }
 .bio{display:inline; float:left;width:50%;height:100%;}
 .bio img{width:95%; height:100%; border-radius:10px;}
 .bio h1{  font-weight: bold;font-size:30px;font-family: "Lucida Console", "Courier New", monospace; color:black; padding:10px 10px 10px 10px; margin:0 0 0 0;}
@@ -112,8 +112,8 @@ html,body{height:98%; background:#F8F8FF;}
 
 @media(max-width:767px){
 	#carrello{display:none;}
-	.banner{width:100%; height:100px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
-	.accedi__mobile{width:70px;display:inline; float:right; font-size:25px;}
+	.banner{width:78%; height:80px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
+	.accedi__mobile{width:70px;display:block; float:right; font-size:25px;}
 	.accedi__mobile__item{display:none;}
 	.header__logo img{width:200px; height:80px; padding :5px 5px 5px 0px;}
 	
@@ -128,30 +128,20 @@ html,body{height:98%; background:#F8F8FF;}
 	.slogan{display:none;}
 	.offerta{display:none;}
 	.immagine{width:90%; margin-left:5%;}
-	.immagine__cerchio{display:inline; float:left;width:60px;height:60px; border-radius:100%; border-style:solid;  padding:0;margin-left:15px; margin-top:10px;}
+	.immagine__cerchio{display:block; float:left;width:60px;height:60px; border-radius:100%; border-style:solid;  padding:0;margin-left:15px; margin-top:10px;}
 	.ricerca{display:none;}
 	
-	.home {width:20%; height:100%; display:inline;float:left;padding:5px 5px 10px 10px;}
+	.home {width:20%; height:100%; display:block;float:left;padding:5px 5px 10px 5px;}
 	.home img{width:50px; height:50px; padding:10px 10px 10px 10px;}
 	.home img:hover{background:green;}
-
-	.bio{display:inline;float: left; width:100%;height:100%;}
-	.bio img{width:100%; height:50%; border-radius:5px; display: inline-block;}
-	bio .h1,.h2{  font-weight: bold;font-size:5px;font-family: "Lucida Console", "Courier New", monospace; color:black; padding: 500px 0px 500px 0px;}
+	
+	#slogan-bio{height:700px;}
+	.bio{display:block;float: left; width:100%;height:50%;}
+	.bio img{width:100%; height:100%; border-radius:5px; display: block; float:left;}
+	bio .h1, .h2{  width:100%; height:50%; display:block; float:left;font-weight: bold;font-size:3px;font-family: "Lucida Console", "Courier New", monospace; color:black; padding: 0px 0px 0px 0px; margin-top:10px;}
 
 	
-	foother .block-contact{
-		float: none;
-	}
 	
-	foother .paddingMobile, .pagamento, .spedizione, .domande, .altro{
-		float:none;
-		display:block;
-		width:100%;
-		padding: 1px;
-		border-right: none;
-	}
-}
 
 
 
@@ -167,4 +157,4 @@ html,body{height:98%; background:#F8F8FF;}
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 
-
+}
