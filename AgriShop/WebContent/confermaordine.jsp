@@ -115,6 +115,10 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 </div>
 
+
+<div id="foother">
+<%@ include file="foother.jsp"%>
+</div>
 </body>
 
 </html>

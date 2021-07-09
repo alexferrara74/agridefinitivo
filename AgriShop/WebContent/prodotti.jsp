@@ -95,7 +95,7 @@ if(prodotti!=null&&prodotti.size()>0){
 		<img src="immagini/<%=beans.getIdfoto()%>.png">
 		</a>
 		</div>
-		
+
 <div id="descrizione">		
 <a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
 <p><%=beans.getDescrizione() %><br></p>
@@ -132,13 +132,17 @@ if(prodotti!=null&&prodotti.size()>0){
 
 
 
-
 </div>
 
 
 
 
 <script src="JS/prodotti.js"></script>
+
+<div id="foother">
+<%@ include file="foother.jsp"%>
+</div>
+
 </body>
 
 
