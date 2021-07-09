@@ -41,15 +41,15 @@ String errorelogin=(String)request.getAttribute("passerrore");
 	
 <%if(erroreaccount!=null&&erroreaccount.equals("errorelogin")){ %>	
 	<div id="errorelogin">
-	<p>errore account
 	
+	<a><img src="immagini/error.png" width="200" height="200"></a>
 	</div>
 <%}%>
 
 
 <%if(errorelogin!=null&&errorelogin.equals("errorelogin")){ %>	
 	<div id="errorelogin">
-	<p>errore account
+		<a><img src="immagini/error.png" width="200" height="200"></a>
 	
 	</div>
 <%}%>
