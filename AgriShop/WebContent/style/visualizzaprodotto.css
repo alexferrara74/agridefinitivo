@@ -6,7 +6,7 @@
 	margin: 0 10% 2% 10%;
 	font-family: "Times New Roman", Times, serif;
 	font-size:25px;
-	border-style:inset;
+	border:none;
 }
 
 #visualizzaprodotto{
@@ -14,7 +14,7 @@
 	width:70%;
 	height:80%;
 	margin: 10px 10% 10px 28%;
-	border-style:solid;
+	border:none;
 	padding:0;
 }
 
@@ -46,28 +46,29 @@ transform: scale(1.1);
 	display:inline;
 	width:90%;
 	margin-left:5%;
+	border:none;
 }
-#nome p{width:35%; display:inline;float:left; border:3px solid black;}
-#nome span{width:60%; display:inline;float:left; border:3px solid black;margin-top:3%;}
+#nome p{width:35%; display:inline;float:left; }
+#nome span{width:60%; display:inline;float:left; margin-top:3%;}
 #descrizione{
 	display:inline;
 	float:left;
 	width:100%;
 	height:120px;
-	border-style:solid;
+	border-style:none;
 }
-#descrizione p{margin-left:5%;width:30%; display:inline;float:left; border:3px solid black;}
+#descrizione p{margin-left:5%;width:30%; display:inline;float:left; border:none;}
 
-#desc{width:60%; height:90%; display:inline;float:left;border:3px solid black;}
+#desc{width:60%; height:90%; display:inline;float:left;border:none;}
 
 #quantita{float:left;
 	display:inline;
 	width:90%;
 	margin-left:5%;
 	}
-#quantita p{width:30%; height:50px;display:inline;float:left; padding:2% 0 0 0; border:3px solid black;}
+#quantita p{width:30%; height:50px;display:inline;float:left; padding:2% 0 0 0; border:none;}
 
-#qnt{display:inline;float:left;width:60%;height:50px; width:50%; border-style:solid; margin-top:4%;}
+#qnt{display:inline;float:left;width:60%;height:50px; width:50%; border-style:none; margin-top:4%;}
 
 
 #prezzo{

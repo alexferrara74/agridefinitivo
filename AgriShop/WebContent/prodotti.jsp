@@ -23,7 +23,10 @@ if(prodotti==null&&errore==null){
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="style/prodotti.css" rel="stylesheet" type="text/css">
+
+
 
 
 
@@ -148,12 +151,9 @@ if(prodotti!=null&&prodotti.size()>0){
 <a href="" class="home"><img src="immagini/shopping-cart.png" alt="home" class="home"></a>
 <a href="" class="home"><img src="immagini/user.png" alt="home" class="menu__mobile"></a>
 
-</div>
 
 
-<div id="foother">
-<%@ include file="foother.jsp"%>
-</div>
+
 
 </body>
 
