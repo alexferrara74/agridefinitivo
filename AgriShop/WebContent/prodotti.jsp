@@ -128,7 +128,7 @@ if(prodotti!=null&&prodotti.size()>0){
 	}else{
 %>
 
- <a href="errore.jsp">Errore</a>
+ <a href="errore.jsp">Error</a>
 
 <% } %>
 
