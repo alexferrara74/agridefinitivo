@@ -51,33 +51,25 @@ public class totaleordine extends HttpServlet {
 			}catch (SQLException e) {
 				
 				response.sendRedirect("homepage.jsp");		
-	}
+			}
 			
 		}
-		
-		
-		
+				
 		if(carrello!=null) {
 		
 			if(contanti!=null) {
 				cont=Float.parseFloat(contanti);
 			
 			}
-	
-		
-		
-		if(totale!=null&&totale.equals("totale")) {
 			
-			
+		if(totale!=null&&totale.equals("totale")) {	
 			float valore=carrello.getValorecarrello();
 			valore=valore+cont;
 			carrello.setValorecarrello(valore);
 			cont=0;
 			risposta.append(+carrello.getValorecarrello());
 			
-		}
-		
-	
+		}	
 		try {
 		
 			ordine.setNumero(numeroordine);
@@ -87,18 +79,15 @@ public class totaleordine extends HttpServlet {
 			
 		}
 			catch (SQLException e) {
-				
-						
+										
 	}
-		
-		
+			
 		for(int i=0;i<carrello.getOggetto().size();i++) {
 			prodotto prod= new prodotto();
 			prod=carrello.getOggetto().get(i);
 			composto.setNumero(numeroordine);
 			composto.setQuantita(prod.getDispcarrello());
 			composto.setSsn(prod.getSsn());
-			
 			
 		}
 		
@@ -108,10 +97,9 @@ public class totaleordine extends HttpServlet {
 			
 			
 		}
-			catch (SQLException e) {
-				
+			catch (SQLException e) {				
 						
-	}
+			}
 		}
 		
 	
