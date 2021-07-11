@@ -26,7 +26,7 @@ public class carrello extends HttpServlet {
 		String quantita=request.getParameter("quantita");
 		String indirizzo="";
 		String nome = request.getParameter("nome");
-		
+		System.out.print(nome);
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model = new ProductModelDS(ds);
 		boolean controllo=false;
@@ -55,11 +55,11 @@ public class carrello extends HttpServlet {
 				
 
 				 if (action.equals("deleteCart")) {
-						indirizzo="carrello";
+					 indirizzo="carrello";
 						prodotto bean = (prodotto) model.doRetrieveByNome(nome);
 						if (bean != null && !bean.isEmpty()) {
 							carrello.deleteOggetto(bean);
-							
+						
 						
 							
 						}

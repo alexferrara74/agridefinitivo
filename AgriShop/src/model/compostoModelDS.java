@@ -1,10 +1,13 @@
 package model;
 
 import java.sql.SQLException;
+import java.util.Collection;
+
+
 
 public interface compostoModelDS<T> {
 	
-	public T doRetrieveByPiva(String code) throws SQLException;
+	public Collection< T> doRetrieveByPiva(int code) throws SQLException;
 	
 	public void doSave(T item) throws SQLException ;
 	

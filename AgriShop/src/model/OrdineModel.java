@@ -20,25 +20,25 @@ private DataSource ds= null;
 	}
 	
 	@Override
-	public ordine doRetrieveByPiva(String order) throws SQLException {
+	public Collection<ordine>doRetrieveByPiva(String order) throws SQLException {
 		Connection connection=null;
 		PreparedStatement prepareStatement=null;
 		
 		String selectSQL="SELECT * FROM ordine where PIVA= ?";
-		ordine bean=new ordine();
 		
 		
+		Collection <ordine> ordine= new LinkedList<ordine>(); 
 		try {
 			
 			connection= ds.getConnection();
 			prepareStatement= connection.prepareStatement(selectSQL);
 			prepareStatement.setString(1, order);
 			ResultSet rs=prepareStatement.executeQuery();
-			
+			ordine bean=new ordine();
 			
 				bean.setNumero(rs.getInt("numero"));
-			
-							
+				bean.setPiva(rs.getString("PIVA"));
+				ordine.add(bean);			
 			
 						
 		}finally {
@@ -55,7 +55,7 @@ private DataSource ds= null;
 			
 		}
 		
-		return bean;
+		return ordine;
 	}
 	
 

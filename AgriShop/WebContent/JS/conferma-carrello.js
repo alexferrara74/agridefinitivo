@@ -89,7 +89,31 @@ function pagamento(src) {
 	document.getElementById("buttonconferma").disabled=true;
 }
 	
+	function ordini(){
+		
+		
+		 var xhr = new XMLHttpRequest();
+   		 xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+		           
+	document.getElementById("ordini-cliente").innerHTML=xhr.responseText;
+
+	
+
+        	}
+   	 }
+   		 xhr.open('GET', 'ordiniclienti', true);
+  		 xhr.send(null);
+		
+		
+	}
 	
 	
+	function rimuoviogetto(){
+		var valore=document.getElementById("nomeprodotto").value;
+		alert(valore);
+		
+		
+	}
 	
 	

@@ -94,16 +94,16 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 <div id="modalita_spedizione">
-<label class="container"><img src="immagini/gls.png">
-<input type="radio" id="contr" name="radio" value="GLS" onchange="spedizione(this);">
+<label class="container"><img src="immagini/gls1.png">
+<input type="radio" id="contr" name="radiosped" value="GLS" onchange="spedizione(this);">
   <span class="checkmark"></span>
 </label>
-<label class="container"><img src="immagini/contrassegno.png" >
-<input type="radio" id="contr" name="radio" value="SDA"  onchange="spedizione(this);">
+<label class="container"><img src="immagini/sda.png" >
+<input type="radio" id="contr" name="radiosped" value="SDA"  onchange="spedizione(this);">
   <span class="checkmark"></span>
 </label>
 <label class="container"><img src="immagini/ritiroamano.png">
-<input type="radio" id="contr" name="radio" value="MANO"  onchange="spedizione(this);">
+<input type="radio" id="contr" name="radiosped" value="MANO"  onchange="spedizione(this);">
   <span class="checkmark"></span>
 </label>
 </div>

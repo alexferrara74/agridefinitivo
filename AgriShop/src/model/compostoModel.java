@@ -3,9 +3,14 @@ package model;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.LinkedList;
 
 import javax.sql.DataSource;
+
+
 
 import utils.utility;
 
@@ -59,9 +64,45 @@ private DataSource ds= null;
 
 
 	@Override
-	public composto doRetrieveByPiva(String code) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<composto> doRetrieveByPiva(int numero) throws SQLException {
+		Connection connection=null;
+		PreparedStatement prepareStatement=null;
+		
+		String selectSQL="SELECT * FROM composto where numero= ?";
+		Collection <composto> composto= new LinkedList<composto>();
+	
+		try {
+			composto bean=new composto();
+			connection= ds.getConnection();
+			prepareStatement= connection.prepareStatement(selectSQL);
+			prepareStatement.setInt(1, numero);
+			ResultSet rs=prepareStatement.executeQuery();
+			
+			
+				
+				bean.setNumero(rs.getInt("numero"));
+				bean.setQuantita(rs.getInt("quantita"));
+				bean.setSsn(rs.getString("SSN"));
+				composto.add(bean);			
+			
+						
+		}finally {
+			try {
+			if(prepareStatement!=null)
+			prepareStatement.close();
+			}finally {
+				
+			
+			
+			if(connection!=null)
+			connection.close();
+			}
+			
+		}
+		
+		return composto;
+		
+		
 	}
 
 

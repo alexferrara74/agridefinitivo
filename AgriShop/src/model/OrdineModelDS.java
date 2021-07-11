@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public interface OrdineModelDS<T>{
 
-		public T doRetrieveByPiva(String code) throws SQLException;
+		public Collection <T> doRetrieveByPiva(String code) throws SQLException;
 		
 		public void doSave(T item) throws SQLException ;
 		
