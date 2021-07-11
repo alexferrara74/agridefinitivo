@@ -28,11 +28,14 @@ public class totaleordine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	float cont=0;
 	int numeroordine=0;
+	int costospedizione=0;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		String contanti= request.getParameter("contanti");
 		String totale= request.getParameter("action");
+		String spedizione=request.getParameter("spedizione");
 		String nomenegozio=(String) request.getSession().getAttribute("nome");
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		OrdineModel modelordine= new OrdineModel(ds);
@@ -43,6 +46,18 @@ public class totaleordine extends HttpServlet {
 		ordine ordine= new ordine();
 		composto composto=new composto();
 		StringBuffer risposta=new StringBuffer();
+		
+		if(spedizione!=null) {
+			if(spedizione.equals("GLS")) {
+				costospedizione=8;
+			}
+			if(spedizione.equals("SDA")) {
+				costospedizione=6;
+			}
+			if(spedizione.equals("MANO")) {
+				costospedizione=0;
+			}
+		}
 		
 		if(nomenegozio!=null) {
 			try {
@@ -64,9 +79,10 @@ public class totaleordine extends HttpServlet {
 			
 		if(totale!=null&&totale.equals("totale")) {	
 			float valore=carrello.getValorecarrello();
-			valore=valore+cont;
+			valore=valore+cont+costospedizione;
 			carrello.setValorecarrello(valore);
 			cont=0;
+			costospedizione=0;
 			risposta.append(+carrello.getValorecarrello());
 			
 		}	

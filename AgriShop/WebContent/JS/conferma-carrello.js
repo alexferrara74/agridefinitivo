@@ -39,6 +39,26 @@ function pagamento(src) {
 	
 	}
 	
+	
+	function spedizione(sped){
+		
+		var spedizione=sped.value;
+		
+		
+		 var xhr = new XMLHttpRequest();
+   		 xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+           
+        	}
+   	 }
+   		 xhr.open('GET', 'totaleordine?spedizione='+spedizione+'', true);
+  		 xhr.send(null);
+		
+		
+	}
+	
+	
+	
 	function calcolo(){
 		
 		document.getElementById("totale__carrello").style.display="inline";
@@ -47,8 +67,8 @@ function pagamento(src) {
    		 xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
 		           
-document.getElementById("totale__carrello").innerHTML=xhr.responseText;
-document.getElementById("loading").style.display="inline";
+	document.getElementById("totale__carrello").innerHTML=xhr.responseText;
+	document.getElementById("loading").style.display="inline";
 	window.setTimeout("redirect()", 3000);
 	
 

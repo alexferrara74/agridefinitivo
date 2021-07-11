@@ -9,7 +9,7 @@ USE azienda1;
 DROP TABLE IF EXISTS azienda;
 CREATE TABLE azienda (
   nome           varchar(20)    not NULL,
-  città          varchar(20)    not NULL,
+  citta          varchar(20)    not NULL,
   numdipendenti  int            not NULL, 
   PIVA           varchar(16)    not NULL,
   primary key (PIVA)
@@ -74,6 +74,8 @@ categ varchar(15) not null,
 primary key(categ)
 );
 
+
+
 DROP TABLE IF EXISTS negozio;
 CREATE TABLE negozio (
   ragione_sociale    varchar(50)  not NULL,
@@ -83,8 +85,16 @@ CREATE TABLE negozio (
   PIVA      varchar(16)           not NULL,
   email    varchar(35)  not NULL,
   pwd       varchar(8)   not NULL,
-  primary key (PIVA),
-  foreign key (numero) references ordine(numero)
+  primary key (PIVA)
+);
+
+DROP TABLE IF EXISTS ordine;
+CREATE TABLE ordine (
+data      date not NULL,
+numero    int auto_increment not NULL,
+PIVA varchar(16) not null,
+ primary key (numero),
+ foreign key (PIVA) references negozio(PIVA)
 );
 
 DROP TABLE IF EXISTS prodotto;
@@ -100,18 +110,13 @@ CREATE TABLE prodotto (
   foreign key (categ) references categoria(categ)
 );
 
-DROP TABLE IF EXISTS ordine;
-CREATE TABLE ordine (
-data      date not NULL,
-numero    int auto_increment not NULL,
- primary key (numero),
- foreign key (PIVA) references negozio(PIVA),
-);
+
+
 
 
 DROP TABLE IF EXISTS composto;
 CREATE TABLE composto (
-quantità int  not NULL,
+quantita� int  not NULL,
 SSN      char(9) not NULL,
 numero    int auto_increment not NULL,
 foreign key (SSN) references prodotto(SSN),
@@ -283,16 +288,6 @@ INSERT INTO prodotto VALUES
 
 
 
-INSERT INTO composto VALUES
-(12,654008935,1);
-INSERT INTO composto VALUES
-(55,147963258,3);
-INSERT INTO composto VALUES
-(33,159638257,2);
-INSERT INTO composto VALUES
-(80,125987635,4);
-INSERT INTO composto VALUES
-(60,539512508,5);
 
 INSERT INTO produce VALUES
 (13,147963258);
@@ -319,56 +314,4 @@ INSERT INTO ara VALUES
 INSERT INTO ara VALUES
 ('SA 741 OA',20);
 
-INSERT INTO spedizione VALUES
-(128965,1);
-INSERT INTO spedizione VALUES
-(356533,4);
-INSERT INTO spedizione VALUES
-(503488,3);
-INSERT INTO spedizione VALUES
-(001986,2);
-
-INSERT INTO corriere VALUES
-(65,128965);
-INSERT INTO corriere VALUES
-(55,503488);
-INSERT INTO corriere VALUES
-(25,356533);
-INSERT INTO corriere VALUES
-(36,001986);
-
-INSERT INTO ritiro_a_mano VALUES
-(50,128965);
-INSERT INTO ritiro_a_mano VALUES
-(22,503488);
-INSERT INTO ritiro_a_mano VALUES
-(35,356533);
-INSERT INTO ritiro_a_mano VALUES
-(40,001986);
-
-INSERT INTO pagamento (ID) VALUES
-(128965);
-INSERT INTO pagamento (ID) VALUES
-(001986);
-INSERT INTO pagamento (ID) VALUES
-(356533);
-INSERT INTO pagamento (ID) VALUES
-(503488);
-
-INSERT INTO fattura (data,num_pag) VALUES
-('2021-02-12',1);
-INSERT INTO fattura (data,num_pag) VALUES
-('2020-11-12',4);
-INSERT INTO fattura (data,num_pag) VALUES
-('2021-03-25',3);
-
-INSERT INTO contanti VALUES
-(4.50,1);
-INSERT INTO contanti VALUES
-(4.50,4);
-
-INSERT INTO carta VALUES
-(3);
-INSERT INTO carta VALUES
-(2);
 
