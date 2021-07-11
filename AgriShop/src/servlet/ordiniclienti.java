@@ -2,6 +2,9 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +16,10 @@ import javax.sql.DataSource;
 import model.LoginModelDS;
 import model.Negozio;
 import model.OrdineModel;
+import model.composto;
 import model.compostoModel;
 import model.ordine;
+import model.prodotto;
 
 /**
  * Servlet implementation class ordiniclienti
@@ -28,15 +33,16 @@ public class ordiniclienti extends HttpServlet {
 	
 		response.setContentType("text/html");
 		String nomenegozio=(String) request.getSession().getAttribute("nome");
-		System.out.print(nomenegozio);
+
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
 		compostoModel modelcomposto=new compostoModel(ds);
 		OrdineModel modelordine= new OrdineModel(ds);
 		LoginModelDS modelnegozio=new LoginModelDS(ds);
 		Negozio neg=new Negozio();
-		ordine ordine=new ordine();
-		StringBuffer risposta=new StringBuffer();
 		
+		StringBuffer risposta=new StringBuffer();
+		Collection <ordine> ordine= new LinkedList<ordine>(); 
+		Collection <composto> composto= new LinkedList<composto>(); 
 		try {
 			neg=modelnegozio.doRetrieveByRs(nomenegozio);
 		}catch(SQLException e) {
@@ -47,15 +53,37 @@ public class ordiniclienti extends HttpServlet {
 		
 		try {
 			ordine=modelordine.doRetrieveByPiva(neg.getPiva());
+			
+			Iterator<?> it=ordine.iterator();
+			while(it.hasNext()){
+				ordine beans=(ordine)it.next();
+				System.out.println(beans.getPiva());
+				risposta.append("<p>");
+	
+				risposta.append(+beans.getNumero());
+				risposta.append(beans.getPiva());
+				risposta.append("</p>");
+				composto=modelcomposto.doRetrieveByPiva(beans.getNumero());
+				Iterator<?> ite=composto.iterator();
+				while(ite.hasNext()){
+					composto beanscomposto=(composto)ite.next();
+					risposta.append("<p>");
+					risposta.append(beanscomposto.getQuantita());
+					risposta.append(beanscomposto.getSsn());
+					risposta.append("</p>");
+				}
+			}
+			
+			
+			
+			
 		} catch (SQLException e) {
 			
 		}
 		
-		risposta.append("<p>");
-		risposta.append(ordine.getNumero());
-		risposta.append(ordine.getPiva());
-
-		risposta.append("</p>");
+		
+	
+		
 		
 		response.getWriter().write(risposta.toString());
 	}

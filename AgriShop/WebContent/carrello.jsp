@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script src="JS/conferma-carrello.js"></script>
 <link rel="stylesheet" href="style/stylecarrello.css">
 
 
@@ -22,7 +23,7 @@ float totale=0;
 <%@ include file="Header.jsp"%><br>
 
 
-<a href="carrello?action=clearCart">Svuota Carrello</a>
+<a id="svuotacarrello" href="carrello?action=clearCart">Svuota Carrello</a>
 
 
 
@@ -38,7 +39,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <% prodotto p=prodcarrello.get(i);
 	totale=totale+(p.getDispcarrello()*p.getPrezzo());
-
+	
 %>
 
 <div id="test"></div>
@@ -51,9 +52,10 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <input type="text" id="nomeprodotto" name="nome" value="<%=p.getNome() %>" style="display:none"  readonly >
 <span id="nomeprod"><input type="text" name="nome" value="<%=p.getDescrizione() %>"  readonly ></span>
 
-<span id="quantita"><input id="quantitanumero"  type="number" name="quantita" min="0" max="<%=p.getQuantita() %>" step="1" value="<%=p.getDispcarrello() %>"></span>
+<span id="quantita"><input id="quantitanumero"  type="number" name="quantita" value="<%=p.getDispcarrello() %>" readonly></span>
 <span id="prezzo">EUR <%=p.getPrezzo() %></span>
-<a href="carrello?action=modificaqnt" id="aggcarrello">Aggiorna </a>
+
+<button onclick="rimuoviogetto()">Rimuovi </button>
 </div>
 
 

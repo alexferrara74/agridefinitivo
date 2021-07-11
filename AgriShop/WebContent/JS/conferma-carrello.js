@@ -109,4 +109,11 @@ function pagamento(src) {
 	}
 	
 	
+	function rimuoviogetto(){
+		var valore=document.getElementById("nomeprodotto").value;
+		alert(valore);
+		
+		
+	}
+	
 	

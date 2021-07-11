@@ -8,10 +8,13 @@
 </head>
 <body onload="ordini();" >
 
+
+<button onclick="ordini()">ciao</button>
+
 <div id="ordini-cliente">
 
 
-<h1>Ordini Effettuati</h1>
+
 
 </div>
 

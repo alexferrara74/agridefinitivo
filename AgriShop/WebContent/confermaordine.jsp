@@ -94,11 +94,11 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 <div id="modalita_spedizione">
-<label class="container"><img src="immagini/gls.png">
+<label class="container"><img src="immagini/gls1.png">
 <input type="radio" id="contr" name="radiosped" value="GLS" onchange="spedizione(this);">
   <span class="checkmark"></span>
 </label>
-<label class="container"><img src="immagini/contrassegno.png" >
+<label class="container"><img src="immagini/sda.png" >
 <input type="radio" id="contr" name="radiosped" value="SDA"  onchange="spedizione(this);">
   <span class="checkmark"></span>
 </label>
