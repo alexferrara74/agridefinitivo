@@ -1,12 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.*" import="model.prodotto"%>
+    pageEncoding="ISO-8859-1" import="model.*" import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<script src="JS/conferma-carrello.js"></script>
 </head>
-<body>
+<body onload="ordini();" >
+
+<div id="ordini-cliente">
+
+
+<h1>Ordini Effettuati</h1>
+
+</div>
+
 
 </body>
 </html>
