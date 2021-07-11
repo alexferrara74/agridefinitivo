@@ -46,8 +46,7 @@ public class loginservlet extends HttpServlet {
 			response.sendRedirect("homepage.jsp");
 			
 		}
-		
-			
+					
 		try {
 			neg=(model.doRetrieveByKey(username));
 		

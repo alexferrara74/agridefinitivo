@@ -66,6 +66,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </label>
 
 <div id="conferma_paypal">
+<h1>Effettuare pagamento a:</h1>
 <h1>agrishop@gmail.com</h1>
 
 </div>
@@ -92,17 +93,24 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </div>
 
 
-
-
-
 <div id="modalita_spedizione">
-
-
+<label class="container"><img src="immagini/gls.png">
+<input type="radio" id="contr" name="radio" value="GLS" onchange="spedizione(this);">
+  <span class="checkmark"></span>
+</label>
+<label class="container"><img src="immagini/contrassegno.png" >
+<input type="radio" id="contr" name="radio" value="SDA"  onchange="spedizione(this);">
+  <span class="checkmark"></span>
+</label>
+<label class="container"><img src="immagini/ritiroamano.png">
+<input type="radio" id="contr" name="radio" value="MANO"  onchange="spedizione(this);">
+  <span class="checkmark"></span>
+</label>
 </div>
 
-<button onclick="calcolo()">Conferma carrello</button>
+<button id="buttonconferma" onclick="calcolo(),disabilita()" >Conferma carrello</button>
 
-
+<img id="loading" src="immagini/loading.png" alt="errore">
 <div id="totale__carrello">
 
 
@@ -110,10 +118,6 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </div>
 
 
-<div id="inserisci__ordine">
-
-
-</div>
 
 
 <div id="foother">
