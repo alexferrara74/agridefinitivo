@@ -95,7 +95,7 @@ if(prodotti!=null&&prodotti.size()>0){
 		<img src="immagini/<%=beans.getIdfoto()%>.png">
 		</a>
 		</div>
-		
+
 <div id="descrizione">		
 <a href="prodotti/visualizzaprodotto.jsp?nomeprodotto=<%=beans.getNome()%>">
 <p><%=beans.getDescrizione() %><br></p>
@@ -132,13 +132,29 @@ if(prodotti!=null&&prodotti.size()>0){
 
 
 
-
 </div>
 
 
 
 
 <script src="JS/prodotti.js"></script>
+
+<div class="banner clearfix">
+
+
+
+<a href="home.html" class="home"><img src="immagini/home.png" alt="home" class="home"></a>
+<a href="" class="home"><img src="immagini/shop.png" alt="home" class="home"></a>
+<a href="" class="home"><img src="immagini/shopping-cart.png" alt="home" class="home"></a>
+<a href="" class="home"><img src="immagini/user.png" alt="home" class="menu__mobile"></a>
+
+</div>
+
+
+<div id="foother">
+<%@ include file="foother.jsp"%>
+</div>
+
 </body>
 
 

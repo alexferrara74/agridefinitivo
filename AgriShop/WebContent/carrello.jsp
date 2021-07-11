@@ -94,5 +94,6 @@ carrello.setValorecarrello(totale);} %>
 
 
 <script src="JS/carrello.js"></script>
+
 </body>
 </html>

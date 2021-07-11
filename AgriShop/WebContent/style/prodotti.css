@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 
-
+.banner{display:none;}
 #risultato{
 
 	
@@ -54,6 +54,7 @@
 
 
 #singolohomepage:hover {}
+
  #immagineprodhome {display:inline;float:left;width:80%;height:40%;margin-left:10%;}
  #immagineprodhome img{width:80%;height:100%; margin-left:10%;}
  #descrizionehome{display:inline;float:left; width:90%;height:20%;margin-left:5%; margin-top:0;}
@@ -117,10 +118,73 @@
 
 
 
-#contenitore_prodotti{width:80%; height:40%; border-style:none; margin:2% 5% 0 15%; }
-#slogan-bio{width:90%; height:45%; border-style:none; margin:2% 5% 3% 5%; }
-.bio{display:inline; float:left;width:50%;height:100%;}
-.bio img{width:95%; height:100%; border-radius:10px;}
-.bio h1{  font-weight: bold;font-size:30px;font-family: "Lucida Console", "Courier New", monospace; color:black; padding:10px 10px 10px 10px; margin:0 0 0 0;}
-.bio h2{font-style: italic;font-size:20px;font-family: "Lucida Console", "Courier New", monospace; color:black;padding:10px 10px 30px 10px; margin:0 0 0 0;}
 
+@media(max-width:767px){
+		
+	
+	#parametriconfigurazione{
+	width: 10%;
+	height:500px;
+	margin-left:30px;
+
+}
+
+#parametriconfigurazione a{
+	 
+	margin-top:5px;
+	margin-left:1px;
+	font-size:20px;
+	width:50%;
+	
+	
+}
+
+
+#parametriconfigurazione img{
+	display:none;
+}
+#singolo{
+	display:inline;
+	float:left;
+	width:35%;
+	height:15%;
+	margin: 50% 5% 0 10%;
+}
+
+#descrizione{ width:70%;height:10%;}
+#descrizione p{font-size:15px;}
+#prezzo{width:50%; height:10%;font-size:15px; margin-top:50%;margin-left:5px;}
+#prezzo p{width:50%; margin:30% 1% 10% 0 ;font-size:15px;}
+#prezzo img{width:70%; margin-top:0; margin-left:10%;}
+#scelta{display:none;}
+#scelta button{width:52%; height:35px;margin-left:20%; border-radius:10px; background:#69CD12;}
+#scelta button:hover{background:orange;}
+
+
+#singolohomepage:hover {display:block;}
+ #immagineprodhome {display:inline;float:left;width:80%;height:40%;margin-left:10%;}
+ #immagineprodhome img{width:100%;height:70%; margin-left:15%;}
+ #descrizionehome{display:inline;float:left; width:90%;height:20%;margin-left:1%; margin-top:0;}
+ #descrizionehome a{font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:12px; text-decoration:none; margin :0; padding:0 0 0 5px;}
+ #prezzohome{display:inline;float:left;width:90%; height:15%;margin:0 0 0 5%;font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:25px; text-decoration:none; }
+ #prezzohome p{width:50%;display:inline; float:left; margin:0;padding:0;  font-weight: bold; font-size:15px; text-align:center;}
+ #prezzohome img{width:35%;display:inline; float:left; margin-top:-5%; margin-left:0; text-decoration:none;}
+ #sceltahome{display:inline;float:left;width:80%; height:15%; margin-left:5%; padding-top:1%;}
+ #sceltahome input{display:none;}
+ #sceltahome button{display:none;}
+ 
+ .banner{width:78%; height:80px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+}
