@@ -152,28 +152,17 @@ DROP TABLE IF EXISTS spedizione;
 CREATE TABLE spedizione (
  ID           int     not NULL,
  numero   int auto_increment not NULL,
+ modalitaspedizione varchar(15) not null,
+ costospedizione int not null,
  primary key (ID),
   foreign key (numero) references ordine(numero)
-);
-
-DROP TABLE IF EXISTS corriere;
-CREATE TABLE corriere (
-prezzo           int     not NULL,
-ID               int     not NULL,
-foreign key (ID) references spedizione(ID)
-);
-
-DROP TABLE IF EXISTS ritiro_a_mano;
-CREATE TABLE ritiro_a_mano (
- prezzo           int     not NULL,
- ID               int     not NULL,
-foreign key (ID) references spedizione(ID)
 );
 
 DROP TABLE IF EXISTS pagamento;
 CREATE TABLE pagamento (
  ID           int     not NULL,
  num_pag      int auto_increment not NULL,
+ modalitapagamento varchar(15) not null,
  primary key (num_pag),
  foreign key (ID) references spedizione(ID)
 );
@@ -187,18 +176,6 @@ primary key (numero),
 foreign key (num_pag) references pagamento(num_pag)
 );
 
-DROP TABLE IF EXISTS contanti;
-CREATE TABLE contanti (
- spese     float  not NULL,
- num_pag   int not NULL,
- foreign key (num_pag) references pagamento(num_pag)
-);
-
-DROP TABLE IF EXISTS carta;
-CREATE TABLE carta (
- num_pag     int  NULL,
- foreign key (num_pag) references pagamento(num_pag)
-);
 INSERT INTO categoria VALUES
 ('ortaggi');
 INSERT INTO categoria VALUES

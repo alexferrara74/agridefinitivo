@@ -15,10 +15,14 @@ import model.Carrello;
 import model.LoginModelDS;
 import model.Negozio;
 import model.OrdineModel;
+import model.PagamentoModel;
+import model.SpedizioneModel;
 import model.composto;
 import model.compostoModel;
 import model.ordine;
+import model.pagamento;
 import model.prodotto;
+import model.spedizione;
 
 /**
  * Servlet implementation class totaleordine
@@ -27,37 +31,34 @@ import model.prodotto;
 public class totaleordine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	float cont=0;
-	int numeroordine=0;
 	int costospedizione=0;
+
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
-		String contanti= request.getParameter("contanti");
-		String totale= request.getParameter("action");
-		String spedizione=request.getParameter("spedizione");
-		String nomenegozio=(String) request.getSession().getAttribute("nome");
 		DataSource ds= (DataSource) getServletContext().getAttribute("DataSource");
-		OrdineModel modelordine= new OrdineModel(ds);
-		LoginModelDS model= new LoginModelDS(ds);
 		
+		String tipopagamento= request.getParameter("pagamento");
+		String totale= request.getParameter("action");
+		String tipospedizione=request.getParameter("spedizione");
+		String nomenegozio=(String) request.getSession().getAttribute("nome");
+		
+		OrdineModel modelordine= new OrdineModel(ds);
+		PagamentoModel modelpagamento=new PagamentoModel(ds);
+		SpedizioneModel modelspedizione= new SpedizioneModel(ds);
+		LoginModelDS model= new LoginModelDS(ds);
+		compostoModel modelcomposto=new compostoModel(ds);
 		Carrello<prodotto> carrello = (Carrello<prodotto>) request.getSession().getAttribute("carrello");
 		Negozio neg=new Negozio();
 		ordine ordine= new ordine();
 		composto composto=new composto();
+		spedizione spedizione=new spedizione();
+		pagamento pagamento=new pagamento();
+		
+		
 		StringBuffer risposta=new StringBuffer();
 		
-		if(spedizione!=null) {
-			if(spedizione.equals("GLS")) {
-				costospedizione=8;
-			}
-			if(spedizione.equals("SDA")) {
-				costospedizione=6;
-			}
-			if(spedizione.equals("MANO")) {
-				costospedizione=0;
-			}
-		}
 		
 		if(nomenegozio!=null) {
 			try {
@@ -71,11 +72,45 @@ public class totaleordine extends HttpServlet {
 		}
 				
 		if(carrello!=null) {
-		
-			if(contanti!=null) {
-				cont=Float.parseFloat(contanti);
 			
+			if(tipospedizione!=null) {
+				if(tipospedizione.equals("GLS")) {
+					costospedizione=8;
+					spedizione.setCostospedizione(costospedizione);
+					spedizione.setModalitaspedizione("GLS");
+				}
+				if(tipospedizione.equals("SDA")) {
+					costospedizione=6;
+					spedizione.setCostospedizione(costospedizione);
+					spedizione.setModalitaspedizione("SDA");
+				}
+				if(tipospedizione.equals("MANO")) {
+					costospedizione=0;
+					spedizione.setCostospedizione(costospedizione);
+					spedizione.setModalitaspedizione("RITIRO");
+				}
 			}
+		
+			if(tipopagamento!=null) {
+				if(tipopagamento.equals("contanti")) {
+				pagamento.setModalitapagamento("contanti");
+				cont=4;
+				}
+			
+			
+				if(tipopagamento.equals("mastercard")) {
+				pagamento.setModalitapagamento("mastercard");
+				cont=0;
+				}
+			
+	
+				if(tipopagamento.equals("paypal")) {
+				pagamento.setModalitapagamento("paypal");
+				cont=0;
+			
+			}}
+			
+			
 			
 		if(totale!=null&&totale.equals("totale")) {	
 			float valore=carrello.getValorecarrello();
@@ -85,37 +120,38 @@ public class totaleordine extends HttpServlet {
 			costospedizione=0;
 			risposta.append(+carrello.getValorecarrello());
 			
-		}	
+	
+		ordine.setPiva(neg.getPiva());
 		try {
-		
-			ordine.setNumero(numeroordine);
-			numeroordine++;
-			ordine.setPiva(neg.getPiva());			
 			modelordine.doSave(ordine);
-			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-			catch (SQLException e) {
-										
-	}
+		
 			
 		for(int i=0;i<carrello.getOggetto().size();i++) {
 			prodotto prod= new prodotto();
 			prod=carrello.getOggetto().get(i);
-			composto.setNumero(numeroordine);
+		
 			composto.setQuantita(prod.getDispcarrello());
 			composto.setSsn(prod.getSsn());
 			
+			
+			System.out.print(composto.getQuantita());
+			try {
+				
+				modelcomposto.doSave(composto);
+				
+				
+			}
+				catch (SQLException e) {				
+					System.out.print("errore");		
+				}
+			
+		}
 		}
 		
-		try {
-			compostoModel modelcomposto=new compostoModel(ds);
-			modelcomposto.doSave(composto);
-			
-			
-		}
-			catch (SQLException e) {				
-						
-			}
 		}
 		
 	

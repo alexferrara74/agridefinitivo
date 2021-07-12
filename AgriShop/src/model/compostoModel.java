@@ -30,7 +30,7 @@ private DataSource ds= null;
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
-		String insertSQL="INSERT INTO composto"+"(quantita,SSN,numero) VALUES (?,?,?)";    
+		String insertSQL="INSERT INTO composto (quantita,SSN,numero) VALUES (?,?,?)";    
 		
 		try {
 			connection=ds.getConnection();

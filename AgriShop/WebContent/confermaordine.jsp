@@ -61,7 +61,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <div id="modalita_pagamento">
 
  <label class="container" ><img src="immagini/paypal.png">
-  <input type="radio"  name="radio" value="PayPal" onchange="pagamento(this);">
+  <input type="radio"  name="radio" value="paypal" onchange="pagamento(this), costo(this);">
   <span class="checkmark"></span>
 </label>
 
@@ -72,21 +72,24 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </div>
 
 <label class="container"><img src="immagini/mastercard.png">
-  <input type="radio" name="radio" value="mastercard" onchange="pagamento(this);">
+  <input type="radio" name="radio" value="mastercard" onchange="pagamento(this), costo(this);">
   <span class="checkmark"></span>
 </label>
 
+
 <div id="dati_pagamento">
-<input type="text" placeholder="">
-<input type="text" placeholder="">
-<input type="text" placeholder="">
+<input type="text" placeholder="Numero Carta">
+<input type="text" placeholder="Titolare Carta">
+<input type="date" placeholder="Scadenza">
+<input type="number" placeholder="CVV">
+
 </div>
 
 
 
 
 <label class="container"><img src="immagini/contrassegno.png">
-  <input type="radio" id="contr" name="radio" value="contanti"  onchange="pagamento(this);">
+  <input type="radio" id="contr" name="radio" value="contanti"  onchange="pagamento(this),costo(this);">
   <span class="checkmark"></span>
 </label>
 

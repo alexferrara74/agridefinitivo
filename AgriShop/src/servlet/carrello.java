@@ -39,11 +39,7 @@ public class carrello extends HttpServlet {
 		}
 		
 		String action = request.getParameter("action");
-		
-
-		
-		
-		
+	
 		if(nome==null) {
 			
 			indirizzo="homepage.jsp";
@@ -52,31 +48,24 @@ public class carrello extends HttpServlet {
 		
 		try {
 			
-			
-			
 			if (action != null) {
-				
-				
-
+			
 				 if (action.equals("deleteCart")) {
 					 indirizzo="carrello.jsp";
-						prodotto bean = (prodotto) model.doRetrieveByNome(nome);
+						prodotto bean = model.doRetrieveByNome(nome);
 						if (bean != null && !bean.isEmpty()) {
-							carrello.deleteOggetto(bean);
-						
-						
-							
-						}
-					}
-				
-				
+								carrello.deleteOggetto(bean);
+								request.getSession().setAttribute("carrello", carrello);	
+									
+								}	
+				 	}
+										
 				if (action.equals("clearCart")) {
 					carrello.deleteOggetto();
 					indirizzo="carrello.jsp";
 				
 				}
-				
-				
+							
 				if (action.equals("aggiungi")) {	
 					int qnt=Integer.parseInt(quantita);
 					prodotto bean = (prodotto) model.doRetrieveByNome(nome);
@@ -133,7 +122,8 @@ public class carrello extends HttpServlet {
 			utility.print(e);
 			request.setAttribute("error", e.getMessage());
 		}
-		request.setAttribute("carrello", carrello);
+		
+		request.getSession().setAttribute("carrello", carrello);
 		request.getSession().setAttribute("nomeprod", nome);
 
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/"+indirizzo+"");

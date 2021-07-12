@@ -55,13 +55,8 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <span id="quantita"><input id="quantitanumero"  type="number" name="quantita" value="<%=p.getDispcarrello() %>" readonly></span>
 <span id="prezzo">EUR <%=p.getPrezzo() %></span>
 
-<a href="<%=response.encodeURL("carrello?action=deleteCart&nome=" +p.getNome())%>">cancella</a>
 
-<button onclick="rimuoviogetto()">Rimuovi </button>
 </div>
-
-
-
 
 <%}}else{ %>
 

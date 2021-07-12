@@ -16,16 +16,6 @@ function pagamento(src) {
 		document.getElementById("dati_pagamento").style.display="none";
 		document.getElementById("conferma_paypal").style.display="none";
 		
-		 var xhr = new XMLHttpRequest();
-   		 xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-           
-        	}
-   	 }
-   		 xhr.open('GET', 'totaleordine?contanti=4', true);
-  		 xhr.send(null);
-		
-		
 		}
 		
 	if(src.value=="PayPal")
@@ -109,11 +99,23 @@ function pagamento(src) {
 	}
 	
 	
-	function rimuoviogetto(){
-		var valore=document.getElementById("nomeprodotto").value;
-		alert(valore);
-		
+	function costo(costo){
+		var tipo=costo.value;
+	
+		 var xhr = new XMLHttpRequest();
+   		 xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+           
+        	}
+   	 }
+   		 xhr.open('GET', 'totaleordine?pagamento='+tipo+'', true);
+  		 xhr.send(null);
 		
 	}
+	
+	
+		
+		
+	
 	
 	

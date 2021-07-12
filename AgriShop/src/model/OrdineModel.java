@@ -36,7 +36,7 @@ private DataSource ds= null;
 			ResultSet rs=prepareStatement.executeQuery();
 			ordine bean=new ordine();
 			
-				bean.setNumero(rs.getInt("numero"));
+				
 				bean.setPiva(rs.getString("PIVA"));
 				ordine.add(bean);			
 			
@@ -65,15 +65,15 @@ private DataSource ds= null;
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
-		String insertSQL="INSERT INTO ordine"+"(numero,PIVA) VALUES (?,?)";    
+		String insertSQL="INSERT INTO ordine "+" (PIVA) VALUES (?)";    
 		
 		try {
 			connection=ds.getConnection();
 			connection.setAutoCommit(false);
 			preparedStatement = connection.prepareStatement(insertSQL);
 
-			preparedStatement.setInt(1,item.getNumero());
-			preparedStatement.setString(2,item.getPiva());
+			
+			preparedStatement.setString(1,item.getPiva());
 			
 			
 			utility.print("doSave: " + preparedStatement.toString());
