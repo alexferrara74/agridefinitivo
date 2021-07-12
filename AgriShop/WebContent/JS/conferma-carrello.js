@@ -18,7 +18,7 @@ function pagamento(src) {
 		
 		}
 		
-	if(src.value=="PayPal")
+	if(src.value=="paypal")
 		{
 		document.getElementById("conferma_paypal").style.display="inline"; 
 		document.getElementById("dati_pagamento").style.display="none";

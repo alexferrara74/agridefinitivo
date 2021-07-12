@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <link href="style/stylecarrello.css" rel="stylesheet" type="text/css">
 <script src="JS/conferma-carrello.js"></script>
+<script src="JS/controllocarta.js"></script>
 
 
 <%
@@ -61,7 +62,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <div id="modalita_pagamento">
 
  <label class="container" ><img src="immagini/paypal.png">
-  <input type="radio"  name="radio" value="paypal" onchange="pagamento(this), costo(this);">
+  <input type="radio"  name="radio" value="paypal" onchange="pagamento(this), costo(this);" required>
   <span class="checkmark"></span>
 </label>
 
@@ -72,16 +73,18 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </div>
 
 <label class="container"><img src="immagini/mastercard.png">
-  <input type="radio" name="radio" value="mastercard" onchange="pagamento(this), costo(this);">
+  <input type="radio" name="radio" value="mastercard" onchange="pagamento(this), costo(this);" required>
   <span class="checkmark"></span>
 </label>
 
 
 <div id="dati_pagamento">
-<input type="text" placeholder="Numero Carta">
-<input type="text" placeholder="Titolare Carta">
-<input type="date" placeholder="Scadenza">
-<input type="number" placeholder="CVV">
+
+
+<input type="text" name="numerocarta"placeholder="Numero Carta" onblur="validanumero(this)" required>
+<input type="text" name="titolare" placeholder="Titolare Carta" onblur="validanome(this)" required>
+<input type="date" name="scadenza" placeholder="Scadenza" onblur="validascadenza(this)"required>
+<input type="text" name="cvv" placeholder="CVV" onblur="validacvv(this)" required>
 
 </div>
 
@@ -89,7 +92,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 <label class="container"><img src="immagini/contrassegno.png">
-  <input type="radio" id="contr" name="radio" value="contanti"  onchange="pagamento(this),costo(this);">
+  <input type="radio" id="contr" name="radio" value="contanti"  onchange="pagamento(this),costo(this);" required>
   <span class="checkmark"></span>
 </label>
 
@@ -98,15 +101,15 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 <div id="modalita_spedizione">
 <label class="container"><img src="immagini/gls1.png">
-<input type="radio" id="contr" name="radiosped" value="GLS" onchange="spedizione(this);">
+<input type="radio" id="contr" name="radiosped" value="GLS" onchange="spedizione(this);" required>
   <span class="checkmark"></span>
 </label>
 <label class="container"><img src="immagini/sda.png" >
-<input type="radio" id="contr" name="radiosped" value="SDA"  onchange="spedizione(this);">
+<input type="radio" id="contr" name="radiosped" value="SDA"  onchange="spedizione(this);" required>
   <span class="checkmark"></span>
 </label>
 <label class="container"><img src="immagini/ritiroamano.png">
-<input type="radio" id="contr" name="radiosped" value="MANO"  onchange="spedizione(this);">
+<input type="radio" id="contr" name="radiosped" value="MANO"  onchange="spedizione(this);" required>
   <span class="checkmark"></span>
 </label>
 </div>

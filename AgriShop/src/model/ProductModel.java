@@ -6,6 +6,7 @@ import java.sql.SQLException;
 public interface ProductModel<T>{
 
 		public Collection<T> doRetrieveByKey(String code) throws SQLException;
+		public T doRetrieveBySSN(String code) throws SQLException;
 		public T doRetrieveByprodotto(String code) throws SQLException;
 		public Collection<T> doRetrieveByparametro(String parametro) throws SQLException;
 		public T doRetrieveByscelta(String order) throws SQLException ;

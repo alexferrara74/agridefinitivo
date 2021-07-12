@@ -9,8 +9,6 @@
 <body onload="ordini();" >
 
 
-<button onclick="ordini()">ciao</button>
-
 <div id="ordini-cliente">
 
 

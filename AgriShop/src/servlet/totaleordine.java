@@ -31,8 +31,8 @@ import model.spedizione;
 public class totaleordine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	float cont=0;
-	int costospedizione=0;
-
+	int costospedizione;
+	int numeroordine=5;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -108,6 +108,13 @@ public class totaleordine extends HttpServlet {
 				pagamento.setModalitapagamento("paypal");
 				cont=0;
 			
+				try {
+					modelpagamento.doSave(pagamento);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}}
 			
 			
@@ -122,6 +129,7 @@ public class totaleordine extends HttpServlet {
 			
 	
 		ordine.setPiva(neg.getPiva());
+		ordine.setNumero(numeroordine);
 		try {
 			modelordine.doSave(ordine);
 		} catch (SQLException e1) {
@@ -136,26 +144,26 @@ public class totaleordine extends HttpServlet {
 		
 			composto.setQuantita(prod.getDispcarrello());
 			composto.setSsn(prod.getSsn());
-			
+			composto.setNumero(numeroordine);
 			
 			System.out.print(composto.getQuantita());
 			try {
-				
 				modelcomposto.doSave(composto);
-				
-				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-				catch (SQLException e) {				
-					System.out.print("errore");		
-				}
+				
+				
+		
 			
-		}
-		}
 		
 		}
+		
+		}}
 		
 	
-		
+		numeroordine++;
 		response.getWriter().write(risposta.toString());
 		
 	}

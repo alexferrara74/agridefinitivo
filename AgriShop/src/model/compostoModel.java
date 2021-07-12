@@ -30,7 +30,7 @@ private DataSource ds= null;
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
-		String insertSQL="INSERT INTO composto (quantita,SSN,numero) VALUES (?,?,?)";    
+		String insertSQL="INSERT INTO composto "+"( quantita , SSN , numero) VALUES ( ?, ?, ?)";    
 		
 		try {
 			connection=ds.getConnection();
@@ -40,9 +40,7 @@ private DataSource ds= null;
 			preparedStatement.setInt(1,item.getQuantita());
 			preparedStatement.setString(2,item.getSsn());
 			preparedStatement.setInt(3,item.getNumero());
-			
-			
-			utility.print("doSave: " + preparedStatement.toString());
+				
 			preparedStatement.executeUpdate();
 
 			connection.commit();
@@ -72,19 +70,19 @@ private DataSource ds= null;
 		Collection <composto> composto= new LinkedList<composto>();
 	
 		try {
-			composto bean=new composto();
+		
 			connection= ds.getConnection();
 			prepareStatement= connection.prepareStatement(selectSQL);
 			prepareStatement.setInt(1, numero);
 			ResultSet rs=prepareStatement.executeQuery();
 			
-			
-				
+			while(rs.next()) {
+				composto bean=new composto();
 				bean.setNumero(rs.getInt("numero"));
 				bean.setQuantita(rs.getInt("quantita"));
 				bean.setSsn(rs.getString("SSN"));
 				composto.add(bean);			
-			
+			}
 						
 		}finally {
 			try {
