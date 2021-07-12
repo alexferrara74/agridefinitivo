@@ -2,7 +2,7 @@
 
 #mostra__carrello{width:80%; margin-left:10%; height:700px;}
 #conferma__carrello{display:inline;float:right;width:20%;font-family: American Typewriter, serif;font-size:25px; position:fixed; height:60%; margin:0 0 0 5%; border: none;}
-
+#conferma__carrello button{width:200px; height:50px; background:orange;color:black; border-radius:20px;font-family: "Lucida Console", "Courier New", monospace;font-size:18px;}
 
 .prodotti__carrello{display:inline;float:left;width:60%; height:30%; margin:0 0% 0 10%; border-bottom:2px solid orange;font-family: "Lucida Console", "Courier New", monospace;font-size:18px; }
 .prodotti__carrello span img{display:inline;float:left;width:20%;margin:5% 0 0 0;}
@@ -44,7 +44,7 @@
 #buttonconferma{width:20%;font-size:18px;font-family: American Typewriter, serif;}
 #conferma_paypal h1{font-size:18px;font-family: American Typewriter, serif;}
 #loading {display:none; float:right; position:absolute;right:60%; bottom:30%;width:10%; height:12%;}
-#svuotacarrello{width:300px;height:200px;background:green; text-decoration:none;font-size:18px;font-family: American Typewriter, serif;margin:0 0 0 200px;}
+#svuotacarrello{width:300px;height:200px;background:none; text-decoration:none;font-size:18px;font-family: American Typewriter, serif;margin:0 0 0 60px;}
 
 .clearfix:after {
   visibility: hidden;

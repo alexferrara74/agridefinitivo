@@ -23,7 +23,7 @@ float totale=0;
 <%@ include file="Header.jsp"%><br>
 
 
-<a id="svuotacarrello" href="<%=response.encodeURL("carrello?action=clearCart")%>">Svuota Carrello</a>
+<a id="svuotacarrello" href="<%=response.encodeURL("carrello?action=clearCart")%>"><img src="immagini/svuota.png" width="50" height="50"><span>svuota</span></a>
 
 
 
@@ -64,7 +64,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 <div class="carrello__vuoto">
 
 <img src="immagini/carrellovuoto.png">
-<a id="cliccaqui" href="prodotti.jsp"><button>Clicca Qui!</button></a>
+<a id="cliccaqui" href="prodotti.jsp"><button>CLICCA QUI!</button></a>
 
 </div>
 
@@ -75,7 +75,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 
-<a href="confermaordine.jsp"> Conferma Ordine</a>
+<a href="confermaordine.jsp"><button>CONFERMA ORDINE</button> </a>
 
 
 <%=totale %>
