@@ -144,14 +144,13 @@ if(prodotti!=null&&prodotti.size()>0){
 
 <div class="banner clearfix">
 
-
-
 <a href="homepage.jsp" class="home"><img src="immagini/home.png" alt="home" class="home"></a>
 <a href="prodotti.jsp" class="home"><img src="immagini/shop.png" alt="home" class="home"></a>
 <a href="carrello.jsp" class="home"><img src="immagini/shopping-cart.png" alt="home" class="home"></a>
 <a href="Login.jsp" class="home"><img src="immagini/user.png" alt="home" class="menu__mobile"></a>
 
 
+</div>
 
 
 

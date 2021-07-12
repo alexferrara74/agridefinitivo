@@ -115,7 +115,7 @@ html,body{height:98%; background:#F8F8FF;}
 
 @media(max-width:767px){
 	#carrello{display:none;}
-	.banner{width:78%; height:80px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
+	.banner{width:400px; height:80px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
 	.accedi__mobile{width:70px;display:block; float:right; font-size:25px;}
 	.accedi__mobile__item{display:none;}
 	.header__logo img{width:200px; height:80px; padding :5px 5px 5px 0px;}

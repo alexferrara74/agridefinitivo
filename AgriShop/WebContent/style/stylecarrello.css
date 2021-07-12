@@ -111,5 +111,6 @@
 #conferma_paypal h1{font-size:18px;font-family: American Typewriter, serif;}
 #loading {display:none; float:right; position:absolute;right:60%; bottom:30%;width:10%; height:12%;}
 #svuotacarrello{width:300px;height:200px;background:none; text-decoration:none;font-size:18px;font-family: American Typewriter, serif;margin:0 0 0 60px;}
+.banner{width:60%; height:80px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
 	
 }
