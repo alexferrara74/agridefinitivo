@@ -4,7 +4,7 @@
 #risultato{
 
 	
-	width :60%;	
+	width :50%;	
 
 	height:1280px;
 	margin-left:20%;
@@ -15,8 +15,8 @@
 #singolo{
 	display:inline;
 	float:left;
-	width:22%;
-	height:20%;
+	width:180px;
+	height:190px;
 	border-radius:5px;
 	padding: 0;
 	margin: 1% 2% 0 1%;
@@ -34,9 +34,9 @@
 #prezzo{display:inline;float:left;width:90%; height:15%;margin-left:5%;font-family: "Lucida Console", "Courier New", monospace; color:black; font-size:25px; text-decoration:none;  }
 #prezzo p{width:50%;display:inline; float:left; margin:0 0 0 0 ;  font-weight: bold; font-size:25px; text-align:center;}
 #prezzo img{width:25%;display:inline; float:left; margin-top:0%; margin-left:0;}
-#scelta{display:inline;float:left;width:90%; height:15%; margin-left:5%; padding-top:1%; }
+#scelta{display:inline;float:left;width:95%; height:15%; margin-left:5%; padding-top:1%; }
 #scelta input{width:20%;  height:30px; border-style:solid; border-radius:10px; margin: 0 0 0 5% ; outline: none;background:lightgrey;}
-#scelta button{width:52%; height:35px;margin-left:10%; border-radius:10px; background:#69CD12;}
+#scelta button{width:65%; height:35px;margin-left:10%; border-radius:10px; background:#69CD12;}
 #scelta button:hover{background:orange;}
 
 
@@ -151,8 +151,8 @@
 #singolo{
 	display:inline;
 	float:left;
-	width:35%;
-	height:20%;
+	width:120px;
+	height:90px;
 	margin: 10% 10% 5% 0%;
 }
 #risultato{
@@ -162,7 +162,7 @@
 
 	height:80%;
 	
-	margin-left:30%;
+	margin-left:0;
 	margin-right:0;
 
 }
