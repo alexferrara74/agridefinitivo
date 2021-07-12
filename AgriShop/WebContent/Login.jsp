@@ -49,7 +49,7 @@ String errorelogin=(String)request.getAttribute("passerrore");
 
 <%if(errorelogin!=null&&errorelogin.equals("errorelogin")){ %>	
 	<div id="errorelogin">
-		<a><img src="immagini/error.png" width="200" height="200"></a>
+		<a><img src="immagini/error.png" width="3" height="3"></a>
 	
 	</div>
 <%}%>
