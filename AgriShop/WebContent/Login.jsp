@@ -39,7 +39,7 @@ String errorelogin=(String)request.getAttribute("passerrore");
 			
 	</div>
 	
-<%if(erroreaccount!=null&&erroreaccount.equals("errorelogin")){ %>	
+<%if(erroreaccount!=null&&erroreaccount.equals("errorelogin")|| (errorelogin!=null&&errorelogin.equals("errorelogin")) ){ %>	
 	<div id="errorelogin">
 	
 	<a><img src="immagini/error.png" width="200" height="200"></a>
@@ -47,21 +47,16 @@ String errorelogin=(String)request.getAttribute("passerrore");
 <%}%>
 
 
-<%if(errorelogin!=null&&errorelogin.equals("errorelogin")){ %>	
-	<div id="errorelogin">
-		<a><img src="immagini/error.png" width="3" height="3"></a>
-	
-	</div>
-<%}%>
+
 
 <div class="banner clearfix">
 
 
 
 <a href="homepage.jsp" class="home"><img src="immagini/home.png" alt="home" class="home"></a>
-<a href="" class="home"><img src="immagini/shop.png" alt="home" class="home"></a>
-<a href="" class="home"><img src="immagini/shopping-cart.png" alt="home" class="home"></a>
-<a href="login.jsp" class="home"><img src="immagini/user.png" alt="home" class="menu__mobile"></a>
+<a href="prodotti.jsp" class="home"><img src="immagini/shop.png" alt="home" class="home"></a>
+<a href="carrello.jsp" class="home"><img src="immagini/shopping-cart.png" alt="home" class="home"></a>
+<a href="Login.jsp" class="home"><img src="immagini/user.png" alt="home" class="menu__mobile"></a>
 
 </div>
 
