@@ -75,7 +75,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 
-<a href="confermaordine.jsp"><button>CONFERMA ORDINE</button> </a>
+<a href="confermaordine.jsp"><button>CONFERMA ORDINE </button> </a>
 
 
 <%=totale %>
