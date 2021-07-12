@@ -30,8 +30,9 @@ public class carrello extends HttpServlet {
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		ProductModelDS model = new ProductModelDS(ds);
 		boolean controllo=false;
-		@SuppressWarnings("unchecked")
+	
 		Carrello<prodotto> carrello = (Carrello<prodotto>) request.getSession().getAttribute("carrello");
+		
 		if (carrello == null) {
 			carrello = new Carrello<prodotto>();
 			request.getSession().setAttribute("carrello", carrello);
@@ -43,7 +44,10 @@ public class carrello extends HttpServlet {
 		
 		
 		
-		if(nome==null) {}
+		if(nome==null) {
+			
+			indirizzo="homepage.jsp";
+		}
 		
 		
 		try {
@@ -55,7 +59,7 @@ public class carrello extends HttpServlet {
 				
 
 				 if (action.equals("deleteCart")) {
-					 indirizzo="carrello";
+					 indirizzo="carrello.jsp";
 						prodotto bean = (prodotto) model.doRetrieveByNome(nome);
 						if (bean != null && !bean.isEmpty()) {
 							carrello.deleteOggetto(bean);

@@ -128,7 +128,7 @@ indirizzo.focus();
 
 function validacivico(civico){
 
-var ck=/^[0-9]{2,3}$/;
+var ck=/^[0-9]{1,3}$/;
 
 
 if(!ck.test(civico.value)){
