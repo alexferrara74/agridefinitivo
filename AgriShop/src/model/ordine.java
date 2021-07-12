@@ -7,10 +7,7 @@ public class ordine {
 	int numero;
 	String piva;
 	
-		public ordine() {
-			
-		
-			numero=0;
+		public ordine() {		
 			piva="";
 			
 		}

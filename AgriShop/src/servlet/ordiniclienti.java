@@ -41,8 +41,10 @@ public class ordiniclienti extends HttpServlet {
 		OrdineModel modelordine= new OrdineModel(ds);
 		LoginModelDS modelnegozio=new LoginModelDS(ds);
 		ProductModelDS prodotto=new ProductModelDS(ds);
+		
 		Negozio neg=new Negozio();
 		prodotto p= new prodotto();
+		
 		StringBuffer risposta=new StringBuffer();
 	
 				Collection <ordine> ordine= new LinkedList<ordine>(); 
@@ -71,9 +73,9 @@ public class ordiniclienti extends HttpServlet {
 		while(it.hasNext()) {
 			ordine beans=(ordine) it.next();
 				risposta.append("<p>");	
-				
+				risposta.append("N°Ordine :");
 				risposta.append(beans.getNumero());
-				risposta.append(beans.getPiva());
+				risposta.append(" ");
 				risposta.append("</p>");
 		
 				try {
@@ -86,11 +88,21 @@ public class ordiniclienti extends HttpServlet {
 				Iterator <?> itcomposto=composto.iterator();
 				while(itcomposto.hasNext()) {
 					composto bean=(composto) itcomposto.next();
-					risposta.append("<p>");	
 					
-					risposta.append(bean.getSsn());
-					risposta.append(bean.getQuantita());
+					try {
+						p=prodotto.doRetrieveBySSN(bean.getSsn());
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					risposta.append("<p>");						
+					risposta.append("Prodotto: ");
+					risposta.append(p.getNome());
+					risposta.append("     ");
+					risposta.append("Pz:");
+					risposta.append(bean.getQuantita());					
 					risposta.append("</p>");
+					
 			
 				}
 		

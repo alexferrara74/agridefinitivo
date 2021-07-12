@@ -97,6 +97,52 @@ private DataSource ds= null;
 	
 	}
 
+	
+	public Collection<ordine>doRetrieveByAll() throws SQLException {
+		Connection connection=null;
+		PreparedStatement prepareStatement=null;
+		
+		String selectSQL="SELECT * FROM ordine";
+		
+		
+		Collection <ordine> ordine= new LinkedList<ordine>(); 
+		
+		
+		try {
+			
+			connection= ds.getConnection();
+			prepareStatement= connection.prepareStatement(selectSQL);
+			
+			ResultSet rs=prepareStatement.executeQuery();
+			
+			while(rs.next()) {
+				ordine bean= new ordine();
+				
+				bean.setNumero(rs.getInt("numero"));
+				bean.setPiva(rs.getString("PIVA"));
+				ordine.add(bean);
+				}
+						
+		}finally {
+			try {
+			if(prepareStatement!=null)
+			prepareStatement.close();
+			}finally {
+				
+			
+			
+			if(connection!=null)
+			connection.close();
+			}
+			
+		}
+		
+		return ordine;
+	}
+		
+	
+	
+	
 	@Override
 	public void doUpdate(ordine item) throws SQLException {
 		// TODO Auto-generated method stub

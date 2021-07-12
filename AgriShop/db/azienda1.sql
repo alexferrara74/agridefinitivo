@@ -171,6 +171,17 @@ INSERT INTO categoria VALUES
 ('ortaggi');
 INSERT INTO categoria VALUES
 ('frutta');
+INSERT INTO categoria VALUES
+('FruttaSecca');
+INSERT INTO categoria VALUES
+('vino');
+INSERT INTO categoria VALUES
+('olio');
+INSERT INTO categoria VALUES
+('semi');
+INSERT INTO categoria VALUES
+('verdura');
+
 
 INSERT INTO azienda VALUES
 ('Azienda&co','Napoli',1000,'IT12359971632');

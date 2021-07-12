@@ -2,6 +2,9 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,7 +35,7 @@ public class totaleordine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	float cont=0;
 	int costospedizione;
-	int numeroordine=5;
+	int numeroordine=3;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -52,10 +55,11 @@ public class totaleordine extends HttpServlet {
 		Carrello<prodotto> carrello = (Carrello<prodotto>) request.getSession().getAttribute("carrello");
 		Negozio neg=new Negozio();
 		ordine ordine= new ordine();
+
 		composto composto=new composto();
 		spedizione spedizione=new spedizione();
 		pagamento pagamento=new pagamento();
-		
+
 		
 		StringBuffer risposta=new StringBuffer();
 		
@@ -127,9 +131,11 @@ public class totaleordine extends HttpServlet {
 			costospedizione=0;
 			risposta.append(+carrello.getValorecarrello());
 			
-	
-		ordine.setPiva(neg.getPiva());
-		ordine.setNumero(numeroordine);
+			
+			ordine.setPiva(neg.getPiva());	
+			ordine.setNumero(numeroordine);
+
+		
 		try {
 			modelordine.doSave(ordine);
 		} catch (SQLException e1) {
@@ -143,10 +149,10 @@ public class totaleordine extends HttpServlet {
 			prod=carrello.getOggetto().get(i);
 		
 			composto.setQuantita(prod.getDispcarrello());
+	
 			composto.setSsn(prod.getSsn());
 			composto.setNumero(numeroordine);
 			
-			System.out.print(composto.getQuantita());
 			try {
 				modelcomposto.doSave(composto);
 			} catch (SQLException e) {
@@ -154,16 +160,16 @@ public class totaleordine extends HttpServlet {
 				e.printStackTrace();
 			}
 				
-				
-		
 			
 		
 		}
+		numeroordine++;
+		}
 		
-		}}
+		}
 		
 	
-		numeroordine++;
+		
 		response.getWriter().write(risposta.toString());
 		
 	}

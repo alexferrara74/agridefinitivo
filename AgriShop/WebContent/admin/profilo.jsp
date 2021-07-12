@@ -52,13 +52,13 @@ String username= (String)request.getSession().getAttribute("nome");
 
 <tr>
 <td><select name="categoria"  required>
-	<option value= "Ortaggi">Ortaggi</option>
-	<option value="Frutta">Frutta</option>
-	<option value="Verdura">Verdura </option>
-	<option value="Semi">Semi</option>
-	<option value= "Frutta Secca">Frutta Secca</option>
-	<option value="Vino">Vino </option>
-	<option value="Olio">Olio</option>
+	<option value= "ortaggi">Ortaggi</option>
+	<option value="frutta">Frutta</option>
+	<option value="verdura">Verdura </option>
+	<option value="semi">Semi</option>
+	<option value= "FruttaSecca">Frutta Secca</option>
+	<option value="vino">Vino </option>
+	<option value="olio">Olio</option>
 	
 	</select>
 	
