@@ -59,7 +59,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 <div id="modalita_pagamento">
-
+<p style="text-align:center;">PAGAMENTO:</p>
  <label class="container" ><img src="immagini/paypal.png">
   <input type="radio"  name="radio" value="paypal" onchange="pagamento(this), costo(this);">
   <span class="checkmark"></span>
@@ -78,6 +78,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 <div id="dati_pagamento">
+
 <input type="text" placeholder="Numero Carta">
 <input type="text" placeholder="Titolare Carta">
 <input type="date" placeholder="Scadenza">
@@ -97,6 +98,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 
 
 <div id="modalita_spedizione">
+<p style="text-align:center;">SPEDIZIONE:</p>
 <label class="container"><img src="immagini/gls1.png">
 <input type="radio" id="contr" name="radiosped" value="GLS" onchange="spedizione(this);">
   <span class="checkmark"></span>
@@ -111,7 +113,7 @@ List<prodotto> prodcarrello=carrello.getOggetto(); %>
 </label>
 </div>
 
-<button id="buttonconferma" onclick="calcolo(),disabilita()" >Conferma carrello</button>
+ <button id="buttonconferma" onclick="calcolo(),disabilita()">CONFERMA  </button> 
 
 <img id="loading" src="immagini/loading.png" alt="errore">
 <div id="totale__carrello">

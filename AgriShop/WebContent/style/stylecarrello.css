@@ -43,7 +43,11 @@
 #dati_pagamento {display:none; width:100%;height:60%; border:2px solid red;}
 #conferma_paypal{display:none;}
 #totale__carrello{display:none;width:60%; border:3px solid red;}
-#buttonconferma{width:20%;font-size:18px;font-family: American Typewriter, serif;}
+
+#buttonconferma{width:20%;font-family: American Typewriter, serif;font-size:20px; border: none; margin: 0 0 0 5%;}
+#buttonconferma button{width:100px; height:60px; background:green;color:black; border-radius:20px;font-family: American Typewriter, serif;font-size:18px;}
+
+
 #conferma_paypal h1{font-size:18px;font-family: American Typewriter, serif;}
 #loading {display:none; float:right; position:absolute;right:60%; bottom:30%;width:10%; height:12%;}
 #svuotacarrello{width:300px;height:200px;background:none; text-decoration:none;font-size:18px;font-family: American Typewriter, serif;margin:0 0 0 60px;}
