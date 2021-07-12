@@ -46,3 +46,13 @@
 #loading {display:none; float:right; position:absolute;right:60%; bottom:30%;width:10%; height:12%;}
 #svuotacarrello{width:300px;height:200px;background:green; text-decoration:none;font-size:18px;font-family: American Typewriter, serif;margin:0 0 0 200px;}
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */

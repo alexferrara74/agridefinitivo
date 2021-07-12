@@ -123,18 +123,23 @@
 		
 	
 	#parametriconfigurazione{
-	width: 10%;
-	height:500px;
-	margin-left:30px;
+	
+	float:left;
+	
+	margin-left:4px;
+	width: 30%;
+	height:400px;
+	margin-top:90px;
+	
 
 }
 
-#parametriconfigurazione a{
+#parametriconfigurazione a p{
 	 
 	margin-top:5px;
 	margin-left:1px;
 	font-size:20px;
-	width:50%;
+	width:30%;
 	
 	
 }
@@ -147,12 +152,31 @@
 	display:inline;
 	float:left;
 	width:35%;
-	height:15%;
-	margin: 50% 5% 0 10%;
+	height:20%;
+	margin: 10% 10% 10% 0%;
 }
+#risultato{
+	padding-top:50px;
+	
+	width :80%;	
 
-#descrizione{ width:70%;height:10%;}
-#descrizione p{font-size:15px;}
+	height:80%;
+	
+	margin-left:30%;
+	margin-right:0;
+
+}
+#risultato singolo{
+	display:inline;
+	float:left;
+	width:35%;
+	height:20%;
+	margin: 10% 10% 10% 0%;
+}
+#descrizione{ width:70%;height:30%;margin-bottom:30%;}
+#descrizione p{font-size:18px;margin-bottom:20px;}
+
+#immagineprod {display:inline;float:left;width:80%;height:60%;margin-left:10%;}
 #prezzo{width:50%; height:10%;font-size:15px; margin-top:50%;margin-left:5px;}
 #prezzo p{width:50%; margin:30% 1% 10% 0 ;font-size:15px;}
 #prezzo img{width:70%; margin-top:0; margin-left:10%;}
@@ -173,7 +197,7 @@
  #sceltahome input{display:none;}
  #sceltahome button{display:none;}
  
- .banner{width:78%; height:80px; position:fixed; bottom:0; background:grey; display:block; margin:0; z-index:111111;}
+ .banner{width:100%; height:80px; position:relative; bottom:0; background:grey; display:block; margin:0; z-index:111111;left:0px;}
 
 .clearfix:after {
   visibility: hidden;
